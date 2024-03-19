@@ -16,7 +16,7 @@ import schema from "../../schema";
 import Preview from "../Preview/Preview";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
+  { name: "Dashboard", href: "Hero", icon: HomeIcon, current: true },
   { name: "Team", href: "#", icon: UsersIcon, current: false },
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
@@ -43,16 +43,29 @@ export default function Editor() {
     }
   };
 
+  const handleAddNewBlock = (blockId: string) => {
+    console.log(`Adding new ${blockId}`);
+    setEditedSchema({
+      ...editedSchema,
+      components: [
+        ...editedSchema.components,
+        {
+          id: "Hero",
+          sectionIdx: 6,
+          props: {
+            heroTitle: "",
+            heroCaption: "",
+            logoUrl: "",
+            buttonLabel: "",
+            nav: [],
+          },
+        },
+      ],
+    });
+  };
+
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
@@ -119,8 +132,8 @@ export default function Editor() {
                       <ul role="list" className="-mx-2 flex-1 space-y-1">
                         {navigation.map((item) => (
                           <li key={item.name}>
-                            <a
-                              href={item.href}
+                            <div
+                              onClick={() => handleAddNewBlock(item.href)}
                               className={classNames(
                                 item.current
                                   ? "bg-gray-800 text-white"
@@ -133,7 +146,7 @@ export default function Editor() {
                                 aria-hidden="true"
                               />
                               {item.name}
-                            </a>
+                            </div>
                           </li>
                         ))}
                       </ul>
@@ -158,8 +171,8 @@ export default function Editor() {
             <ul role="list" className="flex flex-col items-center space-y-1">
               {navigation.map((item) => (
                 <li key={item.name}>
-                  <a
-                    href={item.href}
+                  <div
+                    onClick={() => handleAddNewBlock(item.href)}
                     className={classNames(
                       item.current
                         ? "bg-gray-800 text-white"
@@ -172,7 +185,7 @@ export default function Editor() {
                       aria-hidden="true"
                     />
                     <span className="sr-only">{item.name}</span>
-                  </a>
+                  </div>
                 </li>
               ))}
             </ul>
