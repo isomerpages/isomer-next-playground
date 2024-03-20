@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@isomerpages/isomer-components": "file:isomerpages-isomer-components-0.0.11.tgz",
-    "@isomerpages/isomer-render-engine": "file:isomerpages-isomer-render-engine-0.0.7.tgz",
+    "@isomerpages/isomer-components": "file:isomerpages-isomer-components-0.0.13.tgz",
     "@monaco-editor/react": "^4.6.0",
     "@tailwindcss/forms": "^0.5.7",
+    "ajv": "^8.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
