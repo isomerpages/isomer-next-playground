@@ -1,5 +1,5 @@
 import CodeEditor from "@monaco-editor/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import placeholder from "../../data/placeholder.json";
 import Preview from "../Preview/Preview";
@@ -7,22 +7,37 @@ import Ajv from "ajv";
 
 const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
 
-const loadSchema = async (uri: string) => {
-  const res = await fetch(uri).then((response) => response.json());
-  return res;
-};
-
-const ajv = new Ajv();
-const validate = ajv.compile(await loadSchema(ISOMER_SCHEMA_URI));
-
 export default function Editor() {
   const [isEditorOpen, setIsEditorOpen] = useState(true);
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
 
+  const [validate, setValidate] = useState<any>(null);
+
+  const loadSchema = async () => {
+    await fetch(ISOMER_SCHEMA_URI)
+      .then((response) => response.json())
+      .then((schema) => {
+        const ajv = new Ajv();
+        const validateFn = ajv.compile(schema);
+        setValidate(() => validateFn);
+      });
+  };
+
+  useEffect(() => {
+    if (validate === null) {
+      loadSchema();
+    }
+  });
+
   const handleEditorChange = (value: any) => {
     try {
       const parsedJson = JSON.parse(value);
+
+      if (validate === null) {
+        console.log("Schema not loaded yet");
+        return;
+      }
 
       if (validate(parsedJson)) {
         setIsJSONValid(true);

@@ -20,12 +20,16 @@ export default function Preview({ schema }: PreviewProps) {
         language: "en",
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
         isGovernment: true,
+        // @ts-expect-error blah
         isStaging: false,
       }}
       page={{
+        // @ts-expect-error blah
         layout: renderSchema.page.layout,
+        // @ts-expect-error blah
         title: renderSchema.page.title,
       }}
+      // @ts-expect-error blah
       content={renderSchema.content}
     />
   );
