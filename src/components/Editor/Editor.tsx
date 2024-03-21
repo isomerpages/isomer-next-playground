@@ -9,6 +9,9 @@ const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
 
 export default function Editor() {
   const [isEditorOpen, setIsEditorOpen] = useState(true);
+  const [editorValue, setEditorValue] = useState(
+    JSON.stringify(placeholder, null, 2)
+  );
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
 
@@ -28,9 +31,18 @@ export default function Editor() {
     if (validate === null) {
       loadSchema();
     }
+
+    const saved = localStorage.getItem("editorValue");
+
+    if (saved) {
+      handleEditorChange(saved);
+    }
   });
 
   const handleEditorChange = (value: any) => {
+    setEditorValue(value);
+    localStorage.setItem("editorValue", value);
+
     try {
       const parsedJson = JSON.parse(value);
 
@@ -54,9 +66,16 @@ export default function Editor() {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:*:text-blue-700">
+      <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:[&_a]:text-blue-700 hover:[&_button]:text-blue-700">
         <button onClick={() => setIsEditorOpen(!isEditorOpen)}>
           {isEditorOpen ? "Close Editor" : "Open Editor"}
+        </button>
+        <button
+          onClick={() =>
+            handleEditorChange(JSON.stringify(placeholder, null, 2))
+          }
+        >
+          Reset Editor
         </button>
         <a href={ISOMER_SCHEMA_URI} target="_blank">
           Isomer Schema
@@ -92,7 +111,7 @@ export default function Editor() {
           <CodeEditor
             height="100%"
             defaultLanguage="json"
-            defaultValue={JSON.stringify(placeholder, null, 2)}
+            value={editorValue}
             onChange={handleEditorChange}
           />
         </div>
