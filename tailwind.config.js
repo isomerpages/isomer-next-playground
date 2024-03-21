@@ -2,7 +2,11 @@
 import { NextPreset } from "@isomerpages/isomer-components";
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@isomerpages/isomer-components/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [NextPreset],
   theme: {
     extend: {
