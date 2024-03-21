@@ -1,5 +1,7 @@
 import { IsomerPageSchema, RenderEngine } from "@isomerpages/isomer-components";
 import placeholderSchema from "../../data/placeholder.json";
+import navBar from "../../data/navbar.json";
+import footer from "../../data/footer.json";
 
 export interface PreviewProps {
   schema?: {
@@ -17,11 +19,12 @@ export default function Preview({ schema }: PreviewProps) {
         siteName: "Ministry of Trade and Industry",
         siteMap: [],
         theme: "next",
-        language: "en",
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
         isGovernment: true,
+        environment: "production",
+        navBarItems: navBar,
         // @ts-expect-error blah
-        isStaging: false,
+        footerItems: footer,
       }}
       page={{
         // @ts-expect-error blah

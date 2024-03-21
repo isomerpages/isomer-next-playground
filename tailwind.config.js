@@ -18,7 +18,4 @@ export default {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"), // ? tailwinds form added here.
-  ],
 };
