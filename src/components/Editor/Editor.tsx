@@ -37,7 +37,7 @@ export default function Editor() {
     if (saved) {
       handleEditorChange(saved);
     }
-  });
+  }, [validate]);
 
   const handleEditorChange = (value: any) => {
     setEditorValue(value);
