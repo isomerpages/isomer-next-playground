@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+import { NextPreset } from "@isomerpages/isomer-components";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  presets: [NextPreset],
   theme: {
     extend: {
       colors: {
