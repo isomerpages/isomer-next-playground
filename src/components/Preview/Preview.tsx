@@ -18,7 +18,7 @@ export default function Preview({ schema }: PreviewProps) {
       site={{
         siteName: "Ministry of Trade and Industry",
         siteMap: [],
-        theme: "next",
+        theme: "isomer-next",
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
         isGovernment: true,
         environment: "production",
