@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
+  "layout": "content",
   "page": {
-    "layout": "content",
     "title": "About us"
   },
   "content": [

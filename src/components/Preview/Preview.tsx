@@ -6,6 +6,7 @@ import footer from "../../data/footer.json";
 export interface PreviewProps {
   schema?: {
     version: string;
+    layout: string;
     page: string;
     content: IsomerPageSchema["content"];
   };
@@ -26,9 +27,9 @@ export default function Preview({ schema }: PreviewProps) {
         // @ts-expect-error blah
         footerItems: footer,
       }}
+      // @ts-expect-error blah
+      layout={renderSchema.layout}
       page={{
-        // @ts-expect-error blah
-        layout: renderSchema.page.layout,
         // @ts-expect-error blah
         title: renderSchema.page.title,
       }}
