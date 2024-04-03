@@ -1,7 +1,11 @@
 {
   "version": "0.1.0",
-  "layout": "content",
   "page": {
+    "contentPageHeader": {
+      "breadcrumb": {
+        "links": []
+      }
+    },
     "title": "About us"
   },
   "content": [
@@ -52,5 +56,6 @@
       "variant": "top",
       "title": "Irrationality in numbers"
     }
-  ]
+  ],
+  "layout": "homepage"
 }
