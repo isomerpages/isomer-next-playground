@@ -23,6 +23,7 @@ export default function Preview({ schema }: PreviewProps) {
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
         isGovernment: true,
         environment: "production",
+        lastUpdated: "3 Apr 2024",
         navBarItems: navBar,
         // @ts-expect-error blah
         footerItems: footer,
@@ -31,7 +32,8 @@ export default function Preview({ schema }: PreviewProps) {
       layout={renderSchema.layout}
       page={{
         // @ts-expect-error blah
-        title: renderSchema.page.title,
+        ...renderSchema.page,
+        tableOfContents: [],
       }}
       // @ts-expect-error blah
       content={renderSchema.content}
