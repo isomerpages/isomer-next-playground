@@ -33,7 +33,9 @@ export default function Preview({ schema }: PreviewProps) {
       page={{
         // @ts-expect-error blah
         ...renderSchema.page,
-        tableOfContents: [],
+        tableOfContents: {
+          items: [],
+        },
       }}
       // @ts-expect-error blah
       content={renderSchema.content}
