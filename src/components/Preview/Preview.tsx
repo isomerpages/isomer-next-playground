@@ -7,7 +7,7 @@ export interface PreviewProps {
   schema?: {
     version: string;
     layout: string;
-    page: string;
+    page: any;
     content: IsomerPageSchema["content"];
   };
 }
@@ -18,7 +18,7 @@ export default function Preview({ schema }: PreviewProps) {
     <RenderEngine
       site={{
         siteName: "Ministry of Trade and Industry",
-        siteMap: [],
+        siteMap: { title: "Home", permalink: "/", children: [] },
         theme: "isomer-next",
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
         isGovernment: true,
@@ -30,13 +30,7 @@ export default function Preview({ schema }: PreviewProps) {
       }}
       // @ts-expect-error blah
       layout={renderSchema.layout}
-      page={{
-        // @ts-expect-error blah
-        ...renderSchema.page,
-        tableOfContents: {
-          items: [],
-        },
-      }}
+      page={renderSchema.page}
       // @ts-expect-error blah
       content={renderSchema.content}
     />
