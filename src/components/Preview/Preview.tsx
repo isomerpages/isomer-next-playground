@@ -30,7 +30,7 @@ export default function Preview({ schema }: PreviewProps) {
       }}
       // @ts-expect-error blah
       layout={renderSchema.layout}
-      page={renderSchema.page}
+      page={{ ...renderSchema.page, permalink: "/" }}
       // @ts-expect-error blah
       content={renderSchema.content}
     />
