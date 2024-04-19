@@ -1,126 +1,104 @@
-import CodeEditor from "@monaco-editor/react";
-import { useEffect, useState } from "react";
+import schema from "../../../docs/0.1.0.json";
+import homePageData from "../../../schema/index.json";
+import aboutPageData from "../../../schema/about.json";
+import { useCallback, useState } from "react";
 
-import placeholder from "../../data/placeholder.json";
 import Preview from "../Preview/Preview";
 import Ajv from "ajv";
+import { JsonForms } from "@jsonforms/react";
+import {
+  materialCells,
+  materialRenderers,
+} from "@jsonforms/material-renderers";
 
 const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
 
 export default function Editor() {
+  const initialPageData = homePageData; // change this to aboutPageData to see how editing a content page looks like
+  const [formData, setFormData] = useState<any>(initialPageData);
+  const [schemaData, setSchemaData] = useState<any>(initialPageData);
   const [isEditorOpen, setIsEditorOpen] = useState(true);
-  const [editorValue, setEditorValue] = useState(
-    JSON.stringify(placeholder, null, 2)
-  );
-  const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
+  const ajvInstance = new Ajv();
+  const validator = ajvInstance.compile(schema);
 
-  const [validate, setValidate] = useState<any>(null);
+  const handleFormDataChange = useCallback(
+    (value: any) => {
+      console.log(value);
+      setFormData(value);
 
-  const loadSchema = async () => {
-    await fetch(ISOMER_SCHEMA_URI)
-      .then((response) => response.json())
-      .then((schema) => {
-        const ajv = new Ajv();
-        const validateFn = ajv.compile(schema);
-        setValidate(() => validateFn);
-      });
-  };
-
-  useEffect(() => {
-    if (validate === null) {
-      loadSchema();
-    }
-
-    const saved = localStorage.getItem("editorValue");
-
-    if (saved) {
-      handleEditorChange(saved);
-    }
-  }, [validate]);
-
-  const handleEditorChange = (value: any) => {
-    setEditorValue(value);
-    localStorage.setItem("editorValue", value);
-
-    try {
-      const parsedJson = JSON.parse(value);
-
-      if (validate === null) {
-        console.log("Schema not loaded yet");
-        return;
-      }
-
-      if (validate(parsedJson)) {
-        setIsJSONValid(true);
-        setEditedSchema(parsedJson);
-      } else {
+      try {
+        if (validator(value)) {
+          setIsJSONValid(true);
+          setSchemaData(value);
+        } else {
+          setIsJSONValid(false);
+          console.log("JSON is invalid", validator.errors);
+        }
+      } catch (e) {
         setIsJSONValid(false);
-        console.log("JSON is invalid", validate.errors);
+        console.log(e);
       }
-    } catch (e) {
-      setIsJSONValid(false);
-      console.log(e);
-    }
-  };
+    },
+    [validator]
+  );
+
+  const TopBar = () => (
+    <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:[&_a]:text-blue-700 hover:[&_button]:text-blue-700">
+      <button onClick={() => setIsEditorOpen(!isEditorOpen)}>
+        {isEditorOpen ? "Close Editor" : "Open Editor"}
+      </button>
+      <button onClick={() => handleFormDataChange(initialPageData)}>
+        Reset Editor
+      </button>
+      <a href={ISOMER_SCHEMA_URI} target="_blank">
+        Isomer Schema
+      </a>
+      <a
+        href="https://rjsf-team.github.io/react-jsonschema-form/"
+        target="_blank"
+      >
+        Form-based editor
+      </a>
+
+      <div className="flex-1"></div>
+
+      <div
+        className={`px-2 ${
+          isJSONValid
+            ? "text-green-700 bg-green-200"
+            : "text-red-700 bg-red-200"
+        }`}
+      >
+        {isJSONValid ? "Valid" : "Invalid"}
+      </div>
+    </div>
+  );
 
   return (
-    <div className="flex flex-col w-full h-full">
-      <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:[&_a]:text-blue-700 hover:[&_button]:text-blue-700">
-        <button onClick={() => setIsEditorOpen(!isEditorOpen)}>
-          {isEditorOpen ? "Close Editor" : "Open Editor"}
-        </button>
-        <button
-          onClick={() =>
-            handleEditorChange(JSON.stringify(placeholder, null, 2))
-          }
-        >
-          Reset Editor
-        </button>
-        <a href={ISOMER_SCHEMA_URI} target="_blank">
-          Isomer Schema
-        </a>
-        <a
-          href="https://rjsf-team.github.io/react-jsonschema-form/"
-          target="_blank"
-        >
-          Form-based editor
-        </a>
-
-        <div className="flex-1"></div>
-
-        <div
-          className={`px-2 ${
-            isJSONValid
-              ? "text-green-700 bg-green-200"
-              : "text-red-700 bg-red-200"
-          }`}
-        >
-          {isJSONValid ? "Valid" : "Invalid"}
-        </div>
+    <div className="flex flex-col">
+      <div className="h-[5vh]">
+        <TopBar />
       </div>
-
-      <div className="flex flex-row">
-        <div
-          className={
-            isEditorOpen
-              ? "w-2/5 h-[calc(100vh-33px)] border-r-2 border-r-gray-400"
-              : "w-0"
-          }
-        >
-          <CodeEditor
-            height="100%"
-            defaultLanguage="json"
-            value={editorValue}
-            onChange={handleEditorChange}
-          />
-        </div>
-        <div
-          className={`h-[calc(100vh-33px)] overflow-scroll ${
-            isEditorOpen ? "w-3/5 px-1" : "w-full"
-          }`}
-        >
-          <Preview schema={editedSchema} />
+      <div className={`h-[95vh] ${isEditorOpen ? "flex flex-row" : ""}`}>
+        {isEditorOpen && (
+          // mega jank css selectors to prevent the materialRenderers from going full width
+          <div className="p-10 overflow-y-auto max-w-[500px] [&_div]:!max-w-full [&_div_.MuiTabs-flexContainer]:overflow-x-auto">
+            <JsonForms
+              schema={schema}
+              data={formData}
+              ajv={ajvInstance}
+              onChange={({ data, errors }) => {
+                console.log(errors);
+                handleFormDataChange(data);
+              }}
+              renderers={materialRenderers}
+              cells={materialCells}
+            />
+          </div>
+        )}
+        <div className="overflow-y-auto">
+          <Preview schema={schemaData} />
         </div>
       </div>
     </div>

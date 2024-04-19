@@ -1,0 +1,110 @@
+{
+  "version": "0.1.0",
+  "page": {
+    "title": "Home"
+  },
+  "content": [
+    {
+      "type": "hero",
+      "variant": "gradient",
+      "title": "Ministry of Trade & Industry",
+      "subtitle": " A leading global city of enterprise and talent, a vibrant nation of innovation and opportunity",
+      "alignment": "left",
+      "dropdown": {
+        "options": []
+      },
+      "backgroundUrl": "https://www.mti.gov.sg/-/media/MTI/Images/Home/jumbotron-merlion.jpg?h=516",
+      "keyHighlights": []
+    },
+    {
+      "type": "infopic",
+      "title": "Committee of Supply (COS) 2024",
+      "imageSrc": "https://www.mti.gov.sg/-/media/MTI/COS-2024/Web-Banners/COS_banner.png?h=450&hash=BE7566290A34E0145E0D5AE7A4A83427",
+      "buttonLabel": "Read More",
+      "buttonUrl": "https://www.mti.gov.sg/COS-2024/Committee-of-Supply-2024",
+      "isTextOnRight": true,
+      "variant": "side-by-side"
+    },
+    {
+      "type": "keystatistics",
+      "statistics": [
+        {
+          "label": "Real GDP, 4Q 2023 (YoY)",
+          "value": "+ 2.2%"
+        },
+        {
+          "label": "Total Merchandise Trade, Feb 2024 (YoY)",
+          "value": "+ 3.5%"
+        },
+        {
+          "label": "Industrial Production, Feb 2024 (YoY)",
+          "value": "+ 3.8%"
+        },
+        {
+          "label": "Consumer Price Index, Feb 2024 (YoY)",
+          "value": "+ 3.4%"
+        }
+      ],
+      "variant": "side",
+      "title": "Key Economic Indicators"
+    },
+    {
+      "type": "infocols",
+      "infoBoxes": [
+        {
+          "title": "Committee of Supply (COS) 2024",
+          "buttonLabel": "Learn more",
+          "description": "Singapore Economy 2030",
+          "buttonUrl": "https://www.mti.gov.sg/COS-2024/Committee-of-Supply-2024",
+          "icon": "bar-chart"
+        },
+        {
+          "title": "Launch of the Manpower for Strategic Economic Priorities (M-SEP) scheme to support firms’ expansion plans",
+          "buttonUrl": "https://www.mti.gov.sg/Newsroom/Press-Releases/2022/12/Launch-of-the-M-SEP-scheme-to-support-firms-expansion-plans",
+          "buttonLabel": "Learn more",
+          "description": "Supporting businesses that contribute to Singapore's strategic economic priorities.",
+          "icon": "bar-chart"
+        },
+        {
+          "title": "Partnerships",
+          "description": "Multilateral collaborations to strengthen regional cooperation and build capabilities.",
+          "buttonLabel": "Learn more",
+          "buttonUrl": "https://www.mti.gov.sg/Partnerships/Overview",
+          "icon": "bar-chart"
+        },
+        {
+          "title": "Digital Economy Agreements",
+          "description": "Digital trade rules and digital economy collaborations between two or more economies.",
+          "buttonLabel": "Learn more",
+          "buttonUrl": "https://www.mti.gov.sg/Trade/Digital-Economy-Agreements",
+          "icon": "bar-chart"
+        },
+        {
+          "title": "Industry Transformation Maps",
+          "description": "23 roadmaps to drive industry transformation",
+          "buttonLabel": "Learn more",
+          "buttonUrl": "https://www.mti.gov.sg/ITMs/Overview",
+          "icon": "bar-chart"
+        },
+        {
+          "title": "Pro-Enterprise Panel (PEP)",
+          "description": "A pro-enterprise environment that facilitates the growth of businesses",
+          "buttonLabel": "Learn more",
+          "buttonUrl": "https://www.mti.gov.sg/PEP/About-the-PEP",
+          "icon": "bar-chart"
+        }
+      ],
+      "title": "Highlights"
+    },
+    {
+      "type": "infopic",
+      "title": "Budget 2024",
+      "description": "Building our Shared Future Together",
+      "imageSrc": "https://www.mti.gov.sg/-/media/MTI/Images/Home/Budget-banner-2024.png?h=312&mh=312&w=533&hash=197E898658D82343A1FD208F1EEA9459",
+      "buttonLabel": "Learn more",
+      "buttonUrl": "https://www.mof.gov.sg/singaporebudget",
+      "variant": "side-by-side"
+    }
+  ],
+  "layout": "homepage"
+}
