@@ -18,6 +18,7 @@ export default function Preview({ schema }: PreviewProps) {
     <RenderEngine
       site={{
         siteName: "Ministry of Trade and Industry",
+        // @ts-expect-error blah
         siteMap: { title: "Home", permalink: "/", children: [] },
         theme: "isomer-next",
         logoUrl: "https://www.isomer.gov.sg/images/isomer-logo.svg",
