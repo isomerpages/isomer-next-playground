@@ -4,12 +4,13 @@ import aboutPageData from "../../../schema/about.json";
 import { useCallback, useState } from "react";
 
 import Preview from "../Preview/Preview";
-import Ajv from "ajv";
 import { JsonForms } from "@jsonforms/react";
 import {
   materialCells,
   materialRenderers,
 } from "@jsonforms/material-renderers";
+import { createAjv } from "@jsonforms/core";
+import ajvErrors from "ajv-errors";
 
 const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
 
@@ -19,7 +20,7 @@ export default function Editor() {
   const [schemaData, setSchemaData] = useState<any>(initialPageData);
   const [isEditorOpen, setIsEditorOpen] = useState(true);
   const [isJSONValid, setIsJSONValid] = useState(true);
-  const ajvInstance = new Ajv();
+  const ajvInstance = ajvErrors(createAjv());
   const validator = ajvInstance.compile(schema);
 
   const handleFormDataChange = useCallback(

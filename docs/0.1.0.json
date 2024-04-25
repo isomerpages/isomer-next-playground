@@ -23,7 +23,13 @@
       "properties": {
         "title": {
           "type": "string",
-          "description": "The title of the page"
+          "description": "The title of the page",
+          "maxLength": 10,
+          "minLength": 4,
+          "errorMessage": {
+            "minLength": "Title must be at least 4 characters long",
+            "maxLength": "Title must be at most 10 characters long"
+          }
         },
         "description": {
           "type": "string",
@@ -446,8 +452,7 @@
         "title": {
           "type": "string",
           "title": "Infobar title",
-          "description": "The title of the Infobar",
-          "maxLength": 10
+          "description": "The title of the Infobar"
         },
         "subtitle": {
           "type": "string",
