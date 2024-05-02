@@ -17,6 +17,7 @@ export default function Editor() {
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
   const [isNewEditor, setIsNewEditor] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const [jsonSchema, setJsonSchema] = useState<any>(null);
   const [validate, setValidate] = useState<any>(null);
@@ -49,6 +50,12 @@ export default function Editor() {
       handleNewEditorChange(saved);
     }
   }, [validate]);
+
+  useEffect(() => {
+    if (isCopied) {
+      setTimeout(() => setIsCopied(false), 3000);
+    }
+  }, [isCopied]);
 
   const handleEditorChange = (value: any) => {
     setEditorValue(value);
@@ -98,6 +105,11 @@ export default function Editor() {
     }
   };
 
+  const handleCopyToClipboard = () => {
+    navigator.clipboard.writeText(JSON.stringify(editedSchema, null, 2));
+    setIsCopied(true);
+  };
+
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:[&_a]:text-blue-700 hover:[&_button]:text-blue-700">
@@ -126,6 +138,11 @@ export default function Editor() {
 
         <div className="flex-1"></div>
 
+        {isNewEditor && (
+          <button onClick={handleCopyToClipboard}>
+            {!isCopied ? "Copy JSON to Clipboard" : "Copied!"}
+          </button>
+        )}
         <div
           className={`px-2 ${
             isJSONValid
