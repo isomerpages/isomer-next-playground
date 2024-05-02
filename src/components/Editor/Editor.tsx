@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import placeholder from "../../data/placeholder.json";
 import Preview from "../Preview/Preview";
 import Ajv from "ajv";
+import NewEditor from "../NewEditor/NewEditor";
 
 const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
 
@@ -12,17 +13,21 @@ export default function Editor() {
   const [editorValue, setEditorValue] = useState(
     JSON.stringify(placeholder, null, 2)
   );
+  const [newEditorValue, setNewEditorValue] = useState({});
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
+  const [isNewEditor, setIsNewEditor] = useState(false);
 
+  const [jsonSchema, setJsonSchema] = useState<any>(null);
   const [validate, setValidate] = useState<any>(null);
 
   const loadSchema = async () => {
     await fetch(ISOMER_SCHEMA_URI)
       .then((response) => response.json())
       .then((schema) => {
-        const ajv = new Ajv();
+        const ajv = new Ajv({ strict: false });
         const validateFn = ajv.compile(schema);
+        setJsonSchema(schema);
         setValidate(() => validateFn);
       });
   };
@@ -36,6 +41,12 @@ export default function Editor() {
 
     if (saved) {
       handleEditorChange(saved);
+    }
+
+    const savedNew = localStorage.getItem("newEditorValue");
+
+    if (savedNew) {
+      handleNewEditorChange(saved);
     }
   }, [validate]);
 
@@ -54,6 +65,29 @@ export default function Editor() {
       if (validate(parsedJson)) {
         setIsJSONValid(true);
         setEditedSchema(parsedJson);
+      } else {
+        setIsJSONValid(false);
+        console.log("JSON is invalid", validate.errors);
+      }
+    } catch (e) {
+      setIsJSONValid(false);
+      console.log(e);
+    }
+  };
+
+  const handleNewEditorChange = (value: any) => {
+    setNewEditorValue(value);
+    localStorage.setItem("newEditorValue", value);
+
+    try {
+      if (validate === null) {
+        console.log("Schema not loaded yet");
+        return;
+      }
+
+      if (validate(value)) {
+        setIsJSONValid(true);
+        setEditedSchema(value);
       } else {
         setIsJSONValid(false);
         console.log("JSON is invalid", validate.errors);
@@ -86,6 +120,9 @@ export default function Editor() {
         >
           Form-based editor
         </a>
+        <button onClick={() => setIsNewEditor(!isNewEditor)}>
+          {isNewEditor ? "Go back to code editor" : "Use new editor (BETA)"}
+        </button>
 
         <div className="flex-1"></div>
 
@@ -108,12 +145,20 @@ export default function Editor() {
               : "w-0"
           }
         >
-          <CodeEditor
-            height="100%"
-            defaultLanguage="json"
-            value={editorValue}
-            onChange={handleEditorChange}
-          />
+          {isNewEditor ? (
+            <NewEditor
+              jsonSchema={jsonSchema}
+              editorValue={newEditorValue}
+              onChange={handleNewEditorChange}
+            />
+          ) : (
+            <CodeEditor
+              height="100%"
+              defaultLanguage="json"
+              value={editorValue}
+              onChange={handleEditorChange}
+            />
+          )}
         </div>
         <div
           className={`h-[calc(100vh-33px)] overflow-scroll ${
