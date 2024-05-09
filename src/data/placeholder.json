@@ -1,12 +1,8 @@
 {
   "version": "0.1.0",
+  "layout": "homepage",
   "page": {
-    "contentPageHeader": {
-      "breadcrumb": {
-        "links": []
-      }
-    },
-    "title": "About us"
+    "title": "Home"
   },
   "content": [
     {
@@ -56,6 +52,5 @@
       "variant": "top",
       "title": "Irrationality in numbers"
     }
-  ],
-  "layout": "homepage"
+  ]
 }
