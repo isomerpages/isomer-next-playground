@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-import { NextPreset } from "@isomerpages/isomer-components";
+import { NextPreset } from "@opengovsg/isomer-components";
 
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@isomerpages/isomer-components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@opengovsg/isomer-components/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [NextPreset],
   theme: {

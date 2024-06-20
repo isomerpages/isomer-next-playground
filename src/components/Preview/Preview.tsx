@@ -1,4 +1,4 @@
-import { IsomerPageSchema, RenderEngine } from "@isomerpages/isomer-components";
+import { IsomerPageSchema, RenderEngine } from "@opengovsg/isomer-components";
 import placeholderSchema from "../../data/placeholder.json";
 import navBar from "../../data/navbar.json";
 import footer from "../../data/footer.json";
