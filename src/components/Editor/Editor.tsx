@@ -6,7 +6,7 @@ import Preview from "../Preview/Preview";
 import Ajv from "ajv";
 import NewEditor from "../NewEditor/NewEditor";
 
-const ISOMER_SCHEMA_URI = "https://schema.isomer.gov.sg/next/0.1.0.json";
+const ISOMER_SCHEMA_URI = "/0.1.0.json";
 
 export default function Editor() {
   const [isEditorOpen, setIsEditorOpen] = useState(true);
@@ -132,17 +132,17 @@ export default function Editor() {
         >
           Form-based editor
         </a>
-        <button onClick={() => setIsNewEditor(!isNewEditor)}>
+        {/* <button onClick={() => setIsNewEditor(!isNewEditor)}>
           {isNewEditor ? "Go back to code editor" : "Use new editor (BETA)"}
-        </button>
+        </button> */}
 
         <div className="flex-1"></div>
 
-        {isNewEditor && (
+        {/* {isNewEditor && (
           <button onClick={handleCopyToClipboard}>
             {!isCopied ? "Copy JSON to Clipboard" : "Copied!"}
           </button>
-        )}
+        )} */}
         <div
           className={`px-2 ${
             isJSONValid
