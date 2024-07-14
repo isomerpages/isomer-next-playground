@@ -16,7 +16,8 @@ export default function Editor() {
   const [newEditorValue, setNewEditorValue] = useState({});
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
-  const [isNewEditor, setIsNewEditor] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isNewEditor] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
   const [jsonSchema, setJsonSchema] = useState<any>(null);
@@ -105,10 +106,10 @@ export default function Editor() {
     }
   };
 
-  const handleCopyToClipboard = () => {
-    navigator.clipboard.writeText(JSON.stringify(editedSchema, null, 2));
-    setIsCopied(true);
-  };
+  // const handleCopyToClipboard = () => {
+  //   navigator.clipboard.writeText(JSON.stringify(editedSchema, null, 2));
+  //   setIsCopied(true);
+  // };
 
   return (
     <div className="flex flex-col w-full h-full">

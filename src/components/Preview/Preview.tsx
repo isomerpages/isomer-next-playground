@@ -1,4 +1,7 @@
-import { IsomerPageSchema, RenderEngine } from "@opengovsg/isomer-components";
+import {
+  type IsomerComponent,
+  RenderEngine,
+} from "@opengovsg/isomer-components";
 import placeholderSchema from "../../data/placeholder.json";
 import navBar from "../../data/navbar.json";
 import footer from "../../data/footer.json";
@@ -8,7 +11,7 @@ export interface PreviewProps {
     version: string;
     layout: string;
     page: any;
-    content: IsomerPageSchema["content"];
+    content: IsomerComponent[];
   };
 }
 export default function Preview({ schema }: PreviewProps) {
