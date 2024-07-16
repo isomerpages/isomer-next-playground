@@ -1361,6 +1361,7 @@
                       "variant": {
                         "title": "Infocards variant",
                         "description": "The variant of the infocards component to use",
+                        "type": "string",
                         "format": "radio",
                         "anyOf": [
                           {
@@ -1461,6 +1462,7 @@
                       "backgroundColor": {
                         "title": "Infocols background color",
                         "description": "The background color to use for the Infocols component",
+                        "type": "string",
                         "anyOf": [
                           {
                             "const": "white",
@@ -1503,6 +1505,7 @@
                             "icon": {
                               "title": "Column icon",
                               "description": "The icon to display for the column",
+                              "type": "string",
                               "anyOf": [
                                 {
                                   "const": "right-arrow",
@@ -1782,6 +1785,7 @@
                 "defaultSortDirection": {
                   "title": "Default sort direction",
                   "description": "The default direction to sort the collection items by",
+                  "type": "string",
                   "anyOf": [
                     {
                       "const": "asc",
@@ -3145,6 +3149,7 @@
                       "variant": {
                         "title": "Infocards variant",
                         "description": "The variant of the infocards component to use",
+                        "type": "string",
                         "format": "radio",
                         "anyOf": [
                           {
@@ -3245,6 +3250,7 @@
                       "backgroundColor": {
                         "title": "Infocols background color",
                         "description": "The background color to use for the Infocols component",
+                        "type": "string",
                         "anyOf": [
                           {
                             "const": "white",
@@ -3287,6 +3293,7 @@
                             "icon": {
                               "title": "Column icon",
                               "description": "The icon to display for the column",
+                              "type": "string",
                               "anyOf": [
                                 {
                                   "const": "right-arrow",
@@ -4827,6 +4834,7 @@
                       "variant": {
                         "title": "Infocards variant",
                         "description": "The variant of the infocards component to use",
+                        "type": "string",
                         "format": "radio",
                         "anyOf": [
                           {
@@ -4927,6 +4935,7 @@
                       "backgroundColor": {
                         "title": "Infocols background color",
                         "description": "The background color to use for the Infocols component",
+                        "type": "string",
                         "anyOf": [
                           {
                             "const": "white",
@@ -4969,6 +4978,7 @@
                             "icon": {
                               "title": "Column icon",
                               "description": "The icon to display for the column",
+                              "type": "string",
                               "anyOf": [
                                 {
                                   "const": "right-arrow",
@@ -6640,6 +6650,7 @@
           "variant": {
             "title": "Infocards variant",
             "description": "The variant of the infocards component to use",
+            "type": "string",
             "format": "radio",
             "anyOf": [
               {
@@ -6740,6 +6751,7 @@
           "backgroundColor": {
             "title": "Infocols background color",
             "description": "The background color to use for the Infocols component",
+            "type": "string",
             "anyOf": [
               {
                 "const": "white",
@@ -6782,6 +6794,7 @@
                 "icon": {
                   "title": "Column icon",
                   "description": "The icon to display for the column",
+                  "type": "string",
                   "anyOf": [
                     {
                       "const": "right-arrow",
