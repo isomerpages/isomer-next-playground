@@ -4,7 +4,7 @@ const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 
 // Change this to the repo that you wish to migrate
-const REPO = "moh-corp-next";
+const REPO = "moh-hcsa-next";
 
 // MIGRATION FUNCTIONS
 const migrateSchema = (schema) => {
