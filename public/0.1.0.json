@@ -12032,7 +12032,7 @@
                   "items": {
                     "anyOf": [
                       {
-                        "title": "Bold mark",
+                        "title": "Bold",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12046,7 +12046,7 @@
                         ]
                       },
                       {
-                        "title": "Code mark",
+                        "title": "Code",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12060,7 +12060,7 @@
                         ]
                       },
                       {
-                        "title": "Italic mark",
+                        "title": "Italic",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12092,7 +12092,7 @@
                         ]
                       },
                       {
-                        "title": "Strike mark",
+                        "title": "Strikethrough",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12106,7 +12106,7 @@
                         ]
                       },
                       {
-                        "title": "Subscript mark",
+                        "title": "Subscript",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12120,7 +12120,7 @@
                         ]
                       },
                       {
-                        "title": "Superscript mark",
+                        "title": "Superscript",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12134,7 +12134,7 @@
                         ]
                       },
                       {
-                        "title": "Underline mark",
+                        "title": "Underline",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -12276,7 +12276,7 @@
                       "items": {
                         "anyOf": [
                           {
-                            "title": "Bold mark",
+                            "title": "Bold",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12290,7 +12290,7 @@
                             ]
                           },
                           {
-                            "title": "Code mark",
+                            "title": "Code",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12304,7 +12304,7 @@
                             ]
                           },
                           {
-                            "title": "Italic mark",
+                            "title": "Italic",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12336,7 +12336,7 @@
                             ]
                           },
                           {
-                            "title": "Strike mark",
+                            "title": "Strikethrough",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12350,7 +12350,7 @@
                             ]
                           },
                           {
-                            "title": "Subscript mark",
+                            "title": "Subscript",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12364,7 +12364,7 @@
                             ]
                           },
                           {
-                            "title": "Superscript mark",
+                            "title": "Superscript",
                             "type": "object",
                             "properties": {
                               "type": {
@@ -12378,7 +12378,7 @@
                             ]
                           },
                           {
-                            "title": "Underline mark",
+                            "title": "Underline",
                             "type": "object",
                             "properties": {
                               "type": {
