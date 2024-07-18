@@ -167,7 +167,7 @@ const pushAndDelete = async (repo) => {
   console.log(`Pushing changes to ${repo}...`);
   await exec(`git add .`);
   await exec(`git commit -m "chore: performing migration on schema files"`);
-  await exec(`git push origin staging`);
+  await exec(`git push origin`);
 
   process.chdir("..");
   await fs.promises.rm(repo, { recursive: true });
