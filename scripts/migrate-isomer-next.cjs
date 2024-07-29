@@ -64,7 +64,7 @@ const migrateSchema = (schema) => {
               newMarks.push({
                 type: "link",
                 attrs: {
-                  href: linkMark.href,
+                  href: linkMark.href || linkMark.attrs.href,
                 },
               });
             }
@@ -78,6 +78,68 @@ const migrateSchema = (schema) => {
           return item;
         } else if (item.type === "iframe") {
           return item;
+        } else if (item.type === "accordion") {
+          const { details, ...rest } = item;
+          const { content, ...detailsRest } = details;
+
+          if (content) {
+            return {
+              ...rest,
+              details: {
+                ...detailsRest,
+                content: migrateContent(content),
+              },
+            };
+          }
+
+          return item;
+        } else if (
+          item.type === "orderedList" ||
+          item.type === "unorderedList"
+        ) {
+          // Check for every list item in the list, check if the item has content with only one item which is of type paragraph
+          // and check if the next item in the list is another list item with item of type either orderedList or unorderedList
+          // If both conditions are true, combine both list items into a single list item
+          const newContent = [];
+          let i = 0;
+          while (i < item.content.length) {
+            const currentItem = item.content[i];
+            const nextItem = item.content[i + 1];
+
+            if (
+              currentItem.type === "listItem" &&
+              currentItem.content.length === 1 &&
+              currentItem.content[0].type === "paragraph" &&
+              nextItem &&
+              nextItem.type === "listItem" &&
+              nextItem.content.length === 1 &&
+              (nextItem.content[0].type === "orderedList" ||
+                nextItem.content[0].type === "unorderedList")
+            ) {
+              newContent.push({
+                type: "listItem",
+                content: [...currentItem.content, ...nextItem.content],
+              });
+              i += 2;
+            } else {
+              newContent.push(currentItem);
+              i += 1;
+            }
+          }
+
+          return {
+            ...item,
+            content: newContent.map((listItem) => {
+              if (listItem.type === "listItem") {
+                return {
+                  ...listItem,
+                  content: migrateContent(listItem.content),
+                };
+              }
+
+              return listItem;
+            }),
+          };
         } else {
           const { content, ...rest } = item;
           if (content) {
