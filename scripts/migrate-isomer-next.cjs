@@ -2,15 +2,120 @@ const fs = require("fs");
 const path = require("path");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
+const { argv } = require("node:process");
 
 // Change this to the repo that you wish to migrate
-const REPO = "moh-hcsa-next";
+const REPO = (argv.length > 2 && argv[2]) || "moh-hcsa-next";
 
 // MIGRATION FUNCTIONS
 const migrateSchema = (schema) => {
   const migrateContent = (content) => {
+    try {
+      return content.map((item) => {
+        if (item.type === "hero") {
+          // Remove alignment from props
+          const { alignment: _, ...rest } = item;
+          return rest;
+        } else if (item.type === "callout") {
+          // Remove variant from props
+          const { variant: _, ...rest } = item;
+          return rest;
+        } else if (item.type === "infocards") {
+          // Remove variant and sectionIdx from props
+          const { variant: _, sectionIdx: __, ...rest } = item;
+          return rest;
+        } else if (item.type === "infocols") {
+          // Remove backgroundColor, buttonLabel and buttonUrl from props
+          const {
+            backgroundColor: _,
+            buttonLabel: __,
+            buttonUrl: ___,
+            sectionIdx: ____,
+            ...rest
+          } = item;
+          return rest;
+        } else if (item.type === "infobar") {
+          // Remove sectionIdx and subtitle from props
+          const { sectionIdx: _, subtitle: __, ...rest } = item;
+          return rest;
+        } else if (item.type === "infopic") {
+          // Remove sectionIndex, isTextOnRight, variant and subtitle from props
+          const {
+            sectionIndex: _,
+            isTextOnRight: __,
+            variant: ___,
+            subtitle: ____,
+            ...rest
+          } = item;
+          return rest;
+        } else if (item.type === "keystatistics") {
+          // Remove variant from props
+          const { variant: _, ...rest } = item;
+          return rest;
+        } else if (item.type === "text") {
+          // Move href into a new attrs object, if the marks array contains a link mark
+          const { marks, ...rest } = item;
+          if (marks && marks.length > 0) {
+            const linkMark = marks.find((mark) => mark.type === "link");
+            const restMarks = marks.filter((mark) => mark.type !== "link");
+            const newMarks = restMarks.length > 0 ? [...restMarks] : [];
+
+            if (linkMark) {
+              newMarks.push({
+                type: "link",
+                attrs: {
+                  href: linkMark.href,
+                },
+              });
+            }
+
+            return {
+              ...rest,
+              marks: newMarks,
+            };
+          }
+
+          return item;
+        } else if (item.type === "iframe") {
+          return item;
+        } else {
+          const { content, ...rest } = item;
+          if (content) {
+            return {
+              ...rest,
+              content: migrateContent(content),
+            };
+          }
+
+          return item;
+        }
+      });
+    } catch (e) {
+      console.log(content);
+      throw e;
+    }
+  };
+
+  const migratedContent = migrateContent(schema.content);
+  return {
+    ...schema,
+    content: migratedContent,
+  };
+};
+
+const migrateSchemaV1 = (schema) => {
+  const migrateContent = (content) => {
     return content.map((item) => {
-      if (item.type === "heading") {
+      if (item.type === "heading" || item.type === "table") {
+        if (item.attrs) {
+          const { type, content, attrs } = item;
+          return {
+            type,
+            attrs,
+            content: migrateContent(content),
+          };
+        }
+
         const { type, content, level } = item;
         return {
           type,
@@ -19,37 +124,77 @@ const migrateSchema = (schema) => {
           },
           content: migrateContent(content),
         };
-      } else if (
-        item.type === "table" ||
-        item.type == "tableCell" ||
-        item.type === "tableHeader"
-      ) {
-        const { type, content, ...attrs } = item;
+      } else if (item.type === "tableCell" || item.type === "tableHeader") {
+        if (item.attrs) {
+          const { type, content, attrs } = item;
+          return {
+            type,
+            attrs,
+            content: migrateContent(content),
+          };
+        }
+
+        const { type, content, colSpan, rowSpan, ...attrs } = item;
+        const newAttrs = {};
+        if (colSpan) {
+          newAttrs.colspan = colSpan;
+        }
+
+        if (rowSpan) {
+          newAttrs.rowspan = rowSpan;
+        }
+
+        if (Object.keys(attrs).length + Object.keys(newAttrs).length === 0) {
+          return {
+            type,
+            content: migrateContent(content),
+          };
+        }
+
         return {
           type,
-          attrs,
+          attrs: {
+            ...attrs,
+            ...newAttrs,
+          },
           content: migrateContent(content),
         };
-      } else if (item.type === "orderedList" || item.type === "unorderedList") {
-        const { type, content, ...attrs } = item;
+      } else if (
+        item.type.toLowerCase() === "orderedlist" ||
+        item.type.toLowerCase() === "unorderedlist"
+      ) {
+        if (item.attrs) {
+          const { content, attrs } = item;
+          const newType =
+            item.type.toLowerCase() === "orderedlist"
+              ? "orderedList"
+              : "unorderedList";
+          return {
+            type: newType,
+            attrs,
+            content: migrateContent(content),
+          };
+        }
+
+        const { content, ...attrs } = item;
         const newContent = content.map((listItem) => {
-          if (listItem.type === "orderedList") {
+          if (listItem.type.toLowerCase() === "orderedlist") {
             return {
               type: "listItem",
               content: [
                 {
                   ...listItem,
-                  type: listItem.type,
+                  type: "orderedList",
                   content: migrateContent(listItem.content),
                 },
               ],
             };
-          } else if (listItem.type === "unorderedList") {
+          } else if (listItem.type.toLowerCase() === "unorderedlist") {
             return {
               type: "listItem",
               content: [
                 {
-                  type: listItem.type,
+                  type: "unorderedList",
                   content: migrateContent(listItem.content),
                 },
               ],
@@ -63,7 +208,7 @@ const migrateSchema = (schema) => {
           }
         });
 
-        if (item.type === "orderedList") {
+        if (item.type.toLowerCase() === "orderedlist") {
           return {
             type: "orderedList",
             attrs,
@@ -75,6 +220,15 @@ const migrateSchema = (schema) => {
             content: newContent,
           };
         }
+      } else if (
+        item.type === "tableRow" ||
+        item.type === "listItem" ||
+        item.type === "prose"
+      ) {
+        return {
+          type: item.type,
+          content: migrateContent(item.content),
+        };
       } else {
         return item;
       }
