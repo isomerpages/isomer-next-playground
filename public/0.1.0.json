@@ -77,7 +77,7 @@
                     "summary": {
                       "title": "Article summary",
                       "description": "The summary of the article page's content. Having multiple items will display them as a list.",
-                      "minItems": 1,
+                      "minItems": 0,
                       "type": "array",
                       "items": {
                         "type": "string"
@@ -498,6 +498,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -510,6 +511,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -613,6 +615,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -749,6 +752,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -1298,6 +1302,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -1310,6 +1315,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -1413,6 +1419,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -1549,6 +1556,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -2093,6 +2101,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -2105,6 +2114,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -2208,6 +2218,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -2344,6 +2355,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -2861,6 +2873,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -2873,6 +2886,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -2976,6 +2990,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -3112,6 +3127,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -3665,6 +3681,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -3677,6 +3694,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -3780,6 +3798,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -3916,6 +3935,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -4469,6 +4489,7 @@
                       },
                       "src": {
                         "title": "Upload image",
+                        "format": "image",
                         "type": "string"
                       },
                       "alt": {
@@ -4481,6 +4502,7 @@
                         "description": "The width of the image",
                         "exclusiveMinimum": 0,
                         "maximum": 100,
+                        "default": 100,
                         "type": "integer"
                       },
                       "href": {
@@ -4584,6 +4606,7 @@
                             },
                             "imageUrl": {
                               "title": "Upload image",
+                              "format": "image",
                               "type": "string"
                             },
                             "imageAlt": {
@@ -4720,6 +4743,7 @@
                       "imageSrc": {
                         "title": "Upload image",
                         "description": "The URL to the image",
+                        "format": "image",
                         "type": "string"
                       },
                       "imageAlt": {
@@ -5206,6 +5230,7 @@
           },
           "src": {
             "title": "Upload image",
+            "format": "image",
             "type": "string"
           },
           "alt": {
@@ -5218,6 +5243,7 @@
             "description": "The width of the image",
             "exclusiveMinimum": 0,
             "maximum": 100,
+            "default": 100,
             "type": "integer"
           },
           "href": {
@@ -5321,6 +5347,7 @@
                 },
                 "imageUrl": {
                   "title": "Upload image",
+                  "format": "image",
                   "type": "string"
                 },
                 "imageAlt": {
@@ -5457,6 +5484,7 @@
           "imageSrc": {
             "title": "Upload image",
             "description": "The URL to the image",
+            "format": "image",
             "type": "string"
           },
           "imageAlt": {
