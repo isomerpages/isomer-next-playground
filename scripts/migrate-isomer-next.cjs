@@ -21,9 +21,17 @@ const migrateSchema = (schema) => {
           const { variant: _, ...rest } = item;
           return rest;
         } else if (item.type === "infocards") {
-          // Remove variant and sectionIdx from props
-          const { variant: _, sectionIdx: __, ...rest } = item;
-          return rest;
+          // Add variant "cardsWithImages" to props, then remove any buttonLabel from each card
+          const { cards, ...rest } = item;
+          const newCards = cards.map((card) => {
+            const { buttonLabel: _, ...cardRest } = card;
+            return cardRest;
+          });
+          return {
+            ...rest,
+            variant: "cardsWithImages",
+            cards: newCards,
+          };
         } else if (item.type === "infocols") {
           // Remove backgroundColor, buttonLabel and buttonUrl from props
           const {

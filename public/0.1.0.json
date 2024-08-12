@@ -572,70 +572,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -1376,70 +1439,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -2175,70 +2301,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -2947,70 +3136,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -3755,70 +4007,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -4563,70 +4878,133 @@
                     ]
                   },
                   {
-                    "title": "Infocards component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "infocards",
-                        "const": "infocards",
-                        "type": "string"
-                      },
-                      "title": {
-                        "title": "Title",
-                        "type": "string"
-                      },
-                      "subtitle": {
-                        "title": "Description",
-                        "type": "string"
-                      },
-                      "cards": {
-                        "title": "Cards",
-                        "minItems": 1,
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "title": {
-                              "title": "Title",
-                              "type": "string"
-                            },
-                            "description": {
-                              "title": "Description",
-                              "type": "string"
-                            },
-                            "buttonLabel": {
-                              "title": "Link text",
-                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                              "type": "string"
-                            },
-                            "url": {
-                              "title": "Link destination",
-                              "description": "When this is clicked, open:",
-                              "type": "string"
-                            },
-                            "imageUrl": {
-                              "title": "Upload image",
-                              "format": "image",
-                              "type": "string"
-                            },
-                            "imageAlt": {
-                              "title": "Alternate text",
-                              "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                              "type": "string"
-                            }
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
                           },
-                          "required": [
-                            "title",
-                            "url",
-                            "imageUrl",
-                            "imageAlt"
-                          ]
-                        }
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
                       }
-                    },
-                    "required": [
-                      "type",
-                      "cards"
                     ]
                   },
                   {
@@ -5304,70 +5682,133 @@
         ]
       },
       "infocards": {
-        "title": "Infocards component",
-        "type": "object",
-        "properties": {
-          "type": {
-            "default": "infocards",
-            "const": "infocards",
-            "type": "string"
-          },
-          "title": {
-            "title": "Title",
-            "type": "string"
-          },
-          "subtitle": {
-            "title": "Description",
-            "type": "string"
-          },
-          "cards": {
-            "title": "Cards",
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "title": "Title",
-                  "type": "string"
-                },
-                "description": {
-                  "title": "Description",
-                  "type": "string"
-                },
-                "buttonLabel": {
-                  "title": "Link text",
-                  "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
-                  "type": "string"
-                },
-                "url": {
-                  "title": "Link destination",
-                  "description": "When this is clicked, open:",
-                  "type": "string"
-                },
-                "imageUrl": {
-                  "title": "Upload image",
-                  "format": "image",
-                  "type": "string"
-                },
-                "imageAlt": {
-                  "title": "Alternate text",
-                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                  "type": "string"
-                }
+        "title": "Cards component",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "default": "infocards",
+                "const": "infocards",
+                "type": "string"
               },
-              "required": [
-                "title",
-                "url",
-                "imageUrl",
-                "imageAlt"
-              ]
-            }
+              "title": {
+                "title": "Title",
+                "default": "This is an optional title of the Cards component",
+                "type": "string"
+              },
+              "subtitle": {
+                "title": "Description",
+                "default": "This is an optional description for the Cards component",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "title": "Cards with images",
+                "type": "object",
+                "properties": {
+                  "variant": {
+                    "default": "cardsWithImages",
+                    "const": "cardsWithImages",
+                    "type": "string"
+                  },
+                  "cards": {
+                    "title": "Cards",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "title": "Title",
+                          "default": "This is the title of the card",
+                          "type": "string"
+                        },
+                        "description": {
+                          "title": "Description",
+                          "default": "This is an optional description for the card",
+                          "type": "string"
+                        },
+                        "url": {
+                          "title": "Link destination",
+                          "description": "When this is clicked, open:",
+                          "type": "string"
+                        },
+                        "imageUrl": {
+                          "title": "Upload image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "imageAlt": {
+                          "title": "Alternate text",
+                          "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "imageUrl",
+                        "imageAlt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "variant",
+                  "cards"
+                ]
+              },
+              {
+                "title": "Cards without images",
+                "type": "object",
+                "properties": {
+                  "variant": {
+                    "default": "cardsWithoutImages",
+                    "const": "cardsWithoutImages",
+                    "type": "string"
+                  },
+                  "cards": {
+                    "title": "Cards",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "title": "Title",
+                          "default": "This is the title of the card",
+                          "type": "string"
+                        },
+                        "description": {
+                          "title": "Description",
+                          "default": "This is an optional description for the card",
+                          "type": "string"
+                        },
+                        "url": {
+                          "title": "Link destination",
+                          "description": "When this is clicked, open:",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "title"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "variant",
+                  "cards"
+                ]
+              }
+            ]
           }
-        },
-        "required": [
-          "type",
-          "cards"
         ]
       },
       "infocols": {
