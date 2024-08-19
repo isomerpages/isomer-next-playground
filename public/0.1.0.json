@@ -926,27 +926,6 @@
                   "description": "Whether to exclude the page from search engine indexing",
                   "type": "boolean"
                 },
-                "defaultSortBy": {
-                  "const": "date",
-                  "type": "string",
-                  "title": "Default sort by",
-                  "description": "The default field to sort the collection items by"
-                },
-                "defaultSortDirection": {
-                  "title": "Default sort direction",
-                  "description": "The default direction to sort the collection items by",
-                  "type": "string",
-                  "anyOf": [
-                    {
-                      "const": "asc",
-                      "type": "string"
-                    },
-                    {
-                      "const": "desc",
-                      "type": "string"
-                    }
-                  ]
-                },
                 "subtitle": {
                   "title": "The subtitle of the collection",
                   "type": "string"
@@ -954,8 +933,6 @@
               },
               "required": [
                 "title",
-                "defaultSortBy",
-                "defaultSortDirection",
                 "subtitle"
               ]
             },
@@ -2658,6 +2635,868 @@
               },
               "required": [
                 "title"
+              ]
+            },
+            "content": {
+              "title": "Page content",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "title": "Accordion component",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "accordion",
+                        "const": "accordion",
+                        "type": "string"
+                      },
+                      "summary": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "details": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "summary",
+                      "details"
+                    ]
+                  },
+                  {
+                    "title": "Button component",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "button",
+                        "const": "button",
+                        "type": "string"
+                      },
+                      "label": {
+                        "title": "Button label",
+                        "description": "The text to display on the button",
+                        "type": "string"
+                      },
+                      "href": {
+                        "title": "Button URL",
+                        "description": "The URL to navigate to when the button is clicked",
+                        "format": "link",
+                        "type": "string"
+                      },
+                      "colorScheme": {
+                        "title": "Button color scheme",
+                        "description": "The color scheme to use for the button",
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "const": "black",
+                            "type": "string"
+                          },
+                          {
+                            "const": "white",
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "variant": {
+                        "title": "Button variant",
+                        "description": "The variant to use for the button",
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "const": "solid",
+                            "type": "string"
+                          },
+                          {
+                            "const": "outline",
+                            "type": "string"
+                          },
+                          {
+                            "const": "ghost",
+                            "type": "string"
+                          },
+                          {
+                            "const": "link",
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "size": {
+                        "title": "Button size",
+                        "description": "The size to use for the button",
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "const": "base",
+                            "type": "string"
+                          },
+                          {
+                            "const": "sm",
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "rounded": {
+                        "title": "Rounded button",
+                        "description": "Whether the button should have rounded corners",
+                        "type": "boolean"
+                      },
+                      "leftIcon": {
+                        "title": "Button left icon",
+                        "description": "The icon to display on the left of the button's text",
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "const": "right-arrow",
+                            "type": "string"
+                          },
+                          {
+                            "const": "bar-chart",
+                            "type": "string"
+                          },
+                          {
+                            "const": "line-chart",
+                            "type": "string"
+                          },
+                          {
+                            "const": "users",
+                            "type": "string"
+                          },
+                          {
+                            "const": "office-building",
+                            "type": "string"
+                          },
+                          {
+                            "const": "stars",
+                            "type": "string"
+                          },
+                          {
+                            "const": "globe",
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "rightIcon": {
+                        "title": "Button right icon",
+                        "description": "The icon to display on the right of the button's text",
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "const": "right-arrow",
+                            "type": "string"
+                          },
+                          {
+                            "const": "bar-chart",
+                            "type": "string"
+                          },
+                          {
+                            "const": "line-chart",
+                            "type": "string"
+                          },
+                          {
+                            "const": "users",
+                            "type": "string"
+                          },
+                          {
+                            "const": "office-building",
+                            "type": "string"
+                          },
+                          {
+                            "const": "stars",
+                            "type": "string"
+                          },
+                          {
+                            "const": "globe",
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "label",
+                      "href"
+                    ]
+                  },
+                  {
+                    "title": "Callout component",
+                    "description": "A component that highlights important information",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "callout",
+                        "const": "callout",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content"
+                    ]
+                  },
+                  {
+                    "groups": [
+                      {
+                        "label": "Primary call-to-action",
+                        "fields": [
+                          "buttonLabel",
+                          "buttonUrl"
+                        ]
+                      },
+                      {
+                        "label": "Secondary call-to-action",
+                        "fields": [
+                          "secondaryButtonLabel",
+                          "secondaryButtonUrl"
+                        ]
+                      },
+                      {
+                        "label": "Image",
+                        "fields": [
+                          "backgroundUrl"
+                        ]
+                      }
+                    ],
+                    "title": "Hero component",
+                    "description": "The hero component is used to display a large banner at the top of the homepage.",
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "title": "Hero text",
+                        "description": "The title of the hero banner",
+                        "type": "string"
+                      },
+                      "subtitle": {
+                        "title": "Description",
+                        "description": "The contents of the hero banner",
+                        "type": "string"
+                      },
+                      "buttonLabel": {
+                        "title": "Button text",
+                        "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "type": "string"
+                      },
+                      "buttonUrl": {
+                        "title": "Button destination",
+                        "description": "When this is clicked, open:",
+                        "format": "link",
+                        "type": "string"
+                      },
+                      "secondaryButtonLabel": {
+                        "title": "Button text",
+                        "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "type": "string"
+                      },
+                      "secondaryButtonUrl": {
+                        "title": "Button destination",
+                        "description": "When this is clicked, open:",
+                        "format": "link",
+                        "type": "string"
+                      },
+                      "backgroundUrl": {
+                        "title": "Hero image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "type": {
+                        "default": "hero",
+                        "const": "hero",
+                        "type": "string"
+                      },
+                      "variant": {
+                        "default": "gradient",
+                        "const": "gradient",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "title",
+                      "backgroundUrl",
+                      "type",
+                      "variant"
+                    ]
+                  },
+                  {
+                    "title": "Iframe component",
+                    "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "iframe",
+                        "const": "iframe",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Embed code",
+                        "description": "Paste in an embed code. Refer to the guide to understand how to embed your content.",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Description",
+                        "description": "Briefly describe what the embedded content is about. This isn’t displayed on the page but is accessible to screen readers.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
+                      "title"
+                    ]
+                  },
+                  {
+                    "title": "Image component",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "image",
+                        "const": "image",
+                        "type": "string"
+                      },
+                      "src": {
+                        "title": "Upload image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "alt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      },
+                      "width": {
+                        "title": "Image width",
+                        "description": "The width of the image",
+                        "exclusiveMinimum": 0,
+                        "maximum": 100,
+                        "default": 100,
+                        "type": "integer"
+                      },
+                      "href": {
+                        "title": "URL Link",
+                        "description": "The URL to navigate to when the image is clicked",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "src",
+                      "alt"
+                    ]
+                  },
+                  {
+                    "title": "Infobar component",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "infobar",
+                        "const": "infobar",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "description": {
+                        "title": "Description",
+                        "type": "string"
+                      },
+                      "buttonLabel": {
+                        "title": "Button text",
+                        "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "type": "string"
+                      },
+                      "buttonUrl": {
+                        "title": "Button destination",
+                        "description": "When this is clicked, open:",
+                        "format": "link",
+                        "type": "string"
+                      },
+                      "secondaryButtonLabel": {
+                        "title": "Secondary button text",
+                        "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "type": "string"
+                      },
+                      "secondaryButtonUrl": {
+                        "title": "Secondary button destination",
+                        "description": "When this is clicked, open:",
+                        "format": "link",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "title"
+                    ]
+                  },
+                  {
+                    "title": "Cards component",
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "infocards",
+                            "const": "infocards",
+                            "type": "string"
+                          },
+                          "title": {
+                            "title": "Title",
+                            "default": "This is an optional title of the Cards component",
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "title": "Description",
+                            "default": "This is an optional description for the Cards component",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "title": "Cards with images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithImages",
+                                "const": "cardsWithImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    },
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "imageUrl",
+                                    "imageAlt"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          },
+                          {
+                            "title": "Cards without images",
+                            "type": "object",
+                            "properties": {
+                              "variant": {
+                                "default": "cardsWithoutImages",
+                                "const": "cardsWithoutImages",
+                                "type": "string"
+                              },
+                              "cards": {
+                                "title": "Cards",
+                                "default": [],
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "variant",
+                              "cards"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Infocols component",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "infocols",
+                        "const": "infocols",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "subtitle": {
+                        "title": "Description",
+                        "type": "string"
+                      },
+                      "infoBoxes": {
+                        "title": "Content",
+                        "minItems": 1,
+                        "maxItems": 6,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "title": {
+                              "title": "Title",
+                              "type": "string"
+                            },
+                            "description": {
+                              "title": "Description",
+                              "maxLength": 300,
+                              "type": "string"
+                            },
+                            "icon": {
+                              "title": "Column icon",
+                              "description": "The icon to display for the column",
+                              "type": "string",
+                              "anyOf": [
+                                {
+                                  "const": "right-arrow",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "bar-chart",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "line-chart",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "users",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "office-building",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "stars",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "globe",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "buttonLabel": {
+                              "title": "Link text",
+                              "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                              "type": "string"
+                            },
+                            "buttonUrl": {
+                              "title": "Link destination",
+                              "description": "When this is clicked, open:",
+                              "format": "link",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "title"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "title",
+                      "infoBoxes"
+                    ]
+                  },
+                  {
+                    "title": "Infopic component",
+                    "description": "The infopic component is used to display an image with accompanying text",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "infopic",
+                        "const": "infopic",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "description": {
+                        "title": "Description",
+                        "type": "string"
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      },
+                      "buttonLabel": {
+                        "title": "Button text",
+                        "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "type": "string"
+                      },
+                      "buttonUrl": {
+                        "title": "Button destination",
+                        "description": "When this is clicked, open:",
+                        "format": "link",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "KeyStatistics component",
+                    "description": "A component that displays KeyStatistics",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "keystatistics",
+                        "const": "keystatistics",
+                        "type": "string"
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "statistics": {
+                        "title": "Statistics",
+                        "minItems": 1,
+                        "maxItems": 4,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "title": "Description",
+                              "maxLength": 100,
+                              "type": "string"
+                            },
+                            "value": {
+                              "title": "Number",
+                              "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "value"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "title",
+                      "statistics"
+                    ]
+                  },
+                  {
+                    "$ref": "#/components/native/prose"
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "layout",
+            "page",
+            "content"
+          ]
+        },
+        {
+          "title": "Default",
+          "description": "This is a special type of content page layout that is for index pages.",
+          "type": "object",
+          "properties": {
+            "layout": {
+              "default": "index",
+              "const": "index",
+              "type": "string"
+            },
+            "page": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "title": "Page title",
+                  "type": "string"
+                },
+                "description": {
+                  "title": "Page description",
+                  "description": "The summary of the page for SEO purposes",
+                  "type": "string"
+                },
+                "noIndex": {
+                  "description": "Whether to exclude the page from search engine indexing",
+                  "type": "boolean"
+                },
+                "contentPageHeader": {
+                  "title": "Content page header",
+                  "description": "The content page header is used to display the title, summary, and breadcrumbs of a content page.",
+                  "type": "object",
+                  "properties": {
+                    "summary": {
+                      "title": "Content page summary",
+                      "description": "The summary of the page's content",
+                      "type": "string"
+                    },
+                    "buttonLabel": {
+                      "title": "Button label",
+                      "description": "The label for the button",
+                      "type": "string"
+                    },
+                    "buttonUrl": {
+                      "title": "Button URL",
+                      "description": "The URL the button should link to",
+                      "format": "link",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "summary"
+                  ]
+                }
+              },
+              "required": [
+                "title",
+                "contentPageHeader"
               ]
             },
             "content": {
