@@ -506,13 +506,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -1350,13 +1365,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -2212,13 +2242,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -3047,13 +3092,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -3909,13 +3969,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -4780,13 +4855,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -5651,13 +5741,28 @@
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
-                      "width": {
-                        "title": "Image width",
-                        "description": "The width of the image",
-                        "exclusiveMinimum": 0,
-                        "maximum": 100,
-                        "default": 100,
-                        "type": "integer"
+                      "caption": {
+                        "title": "Image caption",
+                        "type": "string"
+                      },
+                      "size": {
+                        "title": "Image size",
+                        "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+                        "format": "radio",
+                        "type": "string",
+                        "default": "default",
+                        "anyOf": [
+                          {
+                            "title": "Fill page width (recommended)",
+                            "const": "default",
+                            "type": "string"
+                          },
+                          {
+                            "title": "Small",
+                            "const": "smaller",
+                            "type": "string"
+                          }
+                        ]
                       },
                       "href": {
                         "title": "URL Link",
@@ -6455,13 +6560,28 @@
             "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
             "type": "string"
           },
-          "width": {
-            "title": "Image width",
-            "description": "The width of the image",
-            "exclusiveMinimum": 0,
-            "maximum": 100,
-            "default": 100,
-            "type": "integer"
+          "caption": {
+            "title": "Image caption",
+            "type": "string"
+          },
+          "size": {
+            "title": "Image size",
+            "description": "On mobile, images will always fill up to the page width even if you choose “Small”.",
+            "format": "radio",
+            "type": "string",
+            "default": "default",
+            "anyOf": [
+              {
+                "title": "Fill page width (recommended)",
+                "const": "default",
+                "type": "string"
+              },
+              {
+                "title": "Small",
+                "const": "smaller",
+                "type": "string"
+              }
+            ]
           },
           "href": {
             "title": "URL Link",
