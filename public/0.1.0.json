@@ -248,30 +248,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -283,30 +290,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -606,6 +620,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -756,30 +788,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -853,6 +892,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -1107,30 +1217,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -1142,30 +1259,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -1465,6 +1589,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -1615,30 +1757,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -1712,6 +1861,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -1984,30 +2204,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -2019,30 +2246,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -2342,6 +2576,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -2492,30 +2744,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -2589,6 +2848,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -2834,30 +3164,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -2869,30 +3206,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -3192,6 +3536,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -3342,30 +3704,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -3439,6 +3808,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -3711,30 +4151,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -3746,30 +4193,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -4069,6 +4523,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -4219,30 +4691,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -4316,6 +4795,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -4597,30 +5147,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -4632,30 +5189,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -4955,6 +5519,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -5105,30 +5687,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -5202,6 +5791,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -5483,30 +6143,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -5518,30 +6185,37 @@
                         "type": "string",
                         "anyOf": [
                           {
+                            "title": "Right arrow",
                             "const": "right-arrow",
                             "type": "string"
                           },
                           {
+                            "title": "Bar chart",
                             "const": "bar-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Line chart",
                             "const": "line-chart",
                             "type": "string"
                           },
                           {
+                            "title": "Users",
                             "const": "users",
                             "type": "string"
                           },
                           {
+                            "title": "Office building",
                             "const": "office-building",
                             "type": "string"
                           },
                           {
+                            "title": "Stars",
                             "const": "stars",
                             "type": "string"
                           },
                           {
+                            "title": "Globe",
                             "const": "globe",
                             "type": "string"
                           }
@@ -5841,6 +6515,24 @@
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
                             "type": "string"
+                          },
+                          "maxColumns": {
+                            "title": "Maximum columns variant",
+                            "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "anyOf": [
+                              {
+                                "const": 1,
+                                "type": "number"
+                              },
+                              {
+                                "const": 2,
+                                "type": "number"
+                              },
+                              {
+                                "const": 3,
+                                "type": "number"
+                              }
+                            ]
                           }
                         },
                         "required": [
@@ -5991,30 +6683,37 @@
                               "type": "string",
                               "anyOf": [
                                 {
+                                  "title": "Right arrow",
                                   "const": "right-arrow",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Bar chart",
                                   "const": "bar-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Line chart",
                                   "const": "line-chart",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Users",
                                   "const": "users",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Office building",
                                   "const": "office-building",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Stars",
                                   "const": "stars",
                                   "type": "string"
                                 },
                                 {
+                                  "title": "Globe",
                                   "const": "globe",
                                   "type": "string"
                                 }
@@ -6088,6 +6787,77 @@
                     "required": [
                       "type",
                       "title",
+                      "imageSrc"
+                    ]
+                  },
+                  {
+                    "title": "Contentpic component",
+                    "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "default": "contentpic",
+                        "const": "contentpic",
+                        "type": "string"
+                      },
+                      "content": {
+                        "title": "Content block",
+                        "description": "A collection of native content components.",
+                        "format": "prose",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "const": "prose",
+                            "type": "string"
+                          },
+                          "content": {
+                            "title": "Content block",
+                            "description": "A collection of native content components.",
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/components/native/divider"
+                                },
+                                {
+                                  "$ref": "#/components/native/heading"
+                                },
+                                {
+                                  "$ref": "#/components/native/orderedList"
+                                },
+                                {
+                                  "$ref": "#/components/native/paragraph"
+                                },
+                                {
+                                  "$ref": "#/components/native/table"
+                                },
+                                {
+                                  "$ref": "#/components/native/unorderedList"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "imageSrc": {
+                        "title": "Upload image",
+                        "description": "The URL to the image",
+                        "format": "image",
+                        "type": "string"
+                      },
+                      "imageAlt": {
+                        "title": "Alternate text",
+                        "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "content",
                       "imageSrc"
                     ]
                   },
@@ -6302,30 +7072,37 @@
             "type": "string",
             "anyOf": [
               {
+                "title": "Right arrow",
                 "const": "right-arrow",
                 "type": "string"
               },
               {
+                "title": "Bar chart",
                 "const": "bar-chart",
                 "type": "string"
               },
               {
+                "title": "Line chart",
                 "const": "line-chart",
                 "type": "string"
               },
               {
+                "title": "Users",
                 "const": "users",
                 "type": "string"
               },
               {
+                "title": "Office building",
                 "const": "office-building",
                 "type": "string"
               },
               {
+                "title": "Stars",
                 "const": "stars",
                 "type": "string"
               },
               {
+                "title": "Globe",
                 "const": "globe",
                 "type": "string"
               }
@@ -6337,30 +7114,37 @@
             "type": "string",
             "anyOf": [
               {
+                "title": "Right arrow",
                 "const": "right-arrow",
                 "type": "string"
               },
               {
+                "title": "Bar chart",
                 "const": "bar-chart",
                 "type": "string"
               },
               {
+                "title": "Line chart",
                 "const": "line-chart",
                 "type": "string"
               },
               {
+                "title": "Users",
                 "const": "users",
                 "type": "string"
               },
               {
+                "title": "Office building",
                 "const": "office-building",
                 "type": "string"
               },
               {
+                "title": "Stars",
                 "const": "stars",
                 "type": "string"
               },
               {
+                "title": "Globe",
                 "const": "globe",
                 "type": "string"
               }
@@ -6660,6 +7444,24 @@
                 "title": "Description",
                 "default": "This is an optional description for the Cards component",
                 "type": "string"
+              },
+              "maxColumns": {
+                "title": "Maximum columns variant",
+                "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                "anyOf": [
+                  {
+                    "const": 1,
+                    "type": "number"
+                  },
+                  {
+                    "const": 2,
+                    "type": "number"
+                  },
+                  {
+                    "const": 3,
+                    "type": "number"
+                  }
+                ]
               }
             },
             "required": [
@@ -6810,30 +7612,37 @@
                   "type": "string",
                   "anyOf": [
                     {
+                      "title": "Right arrow",
                       "const": "right-arrow",
                       "type": "string"
                     },
                     {
+                      "title": "Bar chart",
                       "const": "bar-chart",
                       "type": "string"
                     },
                     {
+                      "title": "Line chart",
                       "const": "line-chart",
                       "type": "string"
                     },
                     {
+                      "title": "Users",
                       "const": "users",
                       "type": "string"
                     },
                     {
+                      "title": "Office building",
                       "const": "office-building",
                       "type": "string"
                     },
                     {
+                      "title": "Stars",
                       "const": "stars",
                       "type": "string"
                     },
                     {
+                      "title": "Globe",
                       "const": "globe",
                       "type": "string"
                     }
@@ -6907,6 +7716,77 @@
         "required": [
           "type",
           "title",
+          "imageSrc"
+        ]
+      },
+      "contentpic": {
+        "title": "Contentpic component",
+        "description": "The contentpic component is used to display an image with accompanying text only in content pages",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "contentpic",
+            "const": "contentpic",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content block",
+            "description": "A collection of native content components.",
+            "format": "prose",
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "prose",
+                "type": "string"
+              },
+              "content": {
+                "title": "Content block",
+                "description": "A collection of native content components.",
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/native/divider"
+                    },
+                    {
+                      "$ref": "#/components/native/heading"
+                    },
+                    {
+                      "$ref": "#/components/native/orderedList"
+                    },
+                    {
+                      "$ref": "#/components/native/paragraph"
+                    },
+                    {
+                      "$ref": "#/components/native/table"
+                    },
+                    {
+                      "$ref": "#/components/native/unorderedList"
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "imageSrc": {
+            "title": "Upload image",
+            "description": "The URL to the image",
+            "format": "image",
+            "type": "string"
+          },
+          "imageAlt": {
+            "title": "Alternate text",
+            "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "content",
           "imageSrc"
         ]
       },
