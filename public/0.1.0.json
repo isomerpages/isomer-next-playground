@@ -117,7 +117,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -165,175 +165,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -346,7 +177,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -546,6 +377,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -662,6 +494,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -675,23 +534,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -730,6 +580,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -1086,7 +937,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -1134,175 +985,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -1315,7 +997,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -1515,6 +1197,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -1631,6 +1314,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -1644,23 +1354,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -1699,6 +1400,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -2073,7 +1775,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -2121,175 +1823,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -2302,7 +1835,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -2502,6 +2035,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -2618,6 +2152,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -2631,23 +2192,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -2686,6 +2238,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -3033,7 +2586,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -3081,175 +2634,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -3262,7 +2646,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -3462,6 +2846,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -3578,6 +2963,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -3591,23 +3003,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -3646,6 +3049,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -4020,7 +3424,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -4068,175 +3472,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -4249,7 +3484,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -4449,6 +3684,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -4565,6 +3801,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -4578,23 +3841,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -4633,6 +3887,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -5016,7 +4271,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -5064,175 +4319,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -5245,7 +4331,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -5445,6 +4531,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -5561,6 +4648,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -5574,23 +4688,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -5629,6 +4734,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -6012,7 +5118,7 @@
                       "details": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "accordion",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -6060,175 +5166,6 @@
                     ]
                   },
                   {
-                    "title": "Button component",
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "default": "button",
-                        "const": "button",
-                        "type": "string"
-                      },
-                      "label": {
-                        "title": "Button label",
-                        "description": "The text to display on the button",
-                        "type": "string"
-                      },
-                      "href": {
-                        "title": "Button URL",
-                        "description": "The URL to navigate to when the button is clicked",
-                        "format": "link",
-                        "type": "string"
-                      },
-                      "colorScheme": {
-                        "title": "Button color scheme",
-                        "description": "The color scheme to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "black",
-                            "type": "string"
-                          },
-                          {
-                            "const": "white",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "variant": {
-                        "title": "Button variant",
-                        "description": "The variant to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "solid",
-                            "type": "string"
-                          },
-                          {
-                            "const": "outline",
-                            "type": "string"
-                          },
-                          {
-                            "const": "ghost",
-                            "type": "string"
-                          },
-                          {
-                            "const": "link",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "size": {
-                        "title": "Button size",
-                        "description": "The size to use for the button",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "const": "base",
-                            "type": "string"
-                          },
-                          {
-                            "const": "sm",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rounded": {
-                        "title": "Rounded button",
-                        "description": "Whether the button should have rounded corners",
-                        "type": "boolean"
-                      },
-                      "leftIcon": {
-                        "title": "Button left icon",
-                        "description": "The icon to display on the left of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      },
-                      "rightIcon": {
-                        "title": "Button right icon",
-                        "description": "The icon to display on the right of the button's text",
-                        "type": "string",
-                        "anyOf": [
-                          {
-                            "title": "Right arrow",
-                            "const": "right-arrow",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Bar chart",
-                            "const": "bar-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Line chart",
-                            "const": "line-chart",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Users",
-                            "const": "users",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Office building",
-                            "const": "office-building",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Stars",
-                            "const": "stars",
-                            "type": "string"
-                          },
-                          {
-                            "title": "Globe",
-                            "const": "globe",
-                            "type": "string"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "label",
-                      "href"
-                    ]
-                  },
-                  {
                     "title": "Callout component",
                     "description": "A component that highlights important information",
                     "type": "object",
@@ -6241,7 +5178,7 @@
                       "content": {
                         "title": "Content block",
                         "description": "A collection of native content components.",
-                        "format": "prose",
+                        "format": "callout",
                         "type": "object",
                         "properties": {
                           "type": {
@@ -6441,6 +5378,7 @@
                       "href": {
                         "title": "URL Link",
                         "description": "The URL to navigate to when the image is clicked",
+                        "format": "link",
                         "type": "string"
                       }
                     },
@@ -6557,6 +5495,33 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "imageUrl": {
+                                      "title": "Upload image",
+                                      "format": "image",
+                                      "type": "string"
+                                    },
+                                    "imageFit": {
+                                      "default": "cover",
+                                      "title": "Image display",
+                                      "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                      "anyOf": [
+                                        {
+                                          "title": "Default (recommended)",
+                                          "const": "cover",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "title": "Resize image to fit",
+                                          "const": "contain",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "imageAlt": {
+                                      "title": "Alternate text",
+                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "type": "string"
+                                    },
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
@@ -6570,23 +5535,14 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
-                                      "type": "string"
-                                    },
-                                    "imageUrl": {
-                                      "title": "Upload image",
-                                      "format": "image",
-                                      "type": "string"
-                                    },
-                                    "imageAlt": {
-                                      "title": "Alternate text",
-                                      "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
                                   "required": [
-                                    "title",
                                     "imageUrl",
-                                    "imageAlt"
+                                    "imageAlt",
+                                    "title"
                                   ]
                                 }
                               }
@@ -6625,6 +5581,7 @@
                                     "url": {
                                       "title": "Link destination",
                                       "description": "When this is clicked, open:",
+                                      "format": "link",
                                       "type": "string"
                                     }
                                   },
@@ -6941,7 +5898,7 @@
           "details": {
             "title": "Content block",
             "description": "A collection of native content components.",
-            "format": "prose",
+            "format": "accordion",
             "type": "object",
             "properties": {
               "type": {
@@ -6988,175 +5945,6 @@
           "details"
         ]
       },
-      "button": {
-        "title": "Button component",
-        "type": "object",
-        "properties": {
-          "type": {
-            "default": "button",
-            "const": "button",
-            "type": "string"
-          },
-          "label": {
-            "title": "Button label",
-            "description": "The text to display on the button",
-            "type": "string"
-          },
-          "href": {
-            "title": "Button URL",
-            "description": "The URL to navigate to when the button is clicked",
-            "format": "link",
-            "type": "string"
-          },
-          "colorScheme": {
-            "title": "Button color scheme",
-            "description": "The color scheme to use for the button",
-            "type": "string",
-            "anyOf": [
-              {
-                "const": "black",
-                "type": "string"
-              },
-              {
-                "const": "white",
-                "type": "string"
-              }
-            ]
-          },
-          "variant": {
-            "title": "Button variant",
-            "description": "The variant to use for the button",
-            "type": "string",
-            "anyOf": [
-              {
-                "const": "solid",
-                "type": "string"
-              },
-              {
-                "const": "outline",
-                "type": "string"
-              },
-              {
-                "const": "ghost",
-                "type": "string"
-              },
-              {
-                "const": "link",
-                "type": "string"
-              }
-            ]
-          },
-          "size": {
-            "title": "Button size",
-            "description": "The size to use for the button",
-            "type": "string",
-            "anyOf": [
-              {
-                "const": "base",
-                "type": "string"
-              },
-              {
-                "const": "sm",
-                "type": "string"
-              }
-            ]
-          },
-          "rounded": {
-            "title": "Rounded button",
-            "description": "Whether the button should have rounded corners",
-            "type": "boolean"
-          },
-          "leftIcon": {
-            "title": "Button left icon",
-            "description": "The icon to display on the left of the button's text",
-            "type": "string",
-            "anyOf": [
-              {
-                "title": "Right arrow",
-                "const": "right-arrow",
-                "type": "string"
-              },
-              {
-                "title": "Bar chart",
-                "const": "bar-chart",
-                "type": "string"
-              },
-              {
-                "title": "Line chart",
-                "const": "line-chart",
-                "type": "string"
-              },
-              {
-                "title": "Users",
-                "const": "users",
-                "type": "string"
-              },
-              {
-                "title": "Office building",
-                "const": "office-building",
-                "type": "string"
-              },
-              {
-                "title": "Stars",
-                "const": "stars",
-                "type": "string"
-              },
-              {
-                "title": "Globe",
-                "const": "globe",
-                "type": "string"
-              }
-            ]
-          },
-          "rightIcon": {
-            "title": "Button right icon",
-            "description": "The icon to display on the right of the button's text",
-            "type": "string",
-            "anyOf": [
-              {
-                "title": "Right arrow",
-                "const": "right-arrow",
-                "type": "string"
-              },
-              {
-                "title": "Bar chart",
-                "const": "bar-chart",
-                "type": "string"
-              },
-              {
-                "title": "Line chart",
-                "const": "line-chart",
-                "type": "string"
-              },
-              {
-                "title": "Users",
-                "const": "users",
-                "type": "string"
-              },
-              {
-                "title": "Office building",
-                "const": "office-building",
-                "type": "string"
-              },
-              {
-                "title": "Stars",
-                "const": "stars",
-                "type": "string"
-              },
-              {
-                "title": "Globe",
-                "const": "globe",
-                "type": "string"
-              }
-            ]
-          }
-        },
-        "required": [
-          "type",
-          "label",
-          "href"
-        ]
-      },
       "callout": {
         "title": "Callout component",
         "description": "A component that highlights important information",
@@ -7170,7 +5958,7 @@
           "content": {
             "title": "Content block",
             "description": "A collection of native content components.",
-            "format": "prose",
+            "format": "callout",
             "type": "object",
             "properties": {
               "type": {
@@ -7370,6 +6158,7 @@
           "href": {
             "title": "URL Link",
             "description": "The URL to navigate to when the image is clicked",
+            "format": "link",
             "type": "string"
           }
         },
@@ -7486,6 +6275,33 @@
                     "items": {
                       "type": "object",
                       "properties": {
+                        "imageUrl": {
+                          "title": "Upload image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "imageFit": {
+                          "default": "cover",
+                          "title": "Image display",
+                          "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                          "anyOf": [
+                            {
+                              "title": "Default (recommended)",
+                              "const": "cover",
+                              "type": "string"
+                            },
+                            {
+                              "title": "Resize image to fit",
+                              "const": "contain",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "imageAlt": {
+                          "title": "Alternate text",
+                          "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                          "type": "string"
+                        },
                         "title": {
                           "title": "Title",
                           "default": "This is the title of the card",
@@ -7499,23 +6315,14 @@
                         "url": {
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
-                          "type": "string"
-                        },
-                        "imageUrl": {
-                          "title": "Upload image",
-                          "format": "image",
-                          "type": "string"
-                        },
-                        "imageAlt": {
-                          "title": "Alternate text",
-                          "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                          "format": "link",
                           "type": "string"
                         }
                       },
                       "required": [
-                        "title",
                         "imageUrl",
-                        "imageAlt"
+                        "imageAlt",
+                        "title"
                       ]
                     }
                   }
@@ -7554,6 +6361,7 @@
                         "url": {
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
+                          "format": "link",
                           "type": "string"
                         }
                       },
@@ -8496,56 +7304,100 @@
                       "minItems": 1,
                       "type": "array",
                       "items": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "default": "tableCell",
-                            "const": "tableCell",
-                            "type": "string"
-                          },
-                          "attrs": {
+                        "anyOf": [
+                          {
                             "type": "object",
                             "properties": {
-                              "colspan": {
-                                "title": "Table cell column span",
-                                "description": "The number of columns the cell spans",
-                                "minimum": 1,
-                                "type": "integer"
+                              "type": {
+                                "default": "tableCell",
+                                "const": "tableCell",
+                                "type": "string"
                               },
-                              "rowspan": {
-                                "title": "Table cell row span",
-                                "description": "The number of rows the cell spans",
-                                "minimum": 1,
-                                "type": "integer"
-                              }
-                            }
-                          },
-                          "content": {
-                            "title": "Table cell contents",
-                            "description": "The contents of the table cell",
-                            "minItems": 1,
-                            "type": "array",
-                            "items": {
-                              "anyOf": [
-                                {
-                                  "$ref": "#/components/native/divider"
-                                },
-                                {
-                                  "$ref": "#/components/native/paragraph"
-                                },
-                                {
-                                  "$ref": "#/components/native/orderedList"
-                                },
-                                {
-                                  "$ref": "#/components/native/unorderedList"
+                              "attrs": {
+                                "type": "object",
+                                "properties": {
+                                  "colspan": {
+                                    "title": "Table cell column span",
+                                    "description": "The number of columns the cell spans",
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  },
+                                  "rowspan": {
+                                    "title": "Table cell row span",
+                                    "description": "The number of rows the cell spans",
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  }
                                 }
-                              ]
-                            }
+                              },
+                              "content": {
+                                "title": "Table cell contents",
+                                "description": "The contents of the table cell",
+                                "minItems": 1,
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "$ref": "#/components/native/divider"
+                                    },
+                                    {
+                                      "$ref": "#/components/native/paragraph"
+                                    },
+                                    {
+                                      "$ref": "#/components/native/orderedList"
+                                    },
+                                    {
+                                      "$ref": "#/components/native/unorderedList"
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "content"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "default": "tableHeader",
+                                "const": "tableHeader",
+                                "type": "string"
+                              },
+                              "attrs": {
+                                "type": "object",
+                                "properties": {
+                                  "colspan": {
+                                    "title": "Table cell column span",
+                                    "description": "The number of columns the cell spans",
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  },
+                                  "rowspan": {
+                                    "title": "Table cell row span",
+                                    "description": "The number of rows the cell spans",
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  }
+                                }
+                              },
+                              "content": {
+                                "title": "Table header cell contents",
+                                "description": "The contents of the table header cell",
+                                "minItems": 1,
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/native/paragraph"
+                                }
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "content"
+                            ]
                           }
-                        },
-                        "required": [
-                          "type",
-                          "content"
                         ]
                       }
                     }
