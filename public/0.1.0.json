@@ -27,29 +27,35 @@
               "const": "article",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "noIndex": {
-                  "description": "Whether to exclude the page from search engine indexing",
+                  "description": "If this is turned on, the page won't appear on Google search results.",
+                  "title": "Prevent search engines from indexing this page?",
+                  "default": false,
                   "type": "boolean"
-                },
+                }
+              }
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "category": {
-                  "title": "Category of the article",
-                  "description": "The category is used for filtering in the parent collection page.",
+                  "title": "Category of the actual item",
+                  "description": "The category is used for filtering in the parent collection page",
                   "type": "string"
                 },
                 "date": {
-                  "title": "Date of the article",
+                  "title": "Date of the actual item",
+                  "format": "date",
                   "type": "string"
                 },
                 "image": {
@@ -58,11 +64,13 @@
                     "src": {
                       "title": "Image source URL",
                       "description": "The source URL of the image",
+                      "format": "image",
                       "type": "string"
                     },
                     "alt": {
                       "title": "Image alt text",
                       "description": "The alt text of the image",
+                      "maxLength": 120,
                       "type": "string"
                     }
                   },
@@ -90,7 +98,6 @@
                 }
               },
               "required": [
-                "title",
                 "category",
                 "date",
                 "articlePageHeader"
@@ -112,6 +119,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -253,11 +261,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -348,11 +359,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -398,20 +412,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -446,34 +464,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -489,11 +514,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -520,28 +564,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -562,6 +590,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -570,11 +599,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -610,10 +641,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -626,11 +659,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -677,6 +711,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -711,10 +746,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -730,6 +767,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -807,6 +845,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -829,6 +868,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -847,6 +887,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -886,29 +927,33 @@
               "const": "collection",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "noIndex": {
-                  "description": "Whether to exclude the page from search engine indexing",
+                  "description": "If this is turned on, the page won't appear on Google search results.",
+                  "title": "Prevent search engines from indexing this page?",
+                  "default": false,
                   "type": "boolean"
-                },
+                }
+              }
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "subtitle": {
                   "title": "The subtitle of the collection",
                   "type": "string"
                 }
               },
               "required": [
-                "title",
                 "subtitle"
               ]
             },
@@ -932,6 +977,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -1073,11 +1119,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -1168,11 +1217,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -1218,20 +1270,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -1266,34 +1322,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -1309,11 +1372,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -1340,28 +1422,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -1382,6 +1448,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -1390,11 +1457,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -1430,10 +1499,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -1446,11 +1517,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -1497,6 +1569,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -1531,10 +1604,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -1550,6 +1625,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -1627,6 +1703,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -1649,6 +1726,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -1667,6 +1745,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -1706,22 +1785,27 @@
               "const": "content",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "noIndex": {
-                  "description": "Whether to exclude the page from search engine indexing",
+                  "description": "If this is turned on, the page won't appear on Google search results.",
+                  "title": "Prevent search engines from indexing this page?",
+                  "default": false,
                   "type": "boolean"
-                },
+                }
+              }
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "contentPageHeader": {
                   "title": "Content page header",
                   "description": "The content page header is used to display the title, summary, and breadcrumbs of a content page.",
@@ -1730,6 +1814,8 @@
                     "summary": {
                       "title": "Content page summary",
                       "description": "The summary of the page's content",
+                      "maxLength": 300,
+                      "format": "textarea",
                       "type": "string"
                     },
                     "buttonLabel": {
@@ -1750,7 +1836,6 @@
                 }
               },
               "required": [
-                "title",
                 "contentPageHeader"
               ]
             },
@@ -1770,6 +1855,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -1911,11 +1997,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -2006,11 +2095,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -2056,20 +2148,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -2104,34 +2200,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -2147,11 +2250,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -2178,28 +2300,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -2220,6 +2326,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -2228,11 +2335,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -2268,10 +2377,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -2284,11 +2395,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -2335,6 +2447,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -2369,10 +2482,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -2388,6 +2503,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -2465,6 +2581,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -2487,6 +2604,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -2505,6 +2623,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -2544,26 +2663,27 @@
               "const": "homepage",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "noIndex": {
-                  "description": "Whether to exclude the page from search engine indexing",
+                  "description": "If this is turned on, the page won't appear on Google search results.",
+                  "title": "Prevent search engines from indexing this page?",
+                  "default": false,
                   "type": "boolean"
                 }
-              },
-              "required": [
-                "title"
-              ]
+              }
+            },
+            "page": {
+              "type": "object",
+              "properties": {}
             },
             "content": {
               "title": "Page content",
@@ -2581,6 +2701,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -2722,11 +2843,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -2817,11 +2941,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -2867,20 +2994,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -2915,34 +3046,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -2958,11 +3096,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -2989,28 +3146,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -3031,6 +3172,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -3039,11 +3181,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -3079,10 +3223,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -3095,11 +3241,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -3146,6 +3293,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -3180,10 +3328,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -3199,6 +3349,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -3276,6 +3427,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -3298,6 +3450,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -3316,6 +3469,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -3355,22 +3509,27 @@
               "const": "index",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "noIndex": {
-                  "description": "Whether to exclude the page from search engine indexing",
+                  "description": "If this is turned on, the page won't appear on Google search results.",
+                  "title": "Prevent search engines from indexing this page?",
+                  "default": false,
                   "type": "boolean"
-                },
+                }
+              }
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "contentPageHeader": {
                   "title": "Content page header",
                   "description": "The content page header is used to display the title, summary, and breadcrumbs of a content page.",
@@ -3379,6 +3538,8 @@
                     "summary": {
                       "title": "Content page summary",
                       "description": "The summary of the page's content",
+                      "maxLength": 300,
+                      "format": "textarea",
                       "type": "string"
                     },
                     "buttonLabel": {
@@ -3399,7 +3560,6 @@
                 }
               },
               "required": [
-                "title",
                 "contentPageHeader"
               ]
             },
@@ -3419,6 +3579,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -3560,11 +3721,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -3655,11 +3819,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -3705,20 +3872,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -3753,34 +3924,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -3796,11 +3974,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -3827,28 +4024,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -3869,6 +4050,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -3877,11 +4059,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -3917,10 +4101,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -3933,11 +4119,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -3984,6 +4171,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -4018,10 +4206,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -4037,6 +4227,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -4114,6 +4305,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -4136,6 +4328,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -4154,6 +4347,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -4193,23 +4387,29 @@
               "const": "file",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "ref": {
                   "title": "URL to the actual item",
                   "description": "The link that users will open immediately when they click on the item in the parent collection page",
                   "type": "string"
-                },
+                }
+              },
+              "required": [
+                "ref"
+              ]
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "category": {
                   "title": "Category of the actual item",
                   "description": "The category is used for filtering in the parent collection page",
@@ -4217,6 +4417,7 @@
                 },
                 "date": {
                   "title": "Date of the actual item",
+                  "format": "date",
                   "type": "string"
                 },
                 "image": {
@@ -4225,11 +4426,13 @@
                     "src": {
                       "title": "Image source URL",
                       "description": "The source URL of the image",
+                      "format": "image",
                       "type": "string"
                     },
                     "alt": {
                       "title": "Image alt text",
                       "description": "The alt text of the image",
+                      "maxLength": 120,
                       "type": "string"
                     }
                   },
@@ -4237,13 +4440,17 @@
                     "src",
                     "alt"
                   ]
+                },
+                "ref": {
+                  "title": "URL to the actual item",
+                  "description": "The link that users will open immediately when they click on the item in the parent collection page",
+                  "type": "string"
                 }
               },
               "required": [
-                "title",
-                "ref",
                 "category",
-                "date"
+                "date",
+                "ref"
               ]
             },
             "content": {
@@ -4266,6 +4473,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -4407,11 +4615,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -4502,11 +4713,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -4552,20 +4766,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -4600,34 +4818,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -4643,11 +4868,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -4674,28 +4918,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -4716,6 +4944,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -4724,11 +4953,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -4764,10 +4995,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -4780,11 +5013,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -4831,6 +5065,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -4865,10 +5100,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -4884,6 +5121,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -4961,6 +5199,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -4983,6 +5222,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -5001,6 +5241,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -5040,23 +5281,29 @@
               "const": "link",
               "type": "string"
             },
-            "page": {
+            "meta": {
               "type": "object",
               "properties": {
-                "title": {
-                  "title": "Page title",
-                  "type": "string"
-                },
                 "description": {
-                  "title": "Page description",
-                  "description": "The summary of the page for SEO purposes",
+                  "title": "Meta description",
+                  "description": "This is a description that appears on search engine results.",
+                  "format": "textarea",
+                  "maxLength": 160,
                   "type": "string"
                 },
                 "ref": {
                   "title": "URL to the actual item",
                   "description": "The link that users will open immediately when they click on the item in the parent collection page",
                   "type": "string"
-                },
+                }
+              },
+              "required": [
+                "ref"
+              ]
+            },
+            "page": {
+              "type": "object",
+              "properties": {
                 "category": {
                   "title": "Category of the actual item",
                   "description": "The category is used for filtering in the parent collection page",
@@ -5064,6 +5311,7 @@
                 },
                 "date": {
                   "title": "Date of the actual item",
+                  "format": "date",
                   "type": "string"
                 },
                 "image": {
@@ -5072,11 +5320,13 @@
                     "src": {
                       "title": "Image source URL",
                       "description": "The source URL of the image",
+                      "format": "image",
                       "type": "string"
                     },
                     "alt": {
                       "title": "Image alt text",
                       "description": "The alt text of the image",
+                      "maxLength": 120,
                       "type": "string"
                     }
                   },
@@ -5084,13 +5334,17 @@
                     "src",
                     "alt"
                   ]
+                },
+                "ref": {
+                  "title": "URL to the actual item",
+                  "description": "The link that users will open immediately when they click on the item in the parent collection page",
+                  "type": "string"
                 }
               },
               "required": [
-                "title",
-                "ref",
                 "category",
-                "date"
+                "date",
+                "ref"
               ]
             },
             "content": {
@@ -5113,6 +5367,7 @@
                       },
                       "summary": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "details": {
@@ -5254,11 +5509,14 @@
                       "title": {
                         "title": "Hero text",
                         "description": "The title of the hero banner",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
                         "description": "The contents of the hero banner",
+                        "format": "textarea",
+                        "maxLength": 250,
                         "type": "string"
                       },
                       "buttonLabel": {
@@ -5349,11 +5607,14 @@
                       },
                       "alt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       },
                       "caption": {
                         "title": "Image caption",
+                        "maxLength": 100,
+                        "format": "textarea",
                         "type": "string"
                       },
                       "size": {
@@ -5399,20 +5660,24 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "buttonLabel": {
                         "title": "Button text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+                        "maxLength": 50,
                         "type": "string"
                       },
                       "buttonUrl": {
                         "title": "Button destination",
                         "description": "When this is clicked, open:",
+                        "maxLength": 50,
                         "format": "link",
                         "type": "string"
                       },
@@ -5447,34 +5712,41 @@
                           "title": {
                             "title": "Title",
                             "default": "This is an optional title of the Cards component",
+                            "maxLength": 100,
                             "type": "string"
                           },
                           "subtitle": {
                             "title": "Description",
                             "default": "This is an optional description for the Cards component",
+                            "maxLength": 200,
                             "type": "string"
                           },
                           "maxColumns": {
                             "title": "Maximum columns variant",
                             "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                            "default": "3",
                             "anyOf": [
                               {
-                                "const": 1,
-                                "type": "number"
+                                "title": "1 column",
+                                "const": "1",
+                                "type": "string"
                               },
                               {
-                                "const": 2,
-                                "type": "number"
+                                "title": "2 columns",
+                                "const": "2",
+                                "type": "string"
                               },
                               {
-                                "const": 3,
-                                "type": "number"
+                                "title": "3 columns",
+                                "const": "3",
+                                "type": "string"
                               }
                             ]
                           }
                         },
                         "required": [
-                          "type"
+                          "type",
+                          "title"
                         ]
                       },
                       {
@@ -5490,11 +5762,30 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
                                   "type": "object",
                                   "properties": {
+                                    "title": {
+                                      "title": "Title",
+                                      "default": "This is the title of the card",
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "title": "Description",
+                                      "default": "This is an optional description for the card",
+                                      "maxLength": 150,
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "title": "Link destination",
+                                      "description": "When this is clicked, open:",
+                                      "format": "link",
+                                      "type": "string"
+                                    },
                                     "imageUrl": {
                                       "title": "Upload image",
                                       "format": "image",
@@ -5521,28 +5812,12 @@
                                       "title": "Alternate text",
                                       "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                       "type": "string"
-                                    },
-                                    "title": {
-                                      "title": "Title",
-                                      "default": "This is the title of the card",
-                                      "type": "string"
-                                    },
-                                    "description": {
-                                      "title": "Description",
-                                      "default": "This is an optional description for the card",
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "title": "Link destination",
-                                      "description": "When this is clicked, open:",
-                                      "format": "link",
-                                      "type": "string"
                                     }
                                   },
                                   "required": [
+                                    "title",
                                     "imageUrl",
-                                    "imageAlt",
-                                    "title"
+                                    "imageAlt"
                                   ]
                                 }
                               }
@@ -5563,6 +5838,7 @@
                               },
                               "cards": {
                                 "title": "Cards",
+                                "maxItems": 6,
                                 "default": [],
                                 "type": "array",
                                 "items": {
@@ -5571,11 +5847,13 @@
                                     "title": {
                                       "title": "Title",
                                       "default": "This is the title of the card",
+                                      "maxLength": 100,
                                       "type": "string"
                                     },
                                     "description": {
                                       "title": "Description",
                                       "default": "This is an optional description for the card",
+                                      "maxLength": 150,
                                       "type": "string"
                                     },
                                     "url": {
@@ -5611,10 +5889,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "subtitle": {
                         "title": "Description",
+                        "maxLength": 150,
                         "type": "string"
                       },
                       "infoBoxes": {
@@ -5627,11 +5907,12 @@
                           "properties": {
                             "title": {
                               "title": "Title",
+                              "maxLength": 100,
                               "type": "string"
                             },
                             "description": {
                               "title": "Description",
-                              "maxLength": 300,
+                              "maxLength": 200,
                               "type": "string"
                             },
                             "icon": {
@@ -5678,6 +5959,7 @@
                             },
                             "buttonLabel": {
                               "title": "Link text",
+                              "maxLength": 50,
                               "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                               "type": "string"
                             },
@@ -5712,10 +5994,12 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "description": {
                         "title": "Description",
+                        "maxLength": 200,
                         "type": "string"
                       },
                       "imageSrc": {
@@ -5731,6 +6015,7 @@
                       },
                       "buttonLabel": {
                         "title": "Button text",
+                        "maxLength": 50,
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -5808,6 +6093,7 @@
                       },
                       "imageAlt": {
                         "title": "Alternate text",
+                        "maxLength": 120,
                         "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                         "type": "string"
                       }
@@ -5830,6 +6116,7 @@
                       },
                       "title": {
                         "title": "Title",
+                        "maxLength": 100,
                         "type": "string"
                       },
                       "statistics": {
@@ -5848,6 +6135,7 @@
                             "value": {
                               "title": "Number",
                               "description": "Keep it succinct. E.g., 3.3%, $12M",
+                              "maxLength": 7,
                               "type": "string"
                             }
                           },
@@ -5893,6 +6181,7 @@
           },
           "summary": {
             "title": "Title",
+            "maxLength": 100,
             "type": "string"
           },
           "details": {
@@ -6034,11 +6323,14 @@
           "title": {
             "title": "Hero text",
             "description": "The title of the hero banner",
+            "maxLength": 50,
             "type": "string"
           },
           "subtitle": {
             "title": "Description",
             "description": "The contents of the hero banner",
+            "format": "textarea",
+            "maxLength": 250,
             "type": "string"
           },
           "buttonLabel": {
@@ -6129,11 +6421,14 @@
           },
           "alt": {
             "title": "Alternate text",
+            "maxLength": 120,
             "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
             "type": "string"
           },
           "caption": {
             "title": "Image caption",
+            "maxLength": 100,
+            "format": "textarea",
             "type": "string"
           },
           "size": {
@@ -6179,20 +6474,24 @@
           },
           "title": {
             "title": "Title",
+            "maxLength": 100,
             "type": "string"
           },
           "description": {
             "title": "Description",
+            "maxLength": 100,
             "type": "string"
           },
           "buttonLabel": {
             "title": "Button text",
             "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
+            "maxLength": 50,
             "type": "string"
           },
           "buttonUrl": {
             "title": "Button destination",
             "description": "When this is clicked, open:",
+            "maxLength": 50,
             "format": "link",
             "type": "string"
           },
@@ -6227,34 +6526,41 @@
               "title": {
                 "title": "Title",
                 "default": "This is an optional title of the Cards component",
+                "maxLength": 100,
                 "type": "string"
               },
               "subtitle": {
                 "title": "Description",
                 "default": "This is an optional description for the Cards component",
+                "maxLength": 200,
                 "type": "string"
               },
               "maxColumns": {
                 "title": "Maximum columns variant",
                 "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                "default": "3",
                 "anyOf": [
                   {
-                    "const": 1,
-                    "type": "number"
+                    "title": "1 column",
+                    "const": "1",
+                    "type": "string"
                   },
                   {
-                    "const": 2,
-                    "type": "number"
+                    "title": "2 columns",
+                    "const": "2",
+                    "type": "string"
                   },
                   {
-                    "const": 3,
-                    "type": "number"
+                    "title": "3 columns",
+                    "const": "3",
+                    "type": "string"
                   }
                 ]
               }
             },
             "required": [
-              "type"
+              "type",
+              "title"
             ]
           },
           {
@@ -6270,11 +6576,30 @@
                   },
                   "cards": {
                     "title": "Cards",
+                    "maxItems": 6,
                     "default": [],
                     "type": "array",
                     "items": {
                       "type": "object",
                       "properties": {
+                        "title": {
+                          "title": "Title",
+                          "default": "This is the title of the card",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "description": {
+                          "title": "Description",
+                          "default": "This is an optional description for the card",
+                          "maxLength": 150,
+                          "type": "string"
+                        },
+                        "url": {
+                          "title": "Link destination",
+                          "description": "When this is clicked, open:",
+                          "format": "link",
+                          "type": "string"
+                        },
                         "imageUrl": {
                           "title": "Upload image",
                           "format": "image",
@@ -6301,28 +6626,12 @@
                           "title": "Alternate text",
                           "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                           "type": "string"
-                        },
-                        "title": {
-                          "title": "Title",
-                          "default": "This is the title of the card",
-                          "type": "string"
-                        },
-                        "description": {
-                          "title": "Description",
-                          "default": "This is an optional description for the card",
-                          "type": "string"
-                        },
-                        "url": {
-                          "title": "Link destination",
-                          "description": "When this is clicked, open:",
-                          "format": "link",
-                          "type": "string"
                         }
                       },
                       "required": [
+                        "title",
                         "imageUrl",
-                        "imageAlt",
-                        "title"
+                        "imageAlt"
                       ]
                     }
                   }
@@ -6343,6 +6652,7 @@
                   },
                   "cards": {
                     "title": "Cards",
+                    "maxItems": 6,
                     "default": [],
                     "type": "array",
                     "items": {
@@ -6351,11 +6661,13 @@
                         "title": {
                           "title": "Title",
                           "default": "This is the title of the card",
+                          "maxLength": 100,
                           "type": "string"
                         },
                         "description": {
                           "title": "Description",
                           "default": "This is an optional description for the card",
+                          "maxLength": 150,
                           "type": "string"
                         },
                         "url": {
@@ -6391,10 +6703,12 @@
           },
           "title": {
             "title": "Title",
+            "maxLength": 100,
             "type": "string"
           },
           "subtitle": {
             "title": "Description",
+            "maxLength": 150,
             "type": "string"
           },
           "infoBoxes": {
@@ -6407,11 +6721,12 @@
               "properties": {
                 "title": {
                   "title": "Title",
+                  "maxLength": 100,
                   "type": "string"
                 },
                 "description": {
                   "title": "Description",
-                  "maxLength": 300,
+                  "maxLength": 200,
                   "type": "string"
                 },
                 "icon": {
@@ -6458,6 +6773,7 @@
                 },
                 "buttonLabel": {
                   "title": "Link text",
+                  "maxLength": 50,
                   "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                   "type": "string"
                 },
@@ -6492,10 +6808,12 @@
           },
           "title": {
             "title": "Title",
+            "maxLength": 100,
             "type": "string"
           },
           "description": {
             "title": "Description",
+            "maxLength": 200,
             "type": "string"
           },
           "imageSrc": {
@@ -6511,6 +6829,7 @@
           },
           "buttonLabel": {
             "title": "Button text",
+            "maxLength": 50,
             "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
             "type": "string"
           },
@@ -6588,6 +6907,7 @@
           },
           "imageAlt": {
             "title": "Alternate text",
+            "maxLength": 120,
             "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
             "type": "string"
           }
@@ -6610,6 +6930,7 @@
           },
           "title": {
             "title": "Title",
+            "maxLength": 100,
             "type": "string"
           },
           "statistics": {
@@ -6628,6 +6949,7 @@
                 "value": {
                   "title": "Number",
                   "description": "Keep it succinct. E.g., 3.3%, $12M",
+                  "maxLength": 7,
                   "type": "string"
                 }
               },
@@ -6831,6 +7153,10 @@
                                   },
                                   {
                                     "const": "_blank",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "const": "",
                                     "type": "string"
                                   }
                                 ]
@@ -7102,6 +7428,10 @@
                                       {
                                         "const": "_blank",
                                         "type": "string"
+                                      },
+                                      {
+                                        "const": "",
+                                        "type": "string"
                                       }
                                     ]
                                   },
@@ -7217,6 +7547,7 @@
               "caption": {
                 "title": "Table caption",
                 "description": "The caption of the table",
+                "maxLength": 200,
                 "type": "string"
               }
             },
