@@ -22,6 +22,20 @@ export default {
             DEFAULT: "#877664",
           },
         },
+        // Colours are based on MOH's colour scheme
+        brand: {
+          canvas: {
+            default: "#e6ecef",
+            alt: "#bfcfd7",
+            backdrop: "#80a0af",
+            inverse: "#00405f",
+          },
+          interaction: {
+            default: "#00405f",
+            hover: "#002e44",
+            pressed: "#00283b",
+          },
+        },
       },
     },
   },

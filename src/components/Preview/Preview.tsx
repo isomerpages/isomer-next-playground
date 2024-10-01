@@ -31,6 +31,7 @@ export default function Preview({ schema }: PreviewProps) {
         navBarItems: navBar,
         // @ts-expect-error blah
         footerItems: footer,
+        assetsBaseUrl: `https://isomer-user-content.by.gov.sg`,
       }}
       // @ts-expect-error blah
       layout={renderSchema.layout}
