@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import { NextPreset } from "@opengovsg/isomer-components";
+import { isomerSiteTheme, NextPreset } from "@opengovsg/isomer-components";
 
 export default {
   content: [
@@ -8,6 +8,24 @@ export default {
     "./node_modules/@opengovsg/isomer-components/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [NextPreset],
+  plugins: [
+    isomerSiteTheme({
+      // Colours are based on MOH's colour scheme
+      colors: {
+        canvas: {
+          default: "#e6ecef",
+          alt: "#bfcfd7",
+          backdrop: "#80a0af",
+          inverse: "#00405f",
+        },
+        interaction: {
+          default: "#00405f",
+          hover: "#002e44",
+          pressed: "#00283b",
+        },
+      },
+    }),
+  ],
   theme: {
     extend: {
       colors: {
@@ -20,20 +38,6 @@ export default {
           },
           secondary: {
             DEFAULT: "#877664",
-          },
-        },
-        // Colours are based on MOH's colour scheme
-        brand: {
-          canvas: {
-            default: "#e6ecef",
-            alt: "#bfcfd7",
-            backdrop: "#80a0af",
-            inverse: "#00405f",
-          },
-          interaction: {
-            default: "#00405f",
-            hover: "#002e44",
-            pressed: "#00283b",
           },
         },
       },

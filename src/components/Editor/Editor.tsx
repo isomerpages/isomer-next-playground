@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import placeholder from "../../data/placeholder.json";
 import Preview from "../Preview/Preview";
 import Ajv from "ajv";
-import NewEditor from "../NewEditor/NewEditor";
 
 const ISOMER_SCHEMA_URI = "/0.1.0.json";
 
@@ -13,14 +12,10 @@ export default function Editor() {
   const [editorValue, setEditorValue] = useState(
     JSON.stringify(placeholder, null, 2)
   );
-  const [newEditorValue, setNewEditorValue] = useState({});
   const [editedSchema, setEditedSchema] = useState<any>(placeholder);
   const [isJSONValid, setIsJSONValid] = useState(true);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isNewEditor] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
-  const [jsonSchema, setJsonSchema] = useState<any>(null);
   const [validate, setValidate] = useState<any>(null);
 
   const loadSchema = async () => {
@@ -29,7 +24,6 @@ export default function Editor() {
       .then((schema) => {
         const ajv = new Ajv({ strict: false });
         const validateFn = ajv.compile(schema);
-        setJsonSchema(schema);
         setValidate(() => validateFn);
       });
   };
@@ -44,12 +38,7 @@ export default function Editor() {
     if (saved) {
       handleEditorChange(saved);
     }
-
-    const savedNew = localStorage.getItem("newEditorValue");
-
-    if (savedNew) {
-      handleNewEditorChange(saved);
-    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [validate]);
 
   useEffect(() => {
@@ -83,34 +72,6 @@ export default function Editor() {
     }
   };
 
-  const handleNewEditorChange = (value: any) => {
-    setNewEditorValue(value);
-    localStorage.setItem("newEditorValue", value);
-
-    try {
-      if (validate === null) {
-        console.log("Schema not loaded yet");
-        return;
-      }
-
-      if (validate(value)) {
-        setIsJSONValid(true);
-        setEditedSchema(value);
-      } else {
-        setIsJSONValid(false);
-        console.log("JSON is invalid", validate.errors);
-      }
-    } catch (e) {
-      setIsJSONValid(false);
-      console.log(e);
-    }
-  };
-
-  // const handleCopyToClipboard = () => {
-  //   navigator.clipboard.writeText(JSON.stringify(editedSchema, null, 2));
-  //   setIsCopied(true);
-  // };
-
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex flex-row w-full border-b border-b-gray-400 gap-4 px-4 py-1 hover:[&_a]:text-blue-700 hover:[&_button]:text-blue-700">
@@ -127,23 +88,9 @@ export default function Editor() {
         <a href={ISOMER_SCHEMA_URI} target="_blank">
           Isomer Schema
         </a>
-        <a
-          href="https://rjsf-team.github.io/react-jsonschema-form/"
-          target="_blank"
-        >
-          Form-based editor
-        </a>
-        {/* <button onClick={() => setIsNewEditor(!isNewEditor)}>
-          {isNewEditor ? "Go back to code editor" : "Use new editor (BETA)"}
-        </button> */}
 
         <div className="flex-1"></div>
 
-        {/* {isNewEditor && (
-          <button onClick={handleCopyToClipboard}>
-            {!isCopied ? "Copy JSON to Clipboard" : "Copied!"}
-          </button>
-        )} */}
         <div
           className={`px-2 ${
             isJSONValid
@@ -163,20 +110,12 @@ export default function Editor() {
               : "w-0"
           }
         >
-          {isNewEditor ? (
-            <NewEditor
-              jsonSchema={jsonSchema}
-              editorValue={newEditorValue}
-              onChange={handleNewEditorChange}
-            />
-          ) : (
-            <CodeEditor
-              height="100%"
-              defaultLanguage="json"
-              value={editorValue}
-              onChange={handleEditorChange}
-            />
-          )}
+          <CodeEditor
+            height="100%"
+            defaultLanguage="json"
+            value={editorValue}
+            onChange={handleEditorChange}
+          />
         </div>
         <div
           className={`h-[calc(100vh-33px)] overflow-scroll ${
