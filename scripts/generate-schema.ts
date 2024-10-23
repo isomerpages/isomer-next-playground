@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-const { schema } = require("@opengovsg/isomer-components");
-const fs = require("fs");
-const path = require("path");
+import { schema } from "@opengovsg/isomer-components";
+import fs from "fs";
+import path from "path";
 
 /**
  * This script generates a JSON schema file for the Isomer JSON Schema. It is
@@ -14,7 +14,7 @@ const jsonOutput = JSON.stringify(schema, null, 2)
   .replace(/"\$ref": "components-native-/g, '"$ref": "#/components/native/')
   // Remove all instances of $id since we no longer need it
   .replace(/^.*\$id.*\n?/gm, "");
-const outputPath = path.resolve(__dirname, "../public", "0.1.0.json");
+const outputPath = path.resolve("public", "0.1.0.json");
 
 fs.writeFileSync(outputPath, jsonOutput + "\n", "utf8");
 console.log(`Isomer JSON schema file has been generated at ${outputPath}`);

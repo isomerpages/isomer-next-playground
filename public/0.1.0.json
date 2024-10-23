@@ -209,22 +209,37 @@
         {
           "type": "object",
           "properties": {
-            "category": {
-              "title": "Category of the actual item",
-              "description": "The category is used for filtering in the parent collection page",
+            "date": {
+              "title": "Article date",
+              "format": "date",
               "type": "string"
             },
-            "date": {
-              "title": "Date of the actual item",
-              "format": "date",
+            "articlePageHeader": {
+              "type": "object",
+              "properties": {
+                "summary": {
+                  "title": "Article summary",
+                  "description": "The summary of the article’s content",
+                  "format": "textarea",
+                  "maxLength": 250,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "summary"
+              ]
+            },
+            "category": {
+              "title": "Article category",
+              "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
             "image": {
               "type": "object",
               "properties": {
                 "src": {
-                  "title": "Image source URL",
-                  "description": "The source URL of the image",
+                  "title": "Image",
+                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "format": "image",
                   "type": "string"
                 },
@@ -239,29 +254,12 @@
                 "src",
                 "alt"
               ]
-            },
-            "articlePageHeader": {
-              "type": "object",
-              "properties": {
-                "summary": {
-                  "title": "Article summary",
-                  "description": "The summary of the article page's content. Having multiple items will display them as a list.",
-                  "minItems": 0,
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "summary"
-              ]
             }
           },
           "required": [
-            "category",
             "date",
-            "articlePageHeader"
+            "articlePageHeader",
+            "category"
           ]
         },
         {
@@ -434,12 +432,12 @@
           "type": "object",
           "properties": {
             "category": {
-              "title": "Category of the actual item",
+              "title": "Article category",
               "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
             "date": {
-              "title": "Date of the actual item",
+              "title": "Article date",
               "format": "date",
               "type": "string"
             },
@@ -447,8 +445,8 @@
               "type": "object",
               "properties": {
                 "src": {
-                  "title": "Image source URL",
-                  "description": "The source URL of the image",
+                  "title": "Image",
+                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "format": "image",
                   "type": "string"
                 },
@@ -480,12 +478,12 @@
           "type": "object",
           "properties": {
             "category": {
-              "title": "Category of the actual item",
+              "title": "Article category",
               "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
             "date": {
-              "title": "Date of the actual item",
+              "title": "Article date",
               "format": "date",
               "type": "string"
             },
@@ -493,8 +491,8 @@
               "type": "object",
               "properties": {
                 "src": {
-                  "title": "Image source URL",
-                  "description": "The source URL of the image",
+                  "title": "Image",
+                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "format": "image",
                   "type": "string"
                 },
@@ -863,12 +861,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -1328,6 +1326,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -1683,12 +1687,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -2148,6 +2152,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -2499,12 +2509,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -2964,6 +2974,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -3315,12 +3331,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -3780,6 +3796,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -4131,12 +4153,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -4596,6 +4618,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -4947,12 +4975,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -5412,6 +5440,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -5767,12 +5801,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -6232,6 +6266,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -6587,12 +6627,12 @@
                   "buttonUrl": {
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
-                    "maxLength": 50,
                     "format": "link",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
                     "title": "Secondary button text",
+                    "maxLength": 50,
                     "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                     "type": "string"
                   },
@@ -7052,6 +7092,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -7409,12 +7455,12 @@
           "buttonUrl": {
             "title": "Button destination",
             "description": "When this is clicked, open:",
-            "maxLength": 50,
             "format": "link",
             "type": "string"
           },
           "secondaryButtonLabel": {
             "title": "Secondary button text",
+            "maxLength": 50,
             "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
             "type": "string"
           },
@@ -7874,6 +7920,12 @@
                 "value"
               ]
             }
+          },
+          "url": {
+            "title": "Link destination",
+            "description": "When this is clicked, open:",
+            "format": "link",
+            "type": "string"
           }
         },
         "required": [
