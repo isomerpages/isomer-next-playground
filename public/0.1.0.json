@@ -298,6 +298,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                   "type": "string"
                 }
               },
@@ -334,6 +335,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                   "type": "string"
                 }
               },
@@ -416,6 +418,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                   "type": "string"
                 }
               },
@@ -463,8 +466,17 @@
               ]
             },
             "ref": {
-              "title": "URL to the actual item",
-              "description": "The link that users will open immediately when they click on the item in the parent collection page",
+              "title": "Link",
+              "description": "Choose a page or file to link to this Collection item",
+              "format": "ref",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+              "type": "string"
+            },
+            "description": {
+              "title": "Summary",
+              "description": "Add a short description to explain what this collection item is about",
+              "format": "textarea",
+              "maxLength": 120,
               "type": "string"
             }
           },
@@ -487,30 +499,18 @@
               "format": "date",
               "type": "string"
             },
-            "image": {
-              "type": "object",
-              "properties": {
-                "src": {
-                  "title": "Image",
-                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
-                  "format": "image",
-                  "type": "string"
-                },
-                "alt": {
-                  "title": "Image alt text",
-                  "description": "The alt text of the image",
-                  "maxLength": 120,
-                  "type": "string"
-                }
-              },
-              "required": [
-                "src",
-                "alt"
-              ]
-            },
             "ref": {
-              "title": "URL to the actual item",
-              "description": "The link that users will open immediately when they click on the item in the parent collection page",
+              "title": "Link",
+              "description": "Choose a page or file to link to this Collection item",
+              "format": "ref",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+              "type": "string"
+            },
+            "description": {
+              "title": "Summary",
+              "description": "Add a short description to explain what this collection item is about",
+              "format": "textarea",
+              "maxLength": 120,
               "type": "string"
             }
           },
@@ -701,6 +701,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -712,6 +713,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -824,6 +826,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -862,6 +865,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -874,6 +878,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -944,7 +949,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -966,6 +971,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -1020,7 +1026,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -1042,6 +1048,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -1149,6 +1156,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -1205,6 +1213,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -1527,6 +1536,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -1538,6 +1548,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -1650,6 +1661,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -1688,6 +1700,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -1700,6 +1713,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -1770,7 +1784,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -1792,6 +1806,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -1846,7 +1861,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -1868,6 +1883,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -1975,6 +1991,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -2031,6 +2048,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -2349,6 +2367,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2360,6 +2379,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -2472,6 +2492,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -2510,6 +2531,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2522,6 +2544,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -2592,7 +2615,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -2614,6 +2637,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -2668,7 +2692,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -2690,6 +2714,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -2797,6 +2822,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -2853,6 +2879,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -3171,6 +3198,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3182,6 +3210,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -3294,6 +3323,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -3332,6 +3362,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3344,6 +3375,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -3414,7 +3446,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -3436,6 +3468,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -3490,7 +3523,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -3512,6 +3545,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -3619,6 +3653,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -3675,6 +3710,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -3993,6 +4029,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4004,6 +4041,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -4116,6 +4154,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -4154,6 +4193,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4166,6 +4206,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -4236,7 +4277,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -4258,6 +4299,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -4312,7 +4354,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -4334,6 +4376,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -4441,6 +4484,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -4497,6 +4541,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -4815,6 +4860,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4826,6 +4872,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -4938,6 +4985,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -4976,6 +5024,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4988,6 +5037,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -5058,7 +5108,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -5080,6 +5130,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -5134,7 +5185,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -5156,6 +5207,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -5263,6 +5315,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -5319,6 +5372,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -5641,6 +5695,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5652,6 +5707,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -5764,6 +5820,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -5802,6 +5859,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5814,6 +5872,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -5884,7 +5943,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -5906,6 +5965,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -5960,7 +6020,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -5982,6 +6042,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -6089,6 +6150,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -6145,6 +6207,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -6467,6 +6530,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -6478,6 +6542,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -6590,6 +6655,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -6628,6 +6694,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -6640,6 +6707,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -6710,7 +6778,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -6732,6 +6800,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -6786,7 +6855,7 @@
                           },
                           "cards": {
                             "title": "Cards",
-                            "maxItems": 6,
+                            "maxItems": 12,
                             "default": [],
                             "type": "array",
                             "items": {
@@ -6808,6 +6877,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                                   "type": "string"
                                 }
                               },
@@ -6915,6 +6985,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -6971,6 +7042,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                     "type": "string"
                   }
                 },
@@ -7295,6 +7367,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -7306,6 +7379,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           },
           "backgroundUrl": {
@@ -7418,6 +7492,7 @@
             "title": "URL Link",
             "description": "The URL to navigate to when the image is clicked",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           }
         },
@@ -7456,6 +7531,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -7468,6 +7544,7 @@
             "title": "Secondary button destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           }
         },
@@ -7538,7 +7615,7 @@
                   },
                   "cards": {
                     "title": "Cards",
-                    "maxItems": 6,
+                    "maxItems": 12,
                     "default": [],
                     "type": "array",
                     "items": {
@@ -7560,6 +7637,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         },
                         "imageUrl": {
@@ -7614,7 +7692,7 @@
                   },
                   "cards": {
                     "title": "Cards",
-                    "maxItems": 6,
+                    "maxItems": 12,
                     "default": [],
                     "type": "array",
                     "items": {
@@ -7636,6 +7714,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                           "type": "string"
                         }
                       },
@@ -7743,6 +7822,7 @@
                   "title": "Link destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
                   "type": "string"
                 }
               },
@@ -7799,6 +7879,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
             "type": "string"
           }
         },
