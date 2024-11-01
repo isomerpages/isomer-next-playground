@@ -298,7 +298,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -335,7 +335,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -418,7 +418,7 @@
                   "title": "Button URL",
                   "description": "The URL the button should link to",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -469,7 +469,7 @@
               "title": "Link",
               "description": "Choose a page or file to link to this Collection item",
               "format": "ref",
-              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
               "type": "string"
             },
             "description": {
@@ -503,7 +503,7 @@
               "title": "Link",
               "description": "Choose a page or file to link to this Collection item",
               "format": "ref",
-              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
               "type": "string"
             },
             "description": {
@@ -701,7 +701,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -713,7 +713,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -826,7 +826,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -865,7 +865,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -878,7 +878,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -971,7 +971,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -1048,7 +1048,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -1156,7 +1156,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -1213,7 +1213,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1296,6 +1296,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -1335,6 +1344,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -1536,7 +1551,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -1548,7 +1563,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -1661,7 +1676,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1700,7 +1715,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -1713,7 +1728,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1806,7 +1821,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -1883,7 +1898,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -1991,7 +2006,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -2048,7 +2063,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2131,6 +2146,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -2170,6 +2194,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -2367,7 +2397,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2379,7 +2409,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -2492,7 +2522,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2531,7 +2561,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2544,7 +2574,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2637,7 +2667,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -2714,7 +2744,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -2822,7 +2852,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -2879,7 +2909,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2962,6 +2992,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -3001,6 +3040,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -3198,7 +3243,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3210,7 +3255,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -3323,7 +3368,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3362,7 +3407,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3375,7 +3420,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3468,7 +3513,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -3545,7 +3590,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -3653,7 +3698,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -3710,7 +3755,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3793,6 +3838,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -3832,6 +3886,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -4029,7 +4089,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4041,7 +4101,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -4154,7 +4214,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4193,7 +4253,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4206,7 +4266,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4299,7 +4359,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -4376,7 +4436,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -4484,7 +4544,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -4541,7 +4601,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4624,6 +4684,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -4663,6 +4732,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -4860,7 +4935,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4872,7 +4947,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -4985,7 +5060,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5024,7 +5099,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5037,7 +5112,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5130,7 +5205,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -5207,7 +5282,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -5315,7 +5390,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -5372,7 +5447,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5455,6 +5530,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -5494,6 +5578,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -5695,7 +5785,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5707,7 +5797,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -5820,7 +5910,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5859,7 +5949,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5872,7 +5962,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5965,7 +6055,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -6042,7 +6132,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -6150,7 +6240,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -6207,7 +6297,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6290,6 +6380,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -6329,6 +6428,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -6530,7 +6635,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -6542,7 +6647,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -6655,7 +6760,7 @@
                     "title": "URL Link",
                     "description": "The URL to navigate to when the image is clicked",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6694,7 +6799,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -6707,7 +6812,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6800,7 +6905,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -6877,7 +6982,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -6985,7 +7090,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -7042,7 +7147,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -7125,6 +7230,15 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
                 "title": "KeyStatistics component",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
@@ -7164,6 +7278,12 @@
                         "value"
                       ]
                     }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
                   },
                   "url": {
                     "title": "Link destination",
@@ -7367,7 +7487,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -7379,7 +7499,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           },
           "backgroundUrl": {
@@ -7492,7 +7612,7 @@
             "title": "URL Link",
             "description": "The URL to navigate to when the image is clicked",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -7531,7 +7651,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -7544,7 +7664,7 @@
             "title": "Secondary button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -7637,7 +7757,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         },
                         "imageUrl": {
@@ -7714,7 +7834,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -7822,7 +7942,7 @@
                   "title": "Link destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -7879,7 +7999,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -7962,6 +8082,15 @@
         ]
       },
       "keystatistics": {
+        "groups": [
+          {
+            "label": "Add a call-to-action",
+            "fields": [
+              "label",
+              "url"
+            ]
+          }
+        ],
         "title": "KeyStatistics component",
         "description": "A component that displays KeyStatistics",
         "type": "object",
@@ -8001,6 +8130,12 @@
                 "value"
               ]
             }
+          },
+          "label": {
+            "title": "Link text",
+            "maxLength": 50,
+            "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+            "type": "string"
           },
           "url": {
             "title": "Link destination",
