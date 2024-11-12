@@ -171,16 +171,8 @@
               "format": "textarea",
               "maxLength": 160,
               "type": "string"
-            },
-            "ref": {
-              "title": "URL to the actual item",
-              "description": "The link that users will open immediately when they click on the item in the parent collection page",
-              "type": "string"
             }
-          },
-          "required": [
-            "ref"
-          ]
+          }
         },
         {
           "type": "object",
@@ -191,16 +183,8 @@
               "format": "textarea",
               "maxLength": 160,
               "type": "string"
-            },
-            "ref": {
-              "title": "URL to the actual item",
-              "description": "The link that users will open immediately when they click on the item in the parent collection page",
-              "type": "string"
             }
-          },
-          "required": [
-            "ref"
-          ]
+          }
         }
       ]
     },
