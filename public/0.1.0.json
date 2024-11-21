@@ -275,12 +275,12 @@
                 },
                 "buttonLabel": {
                   "title": "Button label",
-                  "description": "The label for the button",
+                  "description": "A descriptive text. Avoid generic text like “Here”, “Click here”, or “Learn more”",
                   "type": "string"
                 },
                 "buttonUrl": {
-                  "title": "Button URL",
-                  "description": "The URL the button should link to",
+                  "title": "Button destination",
+                  "description": "When this is clicked, open:",
                   "format": "link",
                   "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
@@ -312,12 +312,12 @@
                 },
                 "buttonLabel": {
                   "title": "Button label",
-                  "description": "The label for the button",
+                  "description": "A descriptive text. Avoid generic text like “Here”, “Click here”, or “Learn more”",
                   "type": "string"
                 },
                 "buttonUrl": {
-                  "title": "Button URL",
-                  "description": "The URL the button should link to",
+                  "title": "Button destination",
+                  "description": "When this is clicked, open:",
                   "format": "link",
                   "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
@@ -395,12 +395,12 @@
                 },
                 "buttonLabel": {
                   "title": "Button label",
-                  "description": "The label for the button",
+                  "description": "A descriptive text. Avoid generic text like “Here”, “Click here”, or “Learn more”",
                   "type": "string"
                 },
                 "buttonUrl": {
-                  "title": "Button URL",
-                  "description": "The URL the button should link to",
+                  "title": "Button destination",
+                  "description": "When this is clicked, open:",
                   "format": "link",
                   "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                   "type": "string"
@@ -8836,9 +8836,6 @@
                                 "type": "array",
                                 "items": {
                                   "anyOf": [
-                                    {
-                                      "$ref": "#/components/native/divider"
-                                    },
                                     {
                                       "$ref": "#/components/native/paragraph"
                                     },
