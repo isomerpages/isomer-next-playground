@@ -805,13 +805,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -983,6 +976,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -1185,6 +1179,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -1713,13 +1708,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -1891,6 +1879,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -2093,6 +2082,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -2617,13 +2607,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -2795,6 +2778,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -2997,6 +2981,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -3521,13 +3506,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -3699,6 +3677,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -3901,6 +3880,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -4425,13 +4405,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -4603,6 +4576,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -4805,6 +4779,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -5329,13 +5304,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -5507,6 +5475,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -5709,6 +5678,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -6237,13 +6207,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -6415,6 +6378,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -6617,6 +6581,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -7145,13 +7110,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "href": {
-                    "title": "URL Link",
-                    "description": "The URL to navigate to when the image is clicked",
-                    "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-                    "type": "string"
                   }
                 },
                 "required": [
@@ -7323,6 +7281,7 @@
                                 "imageAlt": {
                                   "title": "Alternate text",
                                   "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                                  "maxLength": 120,
                                   "type": "string"
                                 }
                               },
@@ -7525,6 +7484,7 @@
                   "imageAlt": {
                     "title": "Alternate text",
                     "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "maxLength": 120,
                     "type": "string"
                   },
                   "buttonLabel": {
@@ -8055,13 +8015,6 @@
                 "type": "string"
               }
             ]
-          },
-          "href": {
-            "title": "URL Link",
-            "description": "The URL to navigate to when the image is clicked",
-            "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
-            "type": "string"
           }
         },
         "required": [
@@ -8233,6 +8186,7 @@
                         "imageAlt": {
                           "title": "Alternate text",
                           "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                          "maxLength": 120,
                           "type": "string"
                         }
                       },
@@ -8435,6 +8389,7 @@
           "imageAlt": {
             "title": "Alternate text",
             "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+            "maxLength": 120,
             "type": "string"
           },
           "buttonLabel": {
@@ -8760,6 +8715,25 @@
                     "type": "number"
                   }
                 ]
+              },
+              "dir": {
+                "anyOf": [
+                  {
+                    "const": "auto",
+                    "type": "string"
+                  },
+                  {
+                    "const": "ltr",
+                    "type": "string"
+                  },
+                  {
+                    "const": "rtl",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               }
             },
             "required": [
@@ -9021,6 +8995,30 @@
             "default": "paragraph",
             "const": "paragraph",
             "type": "string"
+          },
+          "attrs": {
+            "type": "object",
+            "properties": {
+              "dir": {
+                "anyOf": [
+                  {
+                    "const": "auto",
+                    "type": "string"
+                  },
+                  {
+                    "const": "ltr",
+                    "type": "string"
+                  },
+                  {
+                    "const": "rtl",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
           },
           "content": {
             "title": "Paragraph content",
