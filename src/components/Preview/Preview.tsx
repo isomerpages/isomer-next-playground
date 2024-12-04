@@ -5,6 +5,7 @@ import {
 import placeholderSchema from "../../data/placeholder.json";
 import navBar from "../../data/navbar.json";
 import footer from "../../data/footer.json";
+import { forwardRef, PropsWithChildren } from "react";
 
 export interface PreviewProps {
   schema?: {
@@ -14,6 +15,27 @@ export interface PreviewProps {
     content: IsomerComponent[];
   };
 }
+
+// Add a fake link component to prevent the preview from navigating away
+const FakeLink = forwardRef<
+  HTMLAnchorElement,
+  PropsWithChildren<unknown & { href: string }>
+>(({ children, href, ...rest }, ref) => {
+  if (href.startsWith("#")) {
+    return (
+      <a {...rest} href={href} ref={ref}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <a {...rest} href={href} ref={ref} onClick={(e) => e.preventDefault()}>
+      {children}
+    </a>
+  );
+});
+
 export default function Preview({ schema }: PreviewProps) {
   const renderSchema = schema || placeholderSchema;
 
@@ -42,6 +64,7 @@ export default function Preview({ schema }: PreviewProps) {
       }}
       // @ts-expect-error blah
       content={renderSchema.content}
+      LinkComponent={FakeLink}
     />
   );
 }
