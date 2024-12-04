@@ -65,10 +65,7 @@ For the summary, having just one item in the list will automatically show a para
   "layout": "article",
   "page": {
     "articlePageHeader": {
-      "summary": [
-        "Singapore is preparing to host its inaugural Citizens' Festival in Marina Boulevard.",
-        "The festival aims to unite Singaporeans of all backgrounds through cultural showcases, food markets, live music, and wellness activities."
-      ]
+      "summary": "Singapore is preparing to host its inaugural Citizens' Festival in Marina Boulevard. The festival aims to unite Singaporeans of all backgrounds through cultural showcases, food markets, live music, and wellness activities."
     },
     "title": "Singapore's Spectacular Citizens' Festival: a Celebration of Unity and Diversity",
     "category": "Citizen Engagement",
@@ -622,61 +619,64 @@ For your convenience, the marks snippets are here:
   }
   ```
 
-- **OrderedList (for creating numbered lists)**
+</details>
 
-      OrderedLists are useful when you need to list items with a certain sequence to them. Within OrderedLists are ListItems, which itself takes either a Paragraph or a nested list.
+<details>
+<summary><b>OrderedList (for creating numbered lists)</b></summary>
 
-      If you need, you can also customise the starting number of the list.
+OrderedLists are useful when you need to list items with a certain sequence to them. Within OrderedLists are ListItems, which itself takes either a Paragraph or a nested list.
 
-      ```json
-      {
-        "type": "prose",
-        "content": [
-          {
-            "type": "orderedList",
-            "attrs": {
-              "start": 1
-            },
-            "content": [
-              {
-                "type": "listItem",
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "marks": [],
-                        "text": "This is the first list item"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "listItem",
-                "content": [
-                  {
-                    "type": "paragraph",
-                    "content": [
-                      {
-                        "type": "text",
-                        "marks": [],
-                        "text": "This is the second list item"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-      ```
+If you need, you can also customise the starting number of the list.
 
-      More examples (e.g. nested lists) are available [in the OrderedList storybook](https://storybook-next.isomer.gov.sg/?path=/docs/next-components-orderedlist--docs).
+```json
+{
+  "type": "prose",
+  "content": [
+    {
+      "type": "orderedList",
+      "attrs": {
+        "start": 1
+      },
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "marks": [],
+                  "text": "This is the first list item"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "marks": [],
+                  "text": "This is the second list item"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
-  </details>
+More examples (e.g. nested lists) are available [in the OrderedList storybook](https://storybook-next.isomer.gov.sg/?path=/docs/next-components-orderedlist--docs).
+
+</details>
 
 <details>
 <summary><b>Tables (for organising structured content)</b></summary>
@@ -698,7 +698,6 @@ Remember this hierarchy:
         - Paragraph
         - OrderedList
         - UnorderedList
-- **Table snippet**
 
 I’m going to be doing a dead simple one here, can refer to more complex cases in [the Table component Storybook](https://storybook-next.isomer.gov.sg/?path=/docs/next-components-table--docs).
 
