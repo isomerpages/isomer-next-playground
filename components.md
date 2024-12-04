@@ -1,4 +1,4 @@
-## Isomer Next JSON samples
+# Isomer Next JSON samples
 
 Here are sample JSON blocks that can be used to quickly add components to your page. Visit [Isomer Next Storybook](https://storybook-next.isomer.gov.sg) to know what components are available.
 
