@@ -69,6 +69,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -87,6 +93,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -105,6 +117,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -123,6 +141,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -141,6 +165,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -159,6 +189,12 @@
               "title": "Prevent search engines from indexing this page?",
               "default": false,
               "type": "boolean"
+            },
+            "image": {
+              "title": "Meta image",
+              "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
+              "format": "image",
+              "type": "string"
             }
           }
         },
@@ -875,6 +911,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -906,6 +948,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -1054,6 +1109,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -1158,6 +1219,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -1293,6 +1360,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -1399,6 +1472,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -1778,6 +2114,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -1809,6 +2151,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -1957,6 +2312,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -2061,6 +2422,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -2196,6 +2563,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -2302,6 +2675,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -2677,6 +3313,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -2708,6 +3350,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -2856,6 +3511,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -2960,6 +3621,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -3095,6 +3762,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -3201,6 +3874,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -3576,6 +4512,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -3607,6 +4549,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -3755,6 +4710,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -3859,6 +4820,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -3994,6 +4961,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -4100,6 +5073,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -4475,6 +5711,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -4506,6 +5748,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -4654,6 +5909,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -4758,6 +6019,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -4893,6 +6160,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -4999,6 +6272,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -5374,6 +6910,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -5405,6 +6947,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -5553,6 +7108,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -5657,6 +7218,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -5792,6 +7359,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -5898,6 +7471,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -6277,6 +8113,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -6308,6 +8150,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -6456,6 +8311,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -6560,6 +8421,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -6695,6 +8562,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -6801,6 +8674,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -7180,6 +9316,12 @@
                         "const": "infocards",
                         "type": "string"
                       },
+                      "id": {
+                        "title": "Anchor ID",
+                        "description": "The ID to use for anchor links",
+                        "format": "hidden",
+                        "type": "string"
+                      },
                       "title": {
                         "title": "Title",
                         "maxLength": 100,
@@ -7211,6 +9353,19 @@
                             "type": "string"
                           }
                         ]
+                      },
+                      "label": {
+                        "title": "Link text",
+                        "maxLength": 50,
+                        "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                        "format": "hidden",
+                        "type": "string"
+                      },
+                      "url": {
+                        "title": "Link destination",
+                        "description": "When this is clicked, open:",
+                        "format": "hidden",
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -7359,6 +9514,12 @@
                     "const": "infocols",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -7463,6 +9624,12 @@
                   "type": {
                     "default": "infopic",
                     "const": "infopic",
+                    "type": "string"
+                  },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
                     "type": "string"
                   },
                   "title": {
@@ -7598,6 +9765,12 @@
                     "const": "keystatistics",
                     "type": "string"
                   },
+                  "id": {
+                    "title": "Anchor ID",
+                    "description": "The ID to use for anchor links",
+                    "format": "hidden",
+                    "type": "string"
+                  },
                   "title": {
                     "title": "Title",
                     "maxLength": 100,
@@ -7704,6 +9877,269 @@
                   "type",
                   "url",
                   "title"
+                ]
+              },
+              {
+                "groups": [
+                  {
+                    "label": "Map API endpoint",
+                    "fields": [
+                      "apiEndpoint",
+                      "title",
+                      "data"
+                    ]
+                  },
+                  {
+                    "label": "Add a call-to-action",
+                    "fields": [
+                      "label",
+                      "url"
+                    ]
+                  }
+                ],
+                "title": "DynamicDataBanner component",
+                "description": "A component that displays DynamicDataBanner",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "dynamicdatabanner",
+                    "const": "dynamicdatabanner",
+                    "type": "string"
+                  },
+                  "apiEndpoint": {
+                    "title": "API endpoint",
+                    "description": "The API endpoint to fetch the data from",
+                    "format": "uri",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Title JSON Key",
+                    "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "data": {
+                    "title": "Data",
+                    "minItems": 6,
+                    "maxItems": 6,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "title": "Description",
+                          "description": "Descriptive label e.g. 'Maghrib'",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "key": {
+                          "title": "Key",
+                          "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "key"
+                      ]
+                    }
+                  },
+                  "errorMessage": {
+                    "title": "Error message",
+                    "description": "The error message to display if the data is not loaded",
+                    "type": "array",
+                    "items": {
+                      "title": "Text content",
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "default": "text",
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "marks": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "title": "Bold",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "bold",
+                                    "const": "bold",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Code",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "code",
+                                    "const": "code",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Italic",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "italic",
+                                    "const": "italic",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Hyperlink",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "link",
+                                    "const": "link",
+                                    "type": "string"
+                                  },
+                                  "attrs": {
+                                    "type": "object",
+                                    "properties": {
+                                      "target": {
+                                        "anyOf": [
+                                          {
+                                            "const": "_self",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "_blank",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "const": "",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      "href": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "null"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "href"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "attrs"
+                                ]
+                              },
+                              {
+                                "title": "Strikethrough",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "strike",
+                                    "const": "strike",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Subscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "subscript",
+                                    "const": "subscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Superscript",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "superscript",
+                                    "const": "superscript",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              },
+                              {
+                                "title": "Underline",
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "default": "underline",
+                                    "const": "underline",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  },
+                  "label": {
+                    "title": "Link text",
+                    "maxLength": 50,
+                    "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Link destination",
+                    "description": "When this is clicked, open:",
+                    "format": "link",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "apiEndpoint",
+                  "data",
+                  "errorMessage"
                 ]
               },
               {
@@ -8085,6 +10521,12 @@
                 "const": "infocards",
                 "type": "string"
               },
+              "id": {
+                "title": "Anchor ID",
+                "description": "The ID to use for anchor links",
+                "format": "hidden",
+                "type": "string"
+              },
               "title": {
                 "title": "Title",
                 "maxLength": 100,
@@ -8116,6 +10558,19 @@
                     "type": "string"
                   }
                 ]
+              },
+              "label": {
+                "title": "Link text",
+                "maxLength": 50,
+                "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+                "format": "hidden",
+                "type": "string"
+              },
+              "url": {
+                "title": "Link destination",
+                "description": "When this is clicked, open:",
+                "format": "hidden",
+                "type": "string"
               }
             },
             "required": [
@@ -8264,6 +10719,12 @@
             "const": "infocols",
             "type": "string"
           },
+          "id": {
+            "title": "Anchor ID",
+            "description": "The ID to use for anchor links",
+            "format": "hidden",
+            "type": "string"
+          },
           "title": {
             "title": "Title",
             "maxLength": 100,
@@ -8368,6 +10829,12 @@
           "type": {
             "default": "infopic",
             "const": "infopic",
+            "type": "string"
+          },
+          "id": {
+            "title": "Anchor ID",
+            "description": "The ID to use for anchor links",
+            "format": "hidden",
             "type": "string"
           },
           "title": {
@@ -8503,6 +10970,12 @@
             "const": "keystatistics",
             "type": "string"
           },
+          "id": {
+            "title": "Anchor ID",
+            "description": "The ID to use for anchor links",
+            "format": "hidden",
+            "type": "string"
+          },
           "title": {
             "title": "Title",
             "maxLength": 100,
@@ -8609,6 +11082,269 @@
           "type",
           "url",
           "title"
+        ]
+      },
+      "dynamicdatabanner": {
+        "groups": [
+          {
+            "label": "Map API endpoint",
+            "fields": [
+              "apiEndpoint",
+              "title",
+              "data"
+            ]
+          },
+          {
+            "label": "Add a call-to-action",
+            "fields": [
+              "label",
+              "url"
+            ]
+          }
+        ],
+        "title": "DynamicDataBanner component",
+        "description": "A component that displays DynamicDataBanner",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "dynamicdatabanner",
+            "const": "dynamicdatabanner",
+            "type": "string"
+          },
+          "apiEndpoint": {
+            "title": "API endpoint",
+            "description": "The API endpoint to fetch the data from",
+            "format": "uri",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title JSON Key",
+            "description": "Unique identifier in the JSON to be used as title e.g. 'hijriDate'",
+            "maxLength": 100,
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "minItems": 6,
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "title": "Description",
+                  "description": "Descriptive label e.g. 'Maghrib'",
+                  "maxLength": 100,
+                  "type": "string"
+                },
+                "key": {
+                  "title": "Key",
+                  "description": "Unique identifier in the JSON e.g. 'maghribTime'",
+                  "maxLength": 100,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "key"
+              ]
+            }
+          },
+          "errorMessage": {
+            "title": "Error message",
+            "description": "The error message to display if the data is not loaded",
+            "type": "array",
+            "items": {
+              "title": "Text content",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "default": "text",
+                  "const": "text",
+                  "type": "string"
+                },
+                "marks": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "title": "Bold",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "bold",
+                            "const": "bold",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Code",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "code",
+                            "const": "code",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Italic",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "italic",
+                            "const": "italic",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Hyperlink",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "link",
+                            "const": "link",
+                            "type": "string"
+                          },
+                          "attrs": {
+                            "type": "object",
+                            "properties": {
+                              "target": {
+                                "anyOf": [
+                                  {
+                                    "const": "_self",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "const": "_blank",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "const": "",
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              "href": {
+                                "anyOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "href"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "attrs"
+                        ]
+                      },
+                      {
+                        "title": "Strikethrough",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "strike",
+                            "const": "strike",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Subscript",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "subscript",
+                            "const": "subscript",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Superscript",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "superscript",
+                            "const": "superscript",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      {
+                        "title": "Underline",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "default": "underline",
+                            "const": "underline",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "text"
+              ]
+            }
+          },
+          "label": {
+            "title": "Link text",
+            "maxLength": 50,
+            "description": "Add a link under your block. Avoid generic text such as “Click here” or “Learn more”",
+            "type": "string"
+          },
+          "url": {
+            "title": "Link destination",
+            "description": "When this is clicked, open:",
+            "format": "link",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "apiEndpoint",
+          "data",
+          "errorMessage"
         ]
       }
     },
