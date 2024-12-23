@@ -239,7 +239,7 @@
               "properties": {
                 "summary": {
                   "title": "Article summary",
-                  "description": "The summary of the article’s content",
+                  "description": "Help users understand what this page is about",
                   "format": "textarea",
                   "maxLength": 250,
                   "type": "string"
@@ -259,14 +259,14 @@
               "properties": {
                 "src": {
                   "title": "Image",
-                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "format": "image",
+                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "type": "string"
                 },
                 "alt": {
-                  "title": "Image alt text",
-                  "description": "The alt text of the image",
+                  "title": "Alternate text",
                   "maxLength": 120,
+                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                   "type": "string"
                 }
               },
@@ -284,14 +284,45 @@
         },
         {
           "type": "object",
-          "properties": {
-            "subtitle": {
-              "title": "The subtitle of the collection",
-              "type": "string"
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "subtitle": {
+                  "title": "The subtitle of the collection",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "subtitle"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "selected": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "category": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "selected",
+                      "category"
+                    ]
+                  }
+                }
+              }
             }
-          },
-          "required": [
-            "subtitle"
           ]
         },
         {
@@ -304,7 +335,7 @@
               "properties": {
                 "summary": {
                   "title": "Content page summary",
-                  "description": "The summary of the page's content",
+                  "description": "Help users understand what this page is about",
                   "maxLength": 300,
                   "format": "textarea",
                   "type": "string"
@@ -341,7 +372,7 @@
               "properties": {
                 "summary": {
                   "title": "Content page summary",
-                  "description": "The summary of the page's content",
+                  "description": "Help users understand what this page is about",
                   "maxLength": 300,
                   "format": "textarea",
                   "type": "string"
@@ -424,7 +455,7 @@
               "properties": {
                 "summary": {
                   "title": "Content page summary",
-                  "description": "The summary of the page's content",
+                  "description": "Help users understand what this page is about",
                   "maxLength": 300,
                   "format": "textarea",
                   "type": "string"
@@ -469,14 +500,14 @@
               "properties": {
                 "src": {
                   "title": "Image",
-                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "format": "image",
+                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
                   "type": "string"
                 },
                 "alt": {
-                  "title": "Image alt text",
-                  "description": "The alt text of the image",
+                  "title": "Alternate text",
                   "maxLength": 120,
+                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                   "type": "string"
                 }
               },
@@ -564,8 +595,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -574,8 +604,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -603,7 +632,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -624,8 +654,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -634,8 +663,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -663,7 +691,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -807,18 +836,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -850,6 +879,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -928,8 +973,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -969,6 +1014,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -989,13 +1035,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -1007,7 +1051,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -1015,6 +1059,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -1030,8 +1075,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -1067,13 +1112,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -1145,7 +1188,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -1237,18 +1279,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -1260,6 +1290,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -1279,10 +1320,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -1290,8 +1341,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -1319,26 +1369,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -1407,6 +1446,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1476,14 +1516,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -1727,6 +1759,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1735,6 +1768,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -1767,8 +1848,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -1777,8 +1857,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -1806,7 +1885,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -1827,8 +1907,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -1837,8 +1916,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -1866,7 +1944,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -2010,18 +2089,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -2053,6 +2132,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -2131,8 +2226,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -2172,6 +2267,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -2192,13 +2288,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -2210,7 +2304,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -2218,6 +2312,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -2233,8 +2328,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -2270,13 +2365,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -2348,7 +2441,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -2440,18 +2532,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -2463,6 +2543,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -2482,10 +2573,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -2493,8 +2594,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -2522,26 +2622,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -2610,6 +2699,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2679,14 +2769,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -2930,6 +3012,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2938,6 +3021,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -2966,8 +3097,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -2976,8 +3106,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -3005,7 +3134,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -3026,8 +3156,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -3036,8 +3165,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -3065,7 +3193,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -3209,18 +3338,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -3252,6 +3381,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -3330,8 +3475,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -3371,6 +3516,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -3391,13 +3537,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -3409,7 +3553,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -3417,6 +3561,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -3432,8 +3577,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -3469,13 +3614,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -3547,7 +3690,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -3639,18 +3781,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -3662,6 +3792,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -3681,10 +3822,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -3692,8 +3843,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -3721,26 +3871,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -3809,6 +3948,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3878,14 +4018,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -4129,6 +4261,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4137,6 +4270,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -4165,8 +4346,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -4175,8 +4355,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -4204,7 +4383,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -4225,8 +4405,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -4235,8 +4414,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -4264,7 +4442,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -4408,18 +4587,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -4451,6 +4630,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -4529,8 +4724,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -4570,6 +4765,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -4590,13 +4786,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -4608,7 +4802,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -4616,6 +4810,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -4631,8 +4826,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -4668,13 +4863,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -4746,7 +4939,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -4838,18 +5030,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -4861,6 +5041,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -4880,10 +5071,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -4891,8 +5092,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -4920,26 +5120,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -5008,6 +5197,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5077,14 +5267,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -5328,6 +5510,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5336,6 +5519,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -5364,8 +5595,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -5374,8 +5604,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -5403,7 +5632,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -5424,8 +5654,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -5434,8 +5663,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -5463,7 +5691,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -5607,18 +5836,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -5650,6 +5879,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -5728,8 +5973,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -5769,6 +6014,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -5789,13 +6035,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -5807,7 +6051,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -5815,6 +6059,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -5830,8 +6075,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -5867,13 +6112,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -5945,7 +6188,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -6037,18 +6279,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -6060,6 +6290,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -6079,10 +6320,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -6090,8 +6341,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -6119,26 +6369,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -6207,6 +6446,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6276,14 +6516,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -6527,6 +6759,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6535,6 +6768,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -6563,8 +6844,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -6573,8 +6853,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -6602,7 +6881,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -6623,8 +6903,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -6633,8 +6912,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -6662,7 +6940,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -6806,18 +7085,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -6849,6 +7128,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -6927,8 +7222,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -6968,6 +7263,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -6988,13 +7284,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -7006,7 +7300,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -7014,6 +7308,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -7029,8 +7324,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -7066,13 +7361,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -7144,7 +7437,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -7236,18 +7528,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -7259,6 +7539,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -7278,10 +7569,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -7289,8 +7590,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -7318,26 +7618,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -7406,6 +7695,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -7475,14 +7765,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -7726,6 +8008,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -7734,6 +8017,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -7766,8 +8097,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -7776,8 +8106,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -7805,7 +8134,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -7826,8 +8156,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -7836,8 +8165,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -7865,7 +8193,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -8009,18 +8338,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -8052,6 +8381,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -8130,8 +8475,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -8171,6 +8516,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -8191,13 +8537,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -8209,7 +8553,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -8217,6 +8561,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -8232,8 +8577,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -8269,13 +8614,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -8347,7 +8690,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -8439,18 +8781,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -8462,6 +8792,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -8481,10 +8822,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -8492,8 +8843,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -8521,26 +8871,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -8609,6 +8948,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -8678,14 +9018,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -8929,6 +9261,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -8937,6 +9270,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -8969,8 +9350,7 @@
                     "type": "string"
                   },
                   "details": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "accordion",
                     "type": "object",
                     "properties": {
@@ -8979,8 +9359,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -9008,7 +9387,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -9029,8 +9409,7 @@
                     "type": "string"
                   },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
+                    "title": "Content",
                     "format": "callout",
                     "type": "object",
                     "properties": {
@@ -9039,8 +9418,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -9068,7 +9446,8 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
                   }
                 },
@@ -9212,18 +9591,18 @@
                     "type": "string"
                   },
                   "src": {
-                    "title": "Upload image",
+                    "title": "Image",
                     "format": "image",
                     "type": "string"
                   },
                   "alt": {
                     "title": "Alternate text",
                     "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   },
                   "caption": {
-                    "title": "Image caption",
+                    "title": "Caption",
                     "maxLength": 100,
                     "format": "textarea",
                     "type": "string"
@@ -9255,6 +9634,22 @@
                 ]
               },
               {
+                "groups": [
+                  {
+                    "label": "Primary call-to-action",
+                    "fields": [
+                      "buttonLabel",
+                      "buttonUrl"
+                    ]
+                  },
+                  {
+                    "label": "Secondary call-to-action",
+                    "fields": [
+                      "secondaryButtonLabel",
+                      "secondaryButtonUrl"
+                    ]
+                  }
+                ],
                 "title": "Infobar component",
                 "type": "object",
                 "properties": {
@@ -9333,8 +9728,8 @@
                         "type": "string"
                       },
                       "maxColumns": {
-                        "title": "Maximum columns variant",
-                        "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                        "title": "Number of columns",
+                        "description": "This only affects how the block appears on large screens",
                         "default": "3",
                         "anyOf": [
                           {
@@ -9374,6 +9769,7 @@
                     ]
                   },
                   {
+                    "format": "radio",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -9394,13 +9790,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -9412,7 +9806,7 @@
                                   "type": "string"
                                 },
                                 "imageUrl": {
-                                  "title": "Upload image",
+                                  "title": "Image",
                                   "format": "image",
                                   "type": "string"
                                 },
@@ -9420,6 +9814,7 @@
                                   "default": "cover",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -9435,8 +9830,8 @@
                                 },
                                 "imageAlt": {
                                   "title": "Alternate text",
-                                  "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                                   "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
                                   "type": "string"
                                 }
                               },
@@ -9472,13 +9867,11 @@
                               "properties": {
                                 "title": {
                                   "title": "Title",
-                                  "default": "This is the title of the card",
                                   "maxLength": 100,
                                   "type": "string"
                                 },
                                 "description": {
                                   "title": "Description",
-                                  "default": "This is an optional description for the card",
                                   "maxLength": 150,
                                   "type": "string"
                                 },
@@ -9550,7 +9943,6 @@
                         },
                         "icon": {
                           "title": "Column icon",
-                          "description": "The icon to display for the column",
                           "type": "string",
                           "anyOf": [
                             {
@@ -9642,18 +10034,6 @@
                     "maxLength": 200,
                     "type": "string"
                   },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "maxLength": 120,
-                    "type": "string"
-                  },
                   "buttonLabel": {
                     "title": "Button text",
                     "maxLength": 50,
@@ -9665,6 +10045,17 @@
                     "description": "When this is clicked, open:",
                     "format": "link",
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "type": "string"
+                  },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
                     "type": "string"
                   }
                 },
@@ -9684,10 +10075,20 @@
                     "const": "contentpic",
                     "type": "string"
                   },
+                  "imageSrc": {
+                    "title": "Image",
+                    "format": "image",
+                    "type": "string"
+                  },
+                  "imageAlt": {
+                    "title": "Alternate text",
+                    "maxLength": 120,
+                    "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "type": "string"
+                  },
                   "content": {
-                    "title": "Content block",
-                    "description": "A collection of native content components.",
-                    "format": "prose",
+                    "title": "Content",
+                    "format": "contentpic",
                     "type": "object",
                     "properties": {
                       "type": {
@@ -9695,8 +10096,7 @@
                         "type": "string"
                       },
                       "content": {
-                        "title": "Content block",
-                        "description": "A collection of native content components.",
+                        "title": "Content",
                         "minItems": 1,
                         "type": "array",
                         "items": {
@@ -9724,26 +10124,15 @@
                       }
                     },
                     "required": [
-                      "type"
+                      "type",
+                      "content"
                     ]
-                  },
-                  "imageSrc": {
-                    "title": "Upload image",
-                    "description": "The URL to the image",
-                    "format": "image",
-                    "type": "string"
-                  },
-                  "imageAlt": {
-                    "title": "Alternate text",
-                    "maxLength": 120,
-                    "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "content",
-                  "imageSrc"
+                  "imageSrc",
+                  "content"
                 ]
               },
               {
@@ -9812,6 +10201,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -9881,14 +10271,6 @@
               },
               {
                 "groups": [
-                  {
-                    "label": "Map API endpoint",
-                    "fields": [
-                      "apiEndpoint",
-                      "title",
-                      "data"
-                    ]
-                  },
                   {
                     "label": "Add a call-to-action",
                     "fields": [
@@ -10132,6 +10514,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -10140,6 +10523,54 @@
                   "apiEndpoint",
                   "data",
                   "errorMessage"
+                ]
+              },
+              {
+                "title": "Title",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "logocloud",
+                    "const": "logocloud",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images for logo cloud",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  },
+                  "title": {
+                    "title": "Title for the logo cloud",
+                    "description": "Upload the images for the logo cloud here or provide a url",
+                    "maxLength": 120,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "images",
+                  "title"
                 ]
               },
               {
@@ -10174,8 +10605,7 @@
             "type": "string"
           },
           "details": {
-            "title": "Content block",
-            "description": "A collection of native content components.",
+            "title": "Content",
             "format": "accordion",
             "type": "object",
             "properties": {
@@ -10184,8 +10614,7 @@
                 "type": "string"
               },
               "content": {
-                "title": "Content block",
-                "description": "A collection of native content components.",
+                "title": "Content",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -10213,7 +10642,8 @@
               }
             },
             "required": [
-              "type"
+              "type",
+              "content"
             ]
           }
         },
@@ -10234,8 +10664,7 @@
             "type": "string"
           },
           "content": {
-            "title": "Content block",
-            "description": "A collection of native content components.",
+            "title": "Content",
             "format": "callout",
             "type": "object",
             "properties": {
@@ -10244,8 +10673,7 @@
                 "type": "string"
               },
               "content": {
-                "title": "Content block",
-                "description": "A collection of native content components.",
+                "title": "Content",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -10273,7 +10701,8 @@
               }
             },
             "required": [
-              "type"
+              "type",
+              "content"
             ]
           }
         },
@@ -10417,18 +10846,18 @@
             "type": "string"
           },
           "src": {
-            "title": "Upload image",
+            "title": "Image",
             "format": "image",
             "type": "string"
           },
           "alt": {
             "title": "Alternate text",
             "maxLength": 120,
-            "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
+            "description": "Add a descriptive text so that visually impaired users can understand your image",
             "type": "string"
           },
           "caption": {
-            "title": "Image caption",
+            "title": "Caption",
             "maxLength": 100,
             "format": "textarea",
             "type": "string"
@@ -10460,6 +10889,22 @@
         ]
       },
       "infobar": {
+        "groups": [
+          {
+            "label": "Primary call-to-action",
+            "fields": [
+              "buttonLabel",
+              "buttonUrl"
+            ]
+          },
+          {
+            "label": "Secondary call-to-action",
+            "fields": [
+              "secondaryButtonLabel",
+              "secondaryButtonUrl"
+            ]
+          }
+        ],
         "title": "Infobar component",
         "type": "object",
         "properties": {
@@ -10538,8 +10983,8 @@
                 "type": "string"
               },
               "maxColumns": {
-                "title": "Maximum columns variant",
-                "description": "Controls the responsive behaviour regarding the number of columns that this component will expand to in different viewports",
+                "title": "Number of columns",
+                "description": "This only affects how the block appears on large screens",
                 "default": "3",
                 "anyOf": [
                   {
@@ -10579,6 +11024,7 @@
             ]
           },
           {
+            "format": "radio",
             "anyOf": [
               {
                 "title": "Cards with images",
@@ -10599,13 +11045,11 @@
                       "properties": {
                         "title": {
                           "title": "Title",
-                          "default": "This is the title of the card",
                           "maxLength": 100,
                           "type": "string"
                         },
                         "description": {
                           "title": "Description",
-                          "default": "This is an optional description for the card",
                           "maxLength": 150,
                           "type": "string"
                         },
@@ -10617,7 +11061,7 @@
                           "type": "string"
                         },
                         "imageUrl": {
-                          "title": "Upload image",
+                          "title": "Image",
                           "format": "image",
                           "type": "string"
                         },
@@ -10625,6 +11069,7 @@
                           "default": "cover",
                           "title": "Image display",
                           "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                          "format": "radio",
                           "anyOf": [
                             {
                               "title": "Default (recommended)",
@@ -10640,8 +11085,8 @@
                         },
                         "imageAlt": {
                           "title": "Alternate text",
-                          "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
                           "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
                           "type": "string"
                         }
                       },
@@ -10677,13 +11122,11 @@
                       "properties": {
                         "title": {
                           "title": "Title",
-                          "default": "This is the title of the card",
                           "maxLength": 100,
                           "type": "string"
                         },
                         "description": {
                           "title": "Description",
-                          "default": "This is an optional description for the card",
                           "maxLength": 150,
                           "type": "string"
                         },
@@ -10755,7 +11198,6 @@
                 },
                 "icon": {
                   "title": "Column icon",
-                  "description": "The icon to display for the column",
                   "type": "string",
                   "anyOf": [
                     {
@@ -10847,18 +11289,6 @@
             "maxLength": 200,
             "type": "string"
           },
-          "imageSrc": {
-            "title": "Upload image",
-            "description": "The URL to the image",
-            "format": "image",
-            "type": "string"
-          },
-          "imageAlt": {
-            "title": "Alternate text",
-            "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-            "maxLength": 120,
-            "type": "string"
-          },
           "buttonLabel": {
             "title": "Button text",
             "maxLength": 50,
@@ -10870,6 +11300,17 @@
             "description": "When this is clicked, open:",
             "format": "link",
             "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "type": "string"
+          },
+          "imageSrc": {
+            "title": "Image",
+            "format": "image",
+            "type": "string"
+          },
+          "imageAlt": {
+            "title": "Alternate text",
+            "maxLength": 120,
+            "description": "Add a descriptive text so that visually impaired users can understand your image",
             "type": "string"
           }
         },
@@ -10889,10 +11330,20 @@
             "const": "contentpic",
             "type": "string"
           },
+          "imageSrc": {
+            "title": "Image",
+            "format": "image",
+            "type": "string"
+          },
+          "imageAlt": {
+            "title": "Alternate text",
+            "maxLength": 120,
+            "description": "Add a descriptive text so that visually impaired users can understand your image",
+            "type": "string"
+          },
           "content": {
-            "title": "Content block",
-            "description": "A collection of native content components.",
-            "format": "prose",
+            "title": "Content",
+            "format": "contentpic",
             "type": "object",
             "properties": {
               "type": {
@@ -10900,8 +11351,7 @@
                 "type": "string"
               },
               "content": {
-                "title": "Content block",
-                "description": "A collection of native content components.",
+                "title": "Content",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -10929,26 +11379,15 @@
               }
             },
             "required": [
-              "type"
+              "type",
+              "content"
             ]
-          },
-          "imageSrc": {
-            "title": "Upload image",
-            "description": "The URL to the image",
-            "format": "image",
-            "type": "string"
-          },
-          "imageAlt": {
-            "title": "Alternate text",
-            "maxLength": 120,
-            "description": "Add a descriptive alternative text for this image. This helps visually impaired users to understand your image.",
-            "type": "string"
           }
         },
         "required": [
           "type",
-          "content",
-          "imageSrc"
+          "imageSrc",
+          "content"
         ]
       },
       "keystatistics": {
@@ -11017,6 +11456,7 @@
             "title": "Link destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -11086,14 +11526,6 @@
       },
       "dynamicdatabanner": {
         "groups": [
-          {
-            "label": "Map API endpoint",
-            "fields": [
-              "apiEndpoint",
-              "title",
-              "data"
-            ]
-          },
           {
             "label": "Add a call-to-action",
             "fields": [
@@ -11337,6 +11769,7 @@
             "title": "Link destination",
             "description": "When this is clicked, open:",
             "format": "link",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -11346,12 +11779,59 @@
           "data",
           "errorMessage"
         ]
+      },
+      "logocloud": {
+        "title": "Title",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "logocloud",
+            "const": "logocloud",
+            "type": "string"
+          },
+          "images": {
+            "title": "Images for logo cloud",
+            "minItems": 1,
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "title": "Image",
+                  "format": "image",
+                  "type": "string"
+                },
+                "alt": {
+                  "title": "Alternate text",
+                  "maxLength": 120,
+                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ]
+            }
+          },
+          "title": {
+            "title": "Title for the logo cloud",
+            "description": "Upload the images for the logo cloud here or provide a url",
+            "maxLength": 120,
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "images",
+          "title"
+        ]
       }
     },
     "native": {
       "prose": {
-        "title": "Content block",
-        "description": "A collection of native content components.",
+        "title": "Content",
         "format": "prose",
         "type": "object",
         "properties": {
@@ -11360,8 +11840,7 @@
             "type": "string"
           },
           "content": {
-            "title": "Content block",
-            "description": "A collection of native content components.",
+            "title": "Content",
             "minItems": 1,
             "type": "array",
             "items": {
