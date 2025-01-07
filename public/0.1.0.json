@@ -1771,7 +1771,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -3024,7 +3024,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -4273,7 +4273,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -5522,7 +5522,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -6771,7 +6771,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -8020,7 +8020,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -9273,7 +9273,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -10526,7 +10526,7 @@
                 ]
               },
               {
-                "title": "Title",
+                "title": "Logocloud component",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -11781,7 +11781,7 @@
         ]
       },
       "logocloud": {
-        "title": "Title",
+        "title": "Logocloud component",
         "type": "object",
         "properties": {
           "type": {
