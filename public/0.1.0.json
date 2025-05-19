@@ -73,7 +73,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -97,7 +97,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -121,7 +121,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -145,7 +145,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -169,7 +169,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -193,7 +193,7 @@
             "image": {
               "title": "Meta image",
               "description": "This image may appear when the page is shared on social media such as LinkedIn or Facebook.",
-              "format": "image",
+              "format": "meta-image",
               "type": "string"
             }
           }
@@ -251,6 +251,7 @@
             },
             "category": {
               "title": "Article category",
+              "format": "category",
               "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
@@ -258,9 +259,9 @@
               "type": "object",
               "properties": {
                 "src": {
-                  "title": "Image",
+                  "title": "Thumbnail",
                   "format": "image",
-                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
+                  "description": "Upload an image if you want to have a custom thumbnail for this item",
                   "type": "string"
                 },
                 "alt": {
@@ -277,7 +278,6 @@
             }
           },
           "required": [
-            "date",
             "articlePageHeader",
             "category"
           ]
@@ -349,7 +349,7 @@
                   "title": "Button destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -386,7 +386,7 @@
                   "title": "Button destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -469,7 +469,7 @@
                   "title": "Button destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -487,6 +487,7 @@
           "properties": {
             "category": {
               "title": "Article category",
+              "format": "category",
               "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
@@ -499,9 +500,9 @@
               "type": "object",
               "properties": {
                 "src": {
-                  "title": "Image",
+                  "title": "Thumbnail",
                   "format": "image",
-                  "description": "Displayed at the top of the page and as a thumbnail in the collection view",
+                  "description": "Upload an image if you want to have a custom thumbnail for this item",
                   "type": "string"
                 },
                 "alt": {
@@ -520,7 +521,7 @@
               "title": "Link",
               "description": "Choose a page or file to link to this Collection item",
               "format": "ref",
-              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
               "type": "string"
             },
             "description": {
@@ -533,7 +534,6 @@
           },
           "required": [
             "category",
-            "date",
             "ref"
           ]
         },
@@ -542,6 +542,7 @@
           "properties": {
             "category": {
               "title": "Article category",
+              "format": "category",
               "description": "The category is used for filtering in the parent collection page",
               "type": "string"
             },
@@ -554,7 +555,7 @@
               "title": "Link",
               "description": "Choose a page or file to link to this Collection item",
               "format": "ref",
-              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+              "pattern": "(^https:\\/\\/)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
               "type": "string"
             },
             "description": {
@@ -567,7 +568,6 @@
           },
           "required": [
             "category",
-            "date",
             "ref"
           ]
         }
@@ -750,7 +750,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -762,7 +762,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -923,7 +923,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -936,7 +936,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1047,7 +1047,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -1124,7 +1124,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -1237,7 +1237,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -1289,7 +1289,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -1446,7 +1446,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -1759,7 +1759,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2003,7 +2003,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2015,7 +2015,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -2176,7 +2176,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -2189,7 +2189,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -2300,7 +2300,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -2377,7 +2377,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -2490,7 +2490,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -2542,7 +2542,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -2699,7 +2699,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3012,7 +3012,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3252,7 +3252,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3264,7 +3264,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -3425,7 +3425,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -3438,7 +3438,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -3549,7 +3549,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -3626,7 +3626,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -3739,7 +3739,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -3791,7 +3791,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -3948,7 +3948,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4261,7 +4261,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4501,7 +4501,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4513,7 +4513,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -4674,7 +4674,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -4687,7 +4687,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -4798,7 +4798,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -4875,7 +4875,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -4988,7 +4988,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -5040,7 +5040,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -5197,7 +5197,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5510,7 +5510,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -5750,7 +5750,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5762,7 +5762,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -5923,7 +5923,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -5936,7 +5936,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6047,7 +6047,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -6124,7 +6124,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -6237,7 +6237,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -6289,7 +6289,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -6446,7 +6446,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6759,7 +6759,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -6999,7 +6999,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -7011,7 +7011,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -7172,7 +7172,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -7185,7 +7185,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -7296,7 +7296,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -7373,7 +7373,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -7486,7 +7486,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -7538,7 +7538,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -7695,7 +7695,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -8008,7 +8008,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -8252,7 +8252,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -8264,7 +8264,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -8425,7 +8425,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -8438,7 +8438,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -8549,7 +8549,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -8626,7 +8626,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -8739,7 +8739,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -8791,7 +8791,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -8948,7 +8948,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -9261,7 +9261,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -9505,7 +9505,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -9517,7 +9517,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "backgroundUrl": {
@@ -9678,7 +9678,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "secondaryButtonLabel": {
@@ -9691,7 +9691,7 @@
                     "title": "Secondary button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -9802,7 +9802,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 },
                                 "imageUrl": {
@@ -9879,7 +9879,7 @@
                                   "title": "Link destination",
                                   "description": "When this is clicked, open:",
                                   "format": "link",
-                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                                   "type": "string"
                                 }
                               },
@@ -9992,7 +9992,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -10044,7 +10044,7 @@
                     "title": "Button destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
                   "imageSrc": {
@@ -10201,7 +10201,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -10514,7 +10514,7 @@
                     "title": "Link destination",
                     "description": "When this is clicked, open:",
                     "format": "link",
-                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                    "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   }
                 },
@@ -10760,7 +10760,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -10772,7 +10772,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           },
           "backgroundUrl": {
@@ -10933,7 +10933,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           },
           "secondaryButtonLabel": {
@@ -10946,7 +10946,7 @@
             "title": "Secondary button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -11057,7 +11057,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         },
                         "imageUrl": {
@@ -11134,7 +11134,7 @@
                           "title": "Link destination",
                           "description": "When this is clicked, open:",
                           "format": "link",
-                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                           "type": "string"
                         }
                       },
@@ -11247,7 +11247,7 @@
                   "title": "Link destination",
                   "description": "When this is clicked, open:",
                   "format": "link",
-                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                   "type": "string"
                 }
               },
@@ -11299,7 +11299,7 @@
             "title": "Button destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           },
           "imageSrc": {
@@ -11456,7 +11456,7 @@
             "title": "Link destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           }
         },
@@ -11769,7 +11769,7 @@
             "title": "Link destination",
             "description": "When this is clicked, open:",
             "format": "link",
-            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/)|(^\\/)",
+            "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           }
         },
