@@ -50,7 +50,7 @@ export default function Preview({ schema }: PreviewProps) {
         isGovernment: true,
         environment: "production",
         lastUpdated: "3 Apr 2024",
-        navBarItems: navBar,
+        navbar: navBar,
         // @ts-expect-error blah
         footerItems: footer,
         assetsBaseUrl: `https://isomer-user-content.by.gov.sg`,
