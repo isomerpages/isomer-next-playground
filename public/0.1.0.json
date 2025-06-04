@@ -297,6 +297,10 @@
                   "title": "Alternate text",
                   "maxLength": 120,
                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
                   "type": "string"
                 }
               },
@@ -454,6 +458,10 @@
                   "title": "Alternate text",
                   "maxLength": 120,
                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
                   "type": "string"
                 }
               },
@@ -613,6 +621,10 @@
                   "title": "Alternate text",
                   "maxLength": 120,
                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
                   "type": "string"
                 }
               },
@@ -653,6 +665,10 @@
                   "title": "Alternate text",
                   "maxLength": 120,
                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
                   "type": "string"
                 }
               },
@@ -818,14 +834,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -963,15 +982,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -1029,6 +1062,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -1222,6 +1259,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -1285,6 +1323,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -1339,6 +1381,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -1501,6 +1621,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -1510,13 +1647,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -1538,6 +1680,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -1586,6 +1732,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -2049,6 +2196,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -2069,6 +2220,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -2180,14 +2431,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -2325,15 +2579,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -2391,6 +2659,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -2584,6 +2856,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -2647,6 +2920,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -2701,6 +2978,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -2863,6 +3218,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -2872,13 +3244,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -2900,6 +3277,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -2948,6 +3329,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -3411,6 +3793,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -3431,6 +3817,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -3538,14 +4024,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -3683,15 +4172,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -3749,6 +4252,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -3942,6 +4449,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -4005,6 +4513,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -4059,6 +4571,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -4221,6 +4811,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -4230,13 +4837,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -4258,6 +4870,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -4306,6 +4922,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -4769,6 +5386,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -4789,6 +5410,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -4896,14 +5617,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -5041,15 +5765,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -5107,6 +5845,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -5300,6 +6042,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -5363,6 +6106,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -5417,6 +6164,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -5579,6 +6404,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -5588,13 +6430,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -5616,6 +6463,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -5664,6 +6515,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -6127,6 +6979,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -6147,6 +7003,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -6254,14 +7210,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -6399,15 +7358,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -6465,6 +7438,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -6658,6 +7635,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -6721,6 +7699,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -6775,6 +7757,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -6937,6 +7997,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -6946,13 +8023,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -6974,6 +8056,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -7022,6 +8108,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -7485,6 +8572,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -7505,6 +8596,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -7612,14 +8803,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -7757,15 +8951,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -7823,6 +9031,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -8016,6 +9228,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -8079,6 +9292,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -8133,6 +9350,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -8295,6 +9590,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -8304,13 +9616,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -8332,6 +9649,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -8380,6 +9701,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -8843,6 +10165,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -8863,6 +10189,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -8970,14 +10396,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -9115,15 +10544,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -9181,6 +10624,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -9374,6 +10821,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -9437,6 +10885,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -9491,6 +10943,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -9653,6 +11183,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -9662,13 +11209,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -9690,6 +11242,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -9738,6 +11294,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -10201,6 +11758,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -10221,6 +11782,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -10332,14 +11993,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -10477,15 +12141,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -10543,6 +12221,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -10736,6 +12418,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -10799,6 +12482,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -10853,6 +12540,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -11015,6 +12780,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -11024,13 +12806,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -11052,6 +12839,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -11100,6 +12891,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -11563,6 +13355,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -11583,6 +13379,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -11694,14 +13590,17 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "quote",
-                  "source",
-                  "imageAlt"
+                  "source"
                 ]
               },
               {
@@ -11839,15 +13738,29 @@
                   "variant": {
                     "default": "gradient",
                     "title": "Hero banner style",
+                    "format": "radio",
+                    "type": "string",
                     "anyOf": [
                       {
-                        "title": "Gradient",
+                        "title": "Gradient (Default)",
                         "const": "gradient",
                         "type": "string"
                       },
                       {
                         "title": "Block",
                         "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Large image",
+                        "format": "hidden",
+                        "const": "largeImage",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Floating",
+                        "format": "hidden",
+                        "const": "floating",
                         "type": "string"
                       }
                     ]
@@ -11905,6 +13818,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "caption": {
@@ -12098,6 +14015,7 @@
                   },
                   {
                     "format": "radio",
+                    "title": "Infocards style",
                     "anyOf": [
                       {
                         "title": "Cards with images",
@@ -12161,6 +14079,10 @@
                                   "title": "Alternate text",
                                   "maxLength": 120,
                                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
                                   "type": "string"
                                 }
                               },
@@ -12215,6 +14137,84 @@
                               },
                               "required": [
                                 "title"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "variant",
+                          "cards"
+                        ]
+                      },
+                      {
+                        "title": "Cards with full images",
+                        "format": "hidden",
+                        "type": "object",
+                        "properties": {
+                          "variant": {
+                            "default": "cardsWithFullImages",
+                            "const": "cardsWithFullImages",
+                            "type": "string"
+                          },
+                          "cards": {
+                            "title": "Cards",
+                            "minItems": 1,
+                            "maxItems": 30,
+                            "default": [],
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "title": "Title",
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "title": "Link destination",
+                                  "description": "When this is clicked, open:",
+                                  "format": "link",
+                                  "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                                  "type": "string"
+                                },
+                                "imageUrl": {
+                                  "title": "Image",
+                                  "format": "image",
+                                  "type": "string"
+                                },
+                                "imageFit": {
+                                  "default": "cover",
+                                  "title": "Image display",
+                                  "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                                  "format": "radio",
+                                  "anyOf": [
+                                    {
+                                      "title": "Default (recommended)",
+                                      "const": "cover",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "Resize image to fit",
+                                      "const": "contain",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "imageAlt": {
+                                  "title": "Alternate text",
+                                  "maxLength": 120,
+                                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                                  "errorMessage": {
+                                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                                  },
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "imageUrl",
+                                "imageAlt"
                               ]
                             }
                           }
@@ -12377,6 +14377,23 @@
                     "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                     "type": "string"
                   },
+                  "variant": {
+                    "title": "Infopic style",
+                    "default": "block",
+                    "format": "hidden",
+                    "anyOf": [
+                      {
+                        "title": "Block (Default)",
+                        "const": "block",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Full-image",
+                        "const": "full",
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "imageSrc": {
                     "title": "Image",
                     "format": "image",
@@ -12386,13 +14403,18 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   }
                 },
                 "required": [
                   "type",
                   "title",
-                  "imageSrc"
+                  "imageSrc",
+                  "imageAlt"
                 ]
               },
               {
@@ -12414,6 +14436,10 @@
                     "title": "Alternate text",
                     "maxLength": 120,
                     "description": "Add a descriptive text so that visually impaired users can understand your image",
+                    "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                    "errorMessage": {
+                      "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                    },
                     "type": "string"
                   },
                   "content": {
@@ -12462,6 +14488,7 @@
                 "required": [
                   "type",
                   "imageSrc",
+                  "imageAlt",
                   "content"
                 ]
               },
@@ -12925,6 +14952,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -12945,6 +14976,106 @@
                   "type",
                   "images",
                   "title"
+                ]
+              },
+              {
+                "title": "CollectionBlock component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "collectionblock",
+                    "const": "collectionblock",
+                    "type": "string"
+                  },
+                  "collectionReferenceLink": {
+                    "title": "Collection",
+                    "description": "The collection to display pages from",
+                    "format": "link",
+                    "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+                    "type": "string"
+                  },
+                  "customTitle": {
+                    "title": "Custom title",
+                    "maxLength": 100,
+                    "type": "string"
+                  },
+                  "customDescription": {
+                    "title": "Custom description",
+                    "maxLength": 150,
+                    "type": "string"
+                  },
+                  "displayThumbnail": {
+                    "title": "Display thumbnail of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "displayCategory": {
+                    "title": "Display category of all pages",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "buttonLabel": {
+                    "title": "Button text",
+                    "maxLength": 50,
+                    "description": "Clicking this button will open the main collection. You can’t change its destination.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "collectionReferenceLink",
+                  "displayThumbnail",
+                  "displayCategory",
+                  "buttonLabel"
+                ]
+              },
+              {
+                "title": "Image Gallery component",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "imagegallery",
+                    "const": "imagegallery",
+                    "type": "string"
+                  },
+                  "images": {
+                    "title": "Images",
+                    "minItems": 2,
+                    "maxItems": 30,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "alt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        },
+                        "caption": {
+                          "maxLength": 100,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "images"
                 ]
               },
               {
@@ -13058,14 +15189,17 @@
             "title": "Alternate text",
             "maxLength": 120,
             "description": "Add a descriptive text so that visually impaired users can understand your image",
+            "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+            "errorMessage": {
+              "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+            },
             "type": "string"
           }
         },
         "required": [
           "type",
           "quote",
-          "source",
-          "imageAlt"
+          "source"
         ]
       },
       "callout": {
@@ -13203,15 +15337,29 @@
           "variant": {
             "default": "gradient",
             "title": "Hero banner style",
+            "format": "radio",
+            "type": "string",
             "anyOf": [
               {
-                "title": "Gradient",
+                "title": "Gradient (Default)",
                 "const": "gradient",
                 "type": "string"
               },
               {
                 "title": "Block",
                 "const": "block",
+                "type": "string"
+              },
+              {
+                "title": "Large image",
+                "format": "hidden",
+                "const": "largeImage",
+                "type": "string"
+              },
+              {
+                "title": "Floating",
+                "format": "hidden",
+                "const": "floating",
                 "type": "string"
               }
             ]
@@ -13269,6 +15417,10 @@
             "title": "Alternate text",
             "maxLength": 120,
             "description": "Add a descriptive text so that visually impaired users can understand your image",
+            "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+            "errorMessage": {
+              "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+            },
             "type": "string"
           },
           "caption": {
@@ -13462,6 +15614,7 @@
           },
           {
             "format": "radio",
+            "title": "Infocards style",
             "anyOf": [
               {
                 "title": "Cards with images",
@@ -13525,6 +15678,10 @@
                           "title": "Alternate text",
                           "maxLength": 120,
                           "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
                           "type": "string"
                         }
                       },
@@ -13579,6 +15736,84 @@
                       },
                       "required": [
                         "title"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "variant",
+                  "cards"
+                ]
+              },
+              {
+                "title": "Cards with full images",
+                "format": "hidden",
+                "type": "object",
+                "properties": {
+                  "variant": {
+                    "default": "cardsWithFullImages",
+                    "const": "cardsWithFullImages",
+                    "type": "string"
+                  },
+                  "cards": {
+                    "title": "Cards",
+                    "minItems": 1,
+                    "maxItems": 30,
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "title": "Title",
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        "url": {
+                          "title": "Link destination",
+                          "description": "When this is clicked, open:",
+                          "format": "link",
+                          "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
+                          "type": "string"
+                        },
+                        "imageUrl": {
+                          "title": "Image",
+                          "format": "image",
+                          "type": "string"
+                        },
+                        "imageFit": {
+                          "default": "cover",
+                          "title": "Image display",
+                          "description": "Select \"Resize image to fit\" only if the image has a white background.",
+                          "format": "radio",
+                          "anyOf": [
+                            {
+                              "title": "Default (recommended)",
+                              "const": "cover",
+                              "type": "string"
+                            },
+                            {
+                              "title": "Resize image to fit",
+                              "const": "contain",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "imageAlt": {
+                          "title": "Alternate text",
+                          "maxLength": 120,
+                          "description": "Add a descriptive text so that visually impaired users can understand your image",
+                          "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                          "errorMessage": {
+                            "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                          },
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "imageUrl",
+                        "imageAlt"
                       ]
                     }
                   }
@@ -13741,6 +15976,23 @@
             "pattern": "(^https:\\/\\/)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
             "type": "string"
           },
+          "variant": {
+            "title": "Infopic style",
+            "default": "block",
+            "format": "hidden",
+            "anyOf": [
+              {
+                "title": "Block (Default)",
+                "const": "block",
+                "type": "string"
+              },
+              {
+                "title": "Full-image",
+                "const": "full",
+                "type": "string"
+              }
+            ]
+          },
           "imageSrc": {
             "title": "Image",
             "format": "image",
@@ -13750,13 +16002,18 @@
             "title": "Alternate text",
             "maxLength": 120,
             "description": "Add a descriptive text so that visually impaired users can understand your image",
+            "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+            "errorMessage": {
+              "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+            },
             "type": "string"
           }
         },
         "required": [
           "type",
           "title",
-          "imageSrc"
+          "imageSrc",
+          "imageAlt"
         ]
       },
       "contentpic": {
@@ -13778,6 +16035,10 @@
             "title": "Alternate text",
             "maxLength": 120,
             "description": "Add a descriptive text so that visually impaired users can understand your image",
+            "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+            "errorMessage": {
+              "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+            },
             "type": "string"
           },
           "content": {
@@ -13826,6 +16087,7 @@
         "required": [
           "type",
           "imageSrc",
+          "imageAlt",
           "content"
         ]
       },
@@ -14289,6 +16551,10 @@
                   "title": "Alternate text",
                   "maxLength": 120,
                   "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
                   "type": "string"
                 }
               },
@@ -14309,6 +16575,106 @@
           "type",
           "images",
           "title"
+        ]
+      },
+      "collectionblock": {
+        "title": "CollectionBlock component",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "collectionblock",
+            "const": "collectionblock",
+            "type": "string"
+          },
+          "collectionReferenceLink": {
+            "title": "Collection",
+            "description": "The collection to display pages from",
+            "format": "link",
+            "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
+            "type": "string"
+          },
+          "customTitle": {
+            "title": "Custom title",
+            "maxLength": 100,
+            "type": "string"
+          },
+          "customDescription": {
+            "title": "Custom description",
+            "maxLength": 150,
+            "type": "string"
+          },
+          "displayThumbnail": {
+            "title": "Display thumbnail of all pages",
+            "default": true,
+            "type": "boolean"
+          },
+          "displayCategory": {
+            "title": "Display category of all pages",
+            "default": true,
+            "type": "boolean"
+          },
+          "buttonLabel": {
+            "title": "Button text",
+            "maxLength": 50,
+            "description": "Clicking this button will open the main collection. You can’t change its destination.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "collectionReferenceLink",
+          "displayThumbnail",
+          "displayCategory",
+          "buttonLabel"
+        ]
+      },
+      "imagegallery": {
+        "title": "Image Gallery component",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "imagegallery",
+            "const": "imagegallery",
+            "type": "string"
+          },
+          "images": {
+            "title": "Images",
+            "minItems": 2,
+            "maxItems": 30,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "title": "Image",
+                  "format": "image",
+                  "type": "string"
+                },
+                "alt": {
+                  "title": "Alternate text",
+                  "maxLength": 120,
+                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
+                  "type": "string"
+                },
+                "caption": {
+                  "maxLength": 100,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ]
+            }
+          }
+        },
+        "required": [
+          "type",
+          "images"
         ]
       }
     },
