@@ -711,6 +711,31 @@
               "format": "date",
               "type": "string"
             },
+            "image": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "title": "Thumbnail",
+                  "format": "image",
+                  "description": "Upload an image if you want to have a custom thumbnail for this item",
+                  "type": "string"
+                },
+                "alt": {
+                  "title": "Alternate text",
+                  "maxLength": 120,
+                  "description": "Add a descriptive text so that visually impaired users can understand your image",
+                  "pattern": "^(?=.*\\S)(?!(?:[Ii][Mm][Aa][Gg][Ee]|[Pp][Ii][Cc][Tt][Uu][Rr][Ee]|[Pp][Hh][Oo][Tt][Oo]|[Ll][Oo][Gg][Oo]|[Ss][Cc][Rr][Ee][Ee][Nn][Ss][Hh][Oo][Tt]|[Gg][Rr][Aa][Pp][Hh]|[Cc][Hh][Aa][Rr][Tt]|[Dd][Ii][Aa][Gg][Rr][Aa][Mm]|[Ii][Cc][Oo][Nn])$).*$",
+                  "errorMessage": {
+                    "pattern": "must be descriptive. It cannot be empty, contain only spaces, or use generic terms like 'image', 'logo', 'graph', etc."
+                  },
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ]
+            },
             "ref": {
               "title": "Link",
               "description": "Choose a page or file to link to this Collection item",
@@ -1905,6 +1930,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -2245,7 +2280,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -3502,6 +3537,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -3842,7 +3887,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -5095,6 +5140,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -5435,7 +5490,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -6688,6 +6743,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -7028,7 +7093,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -8281,6 +8346,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -8621,7 +8696,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -9874,6 +9949,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -10214,7 +10299,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -11467,6 +11552,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -11807,7 +11902,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -13064,6 +13159,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -13404,7 +13509,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -14661,6 +14766,16 @@
                     "description": "We will use the child pages' feature images as their thumbnail.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "childrenPagesOrdering": {
+                    "default": [],
+                    "format": "childrenPagesOrdering",
+                    "title": "Ordering of Child pages",
+                    "description": "Drag and drop pages to reorder them",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": [
@@ -15001,7 +15116,7 @@
                   },
                   "customDescription": {
                     "title": "Custom description",
-                    "maxLength": 150,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "displayThumbnail": {
@@ -16260,6 +16375,16 @@
             "description": "We will use the child pages' feature images as their thumbnail.",
             "default": false,
             "type": "boolean"
+          },
+          "childrenPagesOrdering": {
+            "default": [],
+            "format": "childrenPagesOrdering",
+            "title": "Ordering of Child pages",
+            "description": "Drag and drop pages to reorder them",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "required": [
@@ -16600,7 +16725,7 @@
           },
           "customDescription": {
             "title": "Custom description",
-            "maxLength": 150,
+            "maxLength": 200,
             "type": "string"
           },
           "displayThumbnail": {
