@@ -1095,7 +1095,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -1157,7 +1157,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -2702,7 +2702,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -2764,7 +2764,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -4305,7 +4305,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -4367,7 +4367,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -5908,7 +5908,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -5970,7 +5970,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -7511,7 +7511,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -7573,7 +7573,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -9114,7 +9114,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -9176,7 +9176,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -10717,7 +10717,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -10779,7 +10779,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -12324,7 +12324,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -12386,7 +12386,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -13931,7 +13931,7 @@
                   },
                   "caption": {
                     "title": "Caption",
-                    "maxLength": 100,
+                    "maxLength": 250,
                     "format": "textarea",
                     "type": "string"
                   },
@@ -13993,7 +13993,7 @@
                   },
                   "description": {
                     "title": "Description",
-                    "maxLength": 100,
+                    "maxLength": 200,
                     "type": "string"
                   },
                   "variant": {
@@ -15540,7 +15540,7 @@
           },
           "caption": {
             "title": "Caption",
-            "maxLength": 100,
+            "maxLength": 250,
             "format": "textarea",
             "type": "string"
           },
@@ -15602,7 +15602,7 @@
           },
           "description": {
             "title": "Description",
-            "maxLength": 100,
+            "maxLength": 200,
             "type": "string"
           },
           "variant": {
