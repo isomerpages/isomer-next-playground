@@ -1022,13 +1022,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -1417,7 +1415,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -1849,7 +1846,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -2269,7 +2266,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -2341,7 +2338,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -2629,13 +2626,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -3024,7 +3019,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -3456,7 +3450,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -3876,7 +3870,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -3948,7 +3942,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -4232,13 +4226,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -4627,7 +4619,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -5059,7 +5050,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -5479,7 +5470,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -5551,7 +5542,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -5835,13 +5826,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -6230,7 +6219,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -6662,7 +6650,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -7082,7 +7070,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -7154,7 +7142,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -7438,13 +7426,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -7833,7 +7819,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -8265,7 +8250,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -8685,7 +8670,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -8757,7 +8742,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -9041,13 +9026,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -9436,7 +9419,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -9868,7 +9850,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -10288,7 +10270,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -10360,7 +10342,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -10644,13 +10626,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -11039,7 +11019,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -11471,7 +11450,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -11891,7 +11870,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -11963,7 +11942,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -12251,13 +12230,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -12646,7 +12623,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -13078,7 +13054,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -13498,7 +13474,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -13570,7 +13546,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -13858,13 +13834,11 @@
                       },
                       {
                         "title": "Large image",
-                        "format": "hidden",
                         "const": "largeImage",
                         "type": "string"
                       },
                       {
                         "title": "Floating",
-                        "format": "hidden",
                         "const": "floating",
                         "type": "string"
                       }
@@ -14253,7 +14227,6 @@
                       },
                       {
                         "title": "Cards with full images",
-                        "format": "hidden",
                         "type": "object",
                         "properties": {
                           "variant": {
@@ -14685,7 +14658,7 @@
                   },
                   "url": {
                     "title": "Map to embed",
-                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+                    "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
                     "format": "embed",
                     "type": "string"
                   },
@@ -15105,7 +15078,7 @@
                   "collectionReferenceLink": {
                     "title": "Collection",
                     "description": "The collection to display pages from",
-                    "format": "link",
+                    "format": "collection-dropdown",
                     "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
                     "type": "string"
                   },
@@ -15177,7 +15150,7 @@
                           "type": "string"
                         },
                         "caption": {
-                          "maxLength": 100,
+                          "maxLength": 250,
                           "type": "string"
                         }
                       },
@@ -15467,13 +15440,11 @@
               },
               {
                 "title": "Large image",
-                "format": "hidden",
                 "const": "largeImage",
                 "type": "string"
               },
               {
                 "title": "Floating",
-                "format": "hidden",
                 "const": "floating",
                 "type": "string"
               }
@@ -15862,7 +15833,6 @@
               },
               {
                 "title": "Cards with full images",
-                "format": "hidden",
                 "type": "object",
                 "properties": {
                   "variant": {
@@ -16294,7 +16264,7 @@
           },
           "url": {
             "title": "Map to embed",
-            "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)",
+            "pattern": "(^https://www\\.google\\.com/maps(?:/d)?/embed?.*$)|(^https://www\\.onemap\\.gov\\.sg(/minimap/minimap\\.html|/amm/amm\\.html).*$)|(^https://maps\\.gov\\.sg/.*$)",
             "format": "embed",
             "type": "string"
           },
@@ -16714,7 +16684,7 @@
           "collectionReferenceLink": {
             "title": "Collection",
             "description": "The collection to display pages from",
-            "format": "link",
+            "format": "collection-dropdown",
             "pattern": "(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/)",
             "type": "string"
           },
@@ -16786,7 +16756,7 @@
                   "type": "string"
                 },
                 "caption": {
-                  "maxLength": 100,
+                  "maxLength": 250,
                   "type": "string"
                 }
               },
