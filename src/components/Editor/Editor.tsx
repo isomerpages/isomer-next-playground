@@ -88,12 +88,6 @@ export default function Editor() {
         <a href={ISOMER_SCHEMA_URI} target="_blank">
           Isomer Schema
         </a>
-        <a
-          href="https://github.com/isomerpages/isomer-next-playground/blob/main/components.md"
-          target="_blank"
-        >
-          Sample JSON Blocks
-        </a>
 
         <div className="flex-1"></div>
 
