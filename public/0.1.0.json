@@ -975,7 +975,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -1037,7 +1037,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -1078,7 +1078,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -1136,7 +1136,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -1179,14 +1179,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -1224,19 +1224,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -1266,14 +1266,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -1311,19 +1311,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -1353,14 +1353,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -1398,19 +1398,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -1440,14 +1440,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -1485,19 +1485,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -1568,7 +1568,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -1595,7 +1595,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -1666,7 +1666,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -1733,7 +1733,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -1803,9 +1803,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -2007,12 +2005,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -2118,7 +2121,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -2194,7 +2197,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -2277,7 +2280,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -2341,7 +2344,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -2369,7 +2372,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -2707,7 +2739,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -2715,8 +2747,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -2743,21 +2779,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -2806,7 +2837,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -3524,7 +3555,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -3586,7 +3617,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -3627,7 +3658,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -3685,7 +3716,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -3728,14 +3759,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -3773,19 +3804,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -3815,14 +3846,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -3860,19 +3891,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -3902,14 +3933,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -3947,19 +3978,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -3989,14 +4020,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -4034,19 +4065,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -4117,7 +4148,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -4144,7 +4175,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -4215,7 +4246,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -4282,7 +4313,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -4352,9 +4383,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -4556,12 +4585,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -4667,7 +4701,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -4743,7 +4777,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -4826,7 +4860,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -4890,7 +4924,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -4918,7 +4952,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -5256,7 +5319,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -5264,8 +5327,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -5292,21 +5359,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -5355,7 +5417,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -6069,7 +6131,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -6131,7 +6193,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -6172,7 +6234,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -6230,7 +6292,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -6273,14 +6335,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -6318,19 +6380,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -6360,14 +6422,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -6405,19 +6467,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -6447,14 +6509,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -6492,19 +6554,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -6534,14 +6596,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -6579,19 +6641,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -6662,7 +6724,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -6689,7 +6751,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -6760,7 +6822,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -6827,7 +6889,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -6897,9 +6959,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -7101,12 +7161,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -7212,7 +7277,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -7288,7 +7353,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -7371,7 +7436,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -7435,7 +7500,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -7463,7 +7528,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -7801,7 +7895,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -7809,8 +7903,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -7837,21 +7935,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -7900,7 +7993,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -8614,7 +8707,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -8676,7 +8769,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -8717,7 +8810,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -8775,7 +8868,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -8818,14 +8911,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -8863,19 +8956,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -8905,14 +8998,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -8950,19 +9043,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -8992,14 +9085,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -9037,19 +9130,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -9079,14 +9172,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -9124,19 +9217,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -9207,7 +9300,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -9234,7 +9327,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -9305,7 +9398,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -9372,7 +9465,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -9442,9 +9535,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -9646,12 +9737,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -9757,7 +9853,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -9833,7 +9929,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -9916,7 +10012,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -9980,7 +10076,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -10008,7 +10104,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -10346,7 +10471,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -10354,8 +10479,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -10382,21 +10511,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -10445,7 +10569,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -11159,7 +11283,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -11221,7 +11345,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -11262,7 +11386,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -11320,7 +11444,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -11363,14 +11487,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -11408,19 +11532,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -11450,14 +11574,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -11495,19 +11619,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -11537,14 +11661,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -11582,19 +11706,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -11624,14 +11748,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -11669,19 +11793,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -11752,7 +11876,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -11779,7 +11903,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -11850,7 +11974,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -11917,7 +12041,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -11987,9 +12111,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -12191,12 +12313,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -12302,7 +12429,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -12378,7 +12505,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -12461,7 +12588,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -12525,7 +12652,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -12553,7 +12680,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -12891,7 +13047,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -12899,8 +13055,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -12927,21 +13087,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -12990,7 +13145,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -13704,7 +13859,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -13766,7 +13921,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -13807,7 +13962,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -13865,7 +14020,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -13908,14 +14063,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -13953,19 +14108,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -13995,14 +14150,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -14040,19 +14195,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -14082,14 +14237,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -14127,19 +14282,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -14169,14 +14324,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -14214,19 +14369,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -14297,7 +14452,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -14324,7 +14479,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -14395,7 +14550,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -14462,7 +14617,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -14532,9 +14687,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -14736,12 +14889,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -14847,7 +15005,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -14923,7 +15081,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -15006,7 +15164,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -15070,7 +15228,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -15098,7 +15256,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -15436,7 +15623,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -15444,8 +15631,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -15472,21 +15663,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -15535,7 +15721,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -16249,7 +16435,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -16311,7 +16497,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -16352,7 +16538,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -16410,7 +16596,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -16453,14 +16639,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -16498,19 +16684,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -16540,14 +16726,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -16585,19 +16771,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -16627,14 +16813,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -16672,19 +16858,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -16714,14 +16900,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -16759,19 +16945,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -16842,7 +17028,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -16869,7 +17055,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -16940,7 +17126,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -17007,7 +17193,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -17077,9 +17263,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -17281,12 +17465,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -17392,7 +17581,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -17468,7 +17657,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -17551,7 +17740,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -17615,7 +17804,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -17643,7 +17832,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -17981,7 +18199,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -17989,8 +18207,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -18017,21 +18239,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -18080,7 +18297,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -18798,7 +19015,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -18860,7 +19077,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -18901,7 +19118,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -18959,7 +19176,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -19002,14 +19219,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -19047,19 +19264,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -19089,14 +19306,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -19134,19 +19351,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -19176,14 +19393,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -19221,19 +19438,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -19263,14 +19480,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -19308,19 +19525,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -19391,7 +19608,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -19418,7 +19635,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -19489,7 +19706,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -19556,7 +19773,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -19626,9 +19843,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -19830,12 +20045,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -19941,7 +20161,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -20017,7 +20237,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -20100,7 +20320,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -20164,7 +20384,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -20192,7 +20412,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -20530,7 +20779,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -20538,8 +20787,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -20566,21 +20819,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -20629,7 +20877,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -21347,7 +21595,7 @@
           "items": {
             "anyOf": [
               {
-                "title": "Accordion component",
+                "title": "Accordion",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -21409,7 +21657,7 @@
                 ]
               },
               {
-                "title": "Blockquote component",
+                "title": "Blockquote",
                 "description": "The Blockquote component is used to display a quote with an image.",
                 "type": "object",
                 "properties": {
@@ -21450,7 +21698,7 @@
                 ]
               },
               {
-                "title": "Callout component",
+                "title": "Callout",
                 "description": "A component that highlights important information",
                 "type": "object",
                 "properties": {
@@ -21508,7 +21756,7 @@
                 ]
               },
               {
-                "title": "FormSG component",
+                "title": "FormSG",
                 "description": "The FormSG component is used to embed a FormSG form within the current page.",
                 "type": "object",
                 "properties": {
@@ -21551,14 +21799,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -21596,19 +21844,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -21638,14 +21886,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -21683,19 +21931,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -21725,14 +21973,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -21770,19 +22018,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -21812,14 +22060,14 @@
                         ]
                       },
                       {
-                        "label": "Primary call-to-action",
+                        "label": "Primary Call-to-Action",
                         "fields": [
                           "buttonLabel",
                           "buttonUrl"
                         ]
                       },
                       {
-                        "label": "Secondary call-to-action",
+                        "label": "Secondary Call-to-Action",
                         "fields": [
                           "secondaryButtonLabel",
                           "secondaryButtonUrl"
@@ -21857,19 +22105,19 @@
                         "type": "string"
                       },
                       "buttonLabel": {
-                        "title": "Primary call-to-action text",
+                        "title": "Primary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
                       "buttonUrl": {
-                        "title": "Primary call-to-action destination",
+                        "title": "Button destination",
                         "description": "When this is clicked, open:",
                         "format": "link",
                         "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                         "type": "string"
                       },
                       "secondaryButtonLabel": {
-                        "title": "Secondary call-to-action text",
+                        "title": "Secondary Call-to-Action text",
                         "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                         "type": "string"
                       },
@@ -21940,7 +22188,7 @@
                 ]
               },
               {
-                "title": "Iframe component",
+                "title": "Iframe",
                 "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
                 "type": "object",
                 "properties": {
@@ -21967,7 +22215,7 @@
                 ]
               },
               {
-                "title": "Image component",
+                "title": "Image",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -22038,7 +22286,7 @@
                     ]
                   }
                 ],
-                "title": "Infobar component",
+                "title": "Call-to-Action",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -22105,7 +22353,7 @@
                 ]
               },
               {
-                "title": "Cards component",
+                "title": "Cards",
                 "allOf": [
                   {
                     "type": "object",
@@ -22175,9 +22423,7 @@
                     ]
                   },
                   {
-                    "format": "radio",
-                    "title": "Infocards style",
-                    "anyOf": [
+                    "oneOf": [
                       {
                         "title": "Cards with images",
                         "type": "object",
@@ -22379,12 +22625,17 @@
                           "cards"
                         ]
                       }
-                    ]
+                    ],
+                    "discriminator": {
+                      "propertyName": "variant"
+                    },
+                    "format": "radio",
+                    "title": "Style"
                   }
                 ]
               },
               {
-                "title": "Infocols component",
+                "title": "Columns of text",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -22490,7 +22741,7 @@
                 ]
               },
               {
-                "title": "Infopic component",
+                "title": "Image with text",
                 "description": "The infopic component is used to display an image with accompanying text",
                 "type": "object",
                 "properties": {
@@ -22566,7 +22817,7 @@
                 ]
               },
               {
-                "title": "Contentpic component",
+                "title": "Image with text",
                 "description": "The contentpic component is used to display an image with accompanying text only in content pages",
                 "type": "object",
                 "properties": {
@@ -22649,7 +22900,7 @@
                     ]
                   }
                 ],
-                "title": "KeyStatistics component",
+                "title": "Statistics",
                 "description": "A component that displays KeyStatistics",
                 "type": "object",
                 "properties": {
@@ -22713,7 +22964,7 @@
                 ]
               },
               {
-                "title": "Map component",
+                "title": "Map",
                 "description": "The map component is used to embed a map of a location or area within the current page.",
                 "type": "object",
                 "properties": {
@@ -22741,7 +22992,36 @@
                 ]
               },
               {
-                "title": "Video component",
+                "title": "Audio",
+                "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "audio",
+                    "const": "audio",
+                    "type": "string"
+                  },
+                  "url": {
+                    "title": "Audio to embed",
+                    "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+                    "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+                    "format": "embed",
+                    "type": "string"
+                  },
+                  "title": {
+                    "title": "Label for screen readers",
+                    "description": "This is not shown on the page, but is compulsory for accessibility",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "url",
+                  "title"
+                ]
+              },
+              {
+                "title": "Video",
                 "description": "The video component is used to embed an external video within the current page.",
                 "type": "object",
                 "properties": {
@@ -23079,7 +23359,7 @@
                 ]
               },
               {
-                "title": "Logocloud component",
+                "title": "Logo cloud",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -23087,8 +23367,12 @@
                     "const": "logocloud",
                     "type": "string"
                   },
+                  "title": {
+                    "title": "Title",
+                    "type": "string"
+                  },
                   "images": {
-                    "title": "Images for logo cloud",
+                    "title": "Logos",
                     "minItems": 1,
                     "maxItems": 10,
                     "type": "array",
@@ -23115,21 +23399,16 @@
                         "alt"
                       ]
                     }
-                  },
-                  "title": {
-                    "title": "Title for the logo cloud",
-                    "description": "Upload the images for the logo cloud here or provide a url",
-                    "type": "string"
                   }
                 },
                 "required": [
                   "type",
-                  "images",
-                  "title"
+                  "title",
+                  "images"
                 ]
               },
               {
-                "title": "CollectionBlock component",
+                "title": "Linked Collection",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -23178,7 +23457,7 @@
                 ]
               },
               {
-                "title": "Image Gallery component",
+                "title": "Image gallery",
                 "type": "object",
                 "properties": {
                   "type": {
@@ -23898,7 +24177,7 @@
   "components": {
     "complex": {
       "accordion": {
-        "title": "Accordion component",
+        "title": "Accordion",
         "type": "object",
         "properties": {
           "type": {
@@ -23960,7 +24239,7 @@
         ]
       },
       "blockquote": {
-        "title": "Blockquote component",
+        "title": "Blockquote",
         "description": "The Blockquote component is used to display a quote with an image.",
         "type": "object",
         "properties": {
@@ -24001,7 +24280,7 @@
         ]
       },
       "callout": {
-        "title": "Callout component",
+        "title": "Callout",
         "description": "A component that highlights important information",
         "type": "object",
         "properties": {
@@ -24059,7 +24338,7 @@
         ]
       },
       "formsg": {
-        "title": "FormSG component",
+        "title": "FormSG",
         "description": "The FormSG component is used to embed a FormSG form within the current page.",
         "type": "object",
         "properties": {
@@ -24102,14 +24381,14 @@
                 ]
               },
               {
-                "label": "Primary call-to-action",
+                "label": "Primary Call-to-Action",
                 "fields": [
                   "buttonLabel",
                   "buttonUrl"
                 ]
               },
               {
-                "label": "Secondary call-to-action",
+                "label": "Secondary Call-to-Action",
                 "fields": [
                   "secondaryButtonLabel",
                   "secondaryButtonUrl"
@@ -24147,19 +24426,19 @@
                 "type": "string"
               },
               "buttonLabel": {
-                "title": "Primary call-to-action text",
+                "title": "Primary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
               "buttonUrl": {
-                "title": "Primary call-to-action destination",
+                "title": "Button destination",
                 "description": "When this is clicked, open:",
                 "format": "link",
                 "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                 "type": "string"
               },
               "secondaryButtonLabel": {
-                "title": "Secondary call-to-action text",
+                "title": "Secondary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
@@ -24189,14 +24468,14 @@
                 ]
               },
               {
-                "label": "Primary call-to-action",
+                "label": "Primary Call-to-Action",
                 "fields": [
                   "buttonLabel",
                   "buttonUrl"
                 ]
               },
               {
-                "label": "Secondary call-to-action",
+                "label": "Secondary Call-to-Action",
                 "fields": [
                   "secondaryButtonLabel",
                   "secondaryButtonUrl"
@@ -24234,19 +24513,19 @@
                 "type": "string"
               },
               "buttonLabel": {
-                "title": "Primary call-to-action text",
+                "title": "Primary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
               "buttonUrl": {
-                "title": "Primary call-to-action destination",
+                "title": "Button destination",
                 "description": "When this is clicked, open:",
                 "format": "link",
                 "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                 "type": "string"
               },
               "secondaryButtonLabel": {
-                "title": "Secondary call-to-action text",
+                "title": "Secondary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
@@ -24276,14 +24555,14 @@
                 ]
               },
               {
-                "label": "Primary call-to-action",
+                "label": "Primary Call-to-Action",
                 "fields": [
                   "buttonLabel",
                   "buttonUrl"
                 ]
               },
               {
-                "label": "Secondary call-to-action",
+                "label": "Secondary Call-to-Action",
                 "fields": [
                   "secondaryButtonLabel",
                   "secondaryButtonUrl"
@@ -24321,19 +24600,19 @@
                 "type": "string"
               },
               "buttonLabel": {
-                "title": "Primary call-to-action text",
+                "title": "Primary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
               "buttonUrl": {
-                "title": "Primary call-to-action destination",
+                "title": "Button destination",
                 "description": "When this is clicked, open:",
                 "format": "link",
                 "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                 "type": "string"
               },
               "secondaryButtonLabel": {
-                "title": "Secondary call-to-action text",
+                "title": "Secondary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
@@ -24363,14 +24642,14 @@
                 ]
               },
               {
-                "label": "Primary call-to-action",
+                "label": "Primary Call-to-Action",
                 "fields": [
                   "buttonLabel",
                   "buttonUrl"
                 ]
               },
               {
-                "label": "Secondary call-to-action",
+                "label": "Secondary Call-to-Action",
                 "fields": [
                   "secondaryButtonLabel",
                   "secondaryButtonUrl"
@@ -24408,19 +24687,19 @@
                 "type": "string"
               },
               "buttonLabel": {
-                "title": "Primary call-to-action text",
+                "title": "Primary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
               "buttonUrl": {
-                "title": "Primary call-to-action destination",
+                "title": "Button destination",
                 "description": "When this is clicked, open:",
                 "format": "link",
                 "pattern": "(^https:\\/\\/)|(^tel:)|(^sms:)|(^mailto:)|(^\\[resource:(\\d+):(\\d+)\\]$)|(^\\/(\\d+)\\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\/)|(^\\/)",
                 "type": "string"
               },
               "secondaryButtonLabel": {
-                "title": "Secondary call-to-action text",
+                "title": "Secondary Call-to-Action text",
                 "description": "A descriptive text. Avoid generic text such as “Click here” or “Learn more”",
                 "type": "string"
               },
@@ -24491,7 +24770,7 @@
         ]
       },
       "iframe": {
-        "title": "Iframe component",
+        "title": "Iframe",
         "description": "The iframe component is used to embed a whitelisted external webpage within the current page.",
         "type": "object",
         "properties": {
@@ -24518,7 +24797,7 @@
         ]
       },
       "image": {
-        "title": "Image component",
+        "title": "Image",
         "type": "object",
         "properties": {
           "type": {
@@ -24589,7 +24868,7 @@
             ]
           }
         ],
-        "title": "Infobar component",
+        "title": "Call-to-Action",
         "type": "object",
         "properties": {
           "type": {
@@ -24656,7 +24935,7 @@
         ]
       },
       "infocards": {
-        "title": "Cards component",
+        "title": "Cards",
         "allOf": [
           {
             "type": "object",
@@ -24726,9 +25005,7 @@
             ]
           },
           {
-            "format": "radio",
-            "title": "Infocards style",
-            "anyOf": [
+            "oneOf": [
               {
                 "title": "Cards with images",
                 "type": "object",
@@ -24930,12 +25207,17 @@
                   "cards"
                 ]
               }
-            ]
+            ],
+            "discriminator": {
+              "propertyName": "variant"
+            },
+            "format": "radio",
+            "title": "Style"
           }
         ]
       },
       "infocols": {
-        "title": "Infocols component",
+        "title": "Columns of text",
         "type": "object",
         "properties": {
           "type": {
@@ -25041,7 +25323,7 @@
         ]
       },
       "infopic": {
-        "title": "Infopic component",
+        "title": "Image with text",
         "description": "The infopic component is used to display an image with accompanying text",
         "type": "object",
         "properties": {
@@ -25117,7 +25399,7 @@
         ]
       },
       "contentpic": {
-        "title": "Contentpic component",
+        "title": "Image with text",
         "description": "The contentpic component is used to display an image with accompanying text only in content pages",
         "type": "object",
         "properties": {
@@ -25200,7 +25482,7 @@
             ]
           }
         ],
-        "title": "KeyStatistics component",
+        "title": "Statistics",
         "description": "A component that displays KeyStatistics",
         "type": "object",
         "properties": {
@@ -25264,7 +25546,7 @@
         ]
       },
       "map": {
-        "title": "Map component",
+        "title": "Map",
         "description": "The map component is used to embed a map of a location or area within the current page.",
         "type": "object",
         "properties": {
@@ -25291,8 +25573,37 @@
           "title"
         ]
       },
+      "audio": {
+        "title": "Audio",
+        "description": "The audio component embeds Spotify podcast episodes and shows, or Apple Podcast shows and episodes.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "default": "audio",
+            "const": "audio",
+            "type": "string"
+          },
+          "url": {
+            "title": "Audio to embed",
+            "description": "Spotify episode or show, or Apple Podcast show/episode embed URL only",
+            "pattern": "(^https://open\\.spotify\\.com/embed/(episode|show)/[a-zA-Z0-9]+.*$)|(^https://embed\\.podcasts\\.apple\\.com/[a-z]{2}/[a-z-]+/.*$)",
+            "format": "embed",
+            "type": "string"
+          },
+          "title": {
+            "title": "Label for screen readers",
+            "description": "This is not shown on the page, but is compulsory for accessibility",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url",
+          "title"
+        ]
+      },
       "video": {
-        "title": "Video component",
+        "title": "Video",
         "description": "The video component is used to embed an external video within the current page.",
         "type": "object",
         "properties": {
@@ -25630,7 +25941,7 @@
         ]
       },
       "logocloud": {
-        "title": "Logocloud component",
+        "title": "Logo cloud",
         "type": "object",
         "properties": {
           "type": {
@@ -25638,8 +25949,12 @@
             "const": "logocloud",
             "type": "string"
           },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
           "images": {
-            "title": "Images for logo cloud",
+            "title": "Logos",
             "minItems": 1,
             "maxItems": 10,
             "type": "array",
@@ -25666,21 +25981,16 @@
                 "alt"
               ]
             }
-          },
-          "title": {
-            "title": "Title for the logo cloud",
-            "description": "Upload the images for the logo cloud here or provide a url",
-            "type": "string"
           }
         },
         "required": [
           "type",
-          "images",
-          "title"
+          "title",
+          "images"
         ]
       },
       "collectionblock": {
-        "title": "CollectionBlock component",
+        "title": "Linked Collection",
         "type": "object",
         "properties": {
           "type": {
@@ -25729,7 +26039,7 @@
         ]
       },
       "imagegallery": {
-        "title": "Image Gallery component",
+        "title": "Image gallery",
         "type": "object",
         "properties": {
           "type": {
