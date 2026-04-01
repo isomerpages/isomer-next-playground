@@ -414,6 +414,22 @@
             {
               "type": "object",
               "properties": {
+                "variant": {
+                  "title": "Layout",
+                  "format": "collection-variant",
+                  "anyOf": [
+                    {
+                      "title": "1-column",
+                      "const": "collection",
+                      "type": "string"
+                    },
+                    {
+                      "title": "2-column",
+                      "const": "blog",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "defaultSortBy": {
                   "title": "Default sort by",
                   "description": "The default sort order of the collection",
@@ -1845,9 +1861,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -1966,9 +1982,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -2460,9 +2476,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -4425,9 +4473,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -4546,9 +4594,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -5040,9 +5088,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -7001,9 +7081,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -7122,9 +7202,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -7616,9 +7696,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -9577,9 +9689,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -9698,9 +9810,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -10192,9 +10304,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -12153,9 +12297,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -12274,9 +12418,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -12768,9 +12912,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -14729,9 +14905,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -14850,9 +15026,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -15344,9 +15520,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -17305,9 +17513,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -17426,9 +17634,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -17920,9 +18128,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -19885,9 +20125,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -20006,9 +20246,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -20500,9 +20740,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -22465,9 +22737,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -22586,9 +22858,9 @@
                                 },
                                 "imageFit": {
                                   "default": "cover",
+                                  "format": "radio",
                                   "title": "Image display",
                                   "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                                  "format": "radio",
                                   "anyOf": [
                                     {
                                       "title": "Default (recommended)",
@@ -23080,9 +23352,41 @@
                   },
                   "showThumbnail": {
                     "title": "Show thumbnail of all child pages",
-                    "description": "We will use the child pages' feature images as their thumbnail.",
+                    "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
                     "default": false,
                     "type": "boolean"
+                  },
+                  "maxColumns": {
+                    "title": "Number of columns",
+                    "description": "This only affects how the block appears on large screens",
+                    "default": "2",
+                    "format": "childPagesCols",
+                    "anyOf": [
+                      {
+                        "title": "2 columns",
+                        "const": "2",
+                        "type": "string"
+                      },
+                      {
+                        "title": "3 columns",
+                        "const": "3",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "imageFit": {
+                    "anyOf": [
+                      {
+                        "title": "Default (recommended)",
+                        "const": "Cover",
+                        "type": "string"
+                      },
+                      {
+                        "title": "Resize image to fit",
+                        "const": "Content",
+                        "type": "string"
+                      }
+                    ]
                   },
                   "childrenPagesOrdering": {
                     "default": [],
@@ -25047,9 +25351,9 @@
                         },
                         "imageFit": {
                           "default": "cover",
+                          "format": "radio",
                           "title": "Image display",
                           "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                          "format": "radio",
                           "anyOf": [
                             {
                               "title": "Default (recommended)",
@@ -25168,9 +25472,9 @@
                         },
                         "imageFit": {
                           "default": "cover",
+                          "format": "radio",
                           "title": "Image display",
                           "description": "Select \"Resize image to fit\" only if the image has a white background.",
-                          "format": "radio",
                           "anyOf": [
                             {
                               "title": "Default (recommended)",
@@ -25662,9 +25966,41 @@
           },
           "showThumbnail": {
             "title": "Show thumbnail of all child pages",
-            "description": "We will use the child pages' feature images as their thumbnail.",
+            "description": "Publish the child page for thumbnail changes to appear here. Pages without a thumbnail will show the site’s logo.",
             "default": false,
             "type": "boolean"
+          },
+          "maxColumns": {
+            "title": "Number of columns",
+            "description": "This only affects how the block appears on large screens",
+            "default": "2",
+            "format": "childPagesCols",
+            "anyOf": [
+              {
+                "title": "2 columns",
+                "const": "2",
+                "type": "string"
+              },
+              {
+                "title": "3 columns",
+                "const": "3",
+                "type": "string"
+              }
+            ]
+          },
+          "imageFit": {
+            "anyOf": [
+              {
+                "title": "Default (recommended)",
+                "const": "Cover",
+                "type": "string"
+              },
+              {
+                "title": "Resize image to fit",
+                "const": "Content",
+                "type": "string"
+              }
+            ]
           },
           "childrenPagesOrdering": {
             "default": [],
